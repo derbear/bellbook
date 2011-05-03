@@ -5,8 +5,8 @@ $query="SELECT * FROM Users";
 $resource=mysql_query($query);
 if($resource) {
     while($row=mysql_fetch_array($resource)) {
-        echo $row['studentId'] . ' ' . $row['firstName'] . ' ' .
-        $row['lastName'] . ' '  ;
+        echo $row['studentId'] . '->' . $row['lastName'] . ', ' .
+        $row['firstName'] . ' ';
         echo '<br />';
     }
 } else {
@@ -31,11 +31,21 @@ $query="SELECT * FROM Books";
 $resource=mysql_query($query);
 if($resource) {
     while($row=mysql_fetch_array($resource)) {
-        echo '|'.$row['ISBN'] . '->' . $row['title'] . '| ';
+        echo $row['ISBN'] . '->' . $row['title'];
         echo '<br />';
     }
 } else {
     echo 'failed';
 }
-phpinfo();
+$query="SELECT * FROM Courses";
+$resource=mysql_query($query);
+if($resource) {
+    while($row=mysql_fetch_array($resource)) {
+        echo $row['courseId'] . '->' . $row['courseName'];
+        echo '<br />';
+    }
+} else {
+    echo 'failed';
+}
+//phpinfo();
 ?>
