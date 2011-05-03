@@ -1,17 +1,17 @@
 <? require("util/header.php");
 connect(false);
 $cId=$_GET['id'];
-$query=mysql_query("SELECT * FROM Courses WHERE courseId=$cId");
-$resource=mysql_query($query);
 $cname="";
 $cteachers="";
+$query="SELECT * FROM Courses";
+$resource=mysql_query($query);
 if($resource) {
     while($row=mysql_fetch_array($resource)) {
         $cname=$row['courseName'];
         $cteachers=$row['teachers'];
     }
 } else {
-//    header("Location: index.php?message=Invalid course");
+    header("Location: index.php?message=Invalid course: $cId");
 }
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -32,8 +32,11 @@ if($resource) {
             $resource=mysql_query($query);
             if($resource) {
                 while($row=mysql_fetch_array($resource)) {
-                    echo '<hr />';
-                    echo generateListing_B($row['ISBN'], mappedTitle($row['ISBN']));
+                    echo "<hr />";
+                    echo generateListing_B($row['ISBN'], mappedTitle($row['ISBN']),
+                            mappedClasses($row['ISBN']));
+                    ?><p><? echo '<a href=offers.php?isbn='.
+                    $row['ISBN'].'>See offers</a>' ?></p><?
                 }
             }
             ?>

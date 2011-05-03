@@ -1,6 +1,8 @@
 <?php
 require("connect.php");
 connect(false);
+error_reporting(E_ALL); //TODO remove
+ini_set("display_errors", 1);
 $query="SELECT * FROM Users";
 $resource=mysql_query($query);
 if($resource) {
@@ -37,6 +39,13 @@ if($resource) {
 } else {
     echo 'failed';
 }
+//$query="INSERT INTO Courses Values('231', 'U.S. History AP', 'Sullivan, Troyan')";
+//if(mysql_query($query)) {
+//    //echo 'success';
+//}
+//else {
+//    echo 'failure: ' . mysql_error();
+//}
 $query="SELECT * FROM Courses";
 $resource=mysql_query($query);
 if($resource) {
