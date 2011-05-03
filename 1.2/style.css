@@ -1,0 +1,9 @@
+h1 {color: rgb(0, 64, 128);}
+h2 {color: rgb(0, 128, 192);}
+body {
+	color: rgb(0, 0, 64);
+	background-color:rgb(255, 191, 128);
+}
+div.msg {
+	color: rgb(0, 128, 0);
+}
