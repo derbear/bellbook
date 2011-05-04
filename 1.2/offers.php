@@ -8,7 +8,7 @@ connect(false);
 require_once("util/listing.php");
 $title=mappedTitle($isbn);
 if($title=="") {
-    header("Location: browse.php?message=Invalid ISBN");
+    header("Location: index.php?message=Invalid ISBN");
 }
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">

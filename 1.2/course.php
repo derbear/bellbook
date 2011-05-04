@@ -11,7 +11,7 @@ if($resource) {
         $cteachers=$row['teachers'];
     }
 } else {
-    header("Location: index.php?message=Invalid course: $cId");
+    header("Location: course.php?message=Invalid course: $cId");
 }
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
