@@ -28,6 +28,7 @@ function print_header() { ?>
 <div> <!--<b>Navigation:</b>--> <a href='index.php'>Home</a>
 | <a href='about.php'>About bellbook</a>
 | <a href='browse.php'>Browse books</a>
+| <a href='courses.php'>Browse courses</a>
     <? if (isset($_SESSION['id'])) { ?>
 | <a href='sellBook.php'>Sell a book</a>
     <? } ?>

@@ -3,7 +3,7 @@ connect(false);
 $cId=$_GET['id'];
 $cname="";
 $cteachers="";
-$query="SELECT * FROM Courses";
+$query="SELECT * FROM Courses WHERE courseId=$cId";
 $resource=mysql_query($query);
 if($resource) {
     while($row=mysql_fetch_array($resource)) {
@@ -23,12 +23,12 @@ if($resource) {
     </head>
     <body>
         <? print_header(); ?>
-        <h2> <?php echo $cname; ?> information </h2>
-        <div> <p> The following course information applies to these teachers:
-            <? echo $cteachers ?> </p>
+        <h2> <?php echo $cname; ?> information </h2> 
+        <div> <? /*<p> The following course information applies to these teachers:
+            <? echo $cteachers ?> </p>*/?>
             <p><b>Books required:</b></p>
             <? require("util/listing.php");
-            $query="SELECT * FROM CMap WHERE courseId='$cId'";
+            $query="SELECT * FROM CMap WHERE courseId='$cId' AND required='1'";
             $resource=mysql_query($query);
             if($resource) {
                 while($row=mysql_fetch_array($resource)) {

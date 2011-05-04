@@ -76,20 +76,10 @@
  * Listing for books
  * @param <type> $fisbn Book ISBN
  * @param <type> $ftitle Book title
- * @param <type> $fcarray (string) Array containing courses used for books
+ * @param <type> $fclist (string) Array containing courses used for books
  */
-function generateListing_B($fisbn, $ftitle, $fcarray=array()) {
-    $formatted="";
-    $first=true;
-    foreach($fcarray as $entry=>$value) {
-        if($first) {
-            $first=false;
-            $formatted=$entry;
-        } else {
-            $formatted=$formatted . ", " . $entry;
-        }
-    }
-    if($first) $clabel="";
+function generateListing_B($fisbn, $ftitle, $fclist) {
+    if($fclist=="") $clabel="";
     else $clabel="All courses used: ";
     return "
 <table>
@@ -103,7 +93,7 @@ function generateListing_B($fisbn, $ftitle, $fcarray=array()) {
     </tr> 
     <tr>
         <td><b>$clabel</b></td>
-        <td>$formatted</td>
+        <td>$fclist</td>
 </table>
 "; }
 
@@ -124,7 +114,25 @@ function mappedTitle($fisbn) {
 }
 
 function mappedClasses($fisbn) {
-    $arr=array('<feature not available>' => 'construction');//TODO map courses
-    return $arr;
+    $query="SELECT * FROM CMap WHERE ISBN='$fisbn'";
+    $resource=mysql_query($query);
+    $first=true;
+    $result="";
+    if($resource) {
+        while($row=mysql_fetch_array($resource)) {
+            $cid=$row['courseId'];
+            $req=$row['required']==1;
+            $query2="SELECT * FROM Courses WHERE courseId='$cid'";
+            $resource2=mysql_query($query2);
+            if($resource2) {
+                $row2=mysql_fetch_array($resource2);
+                $cname=$row2['courseName'];
+                if(req) $cname='<b>'.$cname.'</b>';
+                if(!$first) $result=$result.', ';
+                $result=$result.$cname;
+            }
+        }
+    }
+    return $result;
 }
 ?>
