@@ -80,7 +80,7 @@
  */
 function generateListing_B($fisbn, $ftitle, $fclist) {
     if($fclist=="") $clabel="";
-    else $clabel="All courses used: ";
+    else $clabel="Courses: ";
     return "
 <table>
     <tr>
