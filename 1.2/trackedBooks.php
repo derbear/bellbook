@@ -32,7 +32,8 @@ connect(true);
                         echo "<hr />";
                         echo generateListing_S($tr_row['ISBN'], mappedTitle($tr_row['ISBN']),
                             $tr_row['price'], $tr_row['post'], $tr_row['descr'],
-                            $own_row['email'], $own_row['firstName'], $own_row['lastName']);
+                            $own_row['email'], $row2['studentId'], $own_row['firstName'],
+                            $own_row['lastName']);
                         ?>
 <form action="util/trackBook.php" method="post">
             <input type="hidden" name='list_id' value=<? echo '"' .

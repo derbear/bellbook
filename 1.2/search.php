@@ -39,7 +39,7 @@ UNION
 //                    echo 't1 <br />';
                     echo generateListing_S($row['ISBN'], mappedTitle($row['ISBN']),
                             $row['price'], $row['post'], $row['descr'],
-                            $row2['email'], $row2['firstName'],
+                            $row2['email'], $row2['studentId'], $row2['firstName'],
                             $row2['lastName']); ?>
 <form action="util/trackBook.php" method="post">
             <input type="hidden" name='list_id' value=<? echo '"' .

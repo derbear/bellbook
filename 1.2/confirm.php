@@ -6,7 +6,11 @@ foreach($_POST as $attr=>&$value) {
 foreach($_GET as $attr=>&$value) {
     $value=filter_var($value, FILTER_SANITIZE_STRING);
 }
-
+if(isset($_POST['descr'])) {
+    $descr=$_POST['descr'];
+} else {
+    $descr="";
+}
 if(isset($_POST['new_title'])) { //try to create book, then reconfirm
     $isbn=$_POST['isbn'];
     $title=$_POST['new_title'];
@@ -82,13 +86,13 @@ if($title!="") {?>
                 </tr>
                 <tr>
                     <td><label for="descr"> <b>Description:</b> </label></td>
-                    <td><?echo $_POST['descr']?></td>
+                    <td><?echo $descr?></td>
                 </tr>
             </table>
         <form action="util/postBook.php" method="post">
             <input type="hidden" name="isbn" value=<?echo '"'.$isbn.'"';?> />
             <input type="hidden" name="price" value=<?echo '"'.$_POST['price'].'"';?> />
-            <input type="hidden" name="descr" value=<?echo '"'.$_POST['descr'].'"';?> />
+            <input type="hidden" name="descr" value=<?echo '"'.$descr.'"';?> />
             <input type="Submit" value="Post for sale" />
         </form>
         <p> Not the correct book? You may have entered wrong ISBN. If the ISBN
@@ -133,7 +137,7 @@ if($resource) {
                     new course; afterwards, refresh the page. </p>
                 <input type="hidden" name="isbn" value=<?echo '"'.$isbn.'"';?> />
                 <input type="hidden" name="price" value=<?echo '"'.$_POST['price'].'"';?> />
-                <input type="hidden" name="descr" value=<?echo '"'.$_POST['descr'].'"';?> />
+                <input type="hidden" name="descr" value=<?echo '"'.$descr.'"';?> />
                 <input type="Submit" value="Post new book" />
             </form>
         </div>

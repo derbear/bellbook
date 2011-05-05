@@ -37,7 +37,9 @@
      * its ISBN, title, and description.
      */
     function generateListing_S($fisbn, $ftitle, $fprice, $fdate, $fdescr,
-            $fcontact, $ffname, $flname) {$mail="mailto:" . $fcontact;
+            $fcontact, $fid, $ffname, $flname) {
+        $mail="mailto:" . $fcontact;
+        $account="account.php?id=$fid";
         return "
 <!--listing-->
 <table>
@@ -59,7 +61,7 @@
     </tr>
     <tr>
         <td><b>Seller: </b></td>
-        <td>$ffname" . " " . "$flname</td>
+        <td><a href='$account'>$ffname" . " " . "$flname</a></td>
     </tr>
     <tr>
         <td><b>Contact: </b></td>

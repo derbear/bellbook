@@ -32,7 +32,7 @@ if($resource) {
         while($row2=mysql_fetch_array($resource2)) {
             echo "<hr />";
             echo generateListing_S($isbn, $title, $row['price'], $row['post'],
-                    $row['descr'], $row2['email'], $row2['firstName'],
+                    $row['descr'], $row2['email'], $row2['studentId'], $row2['firstName'],
                     $row2['lastName']);
             if(isset($_SESSION['id'])) { ?>
 <form action="util/trackBook.php" method="post">
