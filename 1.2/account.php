@@ -50,6 +50,19 @@ if($firstname=="" || !isset($_GET['id'])) {
                     <td><?echo $gradYr ?></td>
                 </tr>
             </table>
+        <?php
+            require_once("util/listing.php");
+            $query="SELECT * FROM Listings WHERE ownerId='$id'";
+            $resource=mysql_query($query);
+            if(!$resource) {
+                echo 'Error: ' . mysql_error();
+            }
+            while ($row=mysql_fetch_array($resource)) {
+                echo '<hr />';
+                echo generateListing($row['ISBN'], mappedTitle($row['ISBN']), $row['price'],
+                        $row['post'], $row['descr']); ?>
+            <?}
+        ?>
         <? require("util/footer.php"); ?>
     </body>
 </html>

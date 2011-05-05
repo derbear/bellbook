@@ -4,6 +4,7 @@ body {
 	color: rgb(0, 0, 64);
 	/*background-color:rgb(255, 191, 128);*/
 	background-color:rgb(200, 255, 255);
+        font-family:"Calibri", sans-serif;
 }
 div.msg {
 	color: rgb(0, 128, 0);
