@@ -20,12 +20,16 @@ ini_set("display_errors", 1);
 //        CONSTRAINT course_map FOREIGN KEY (courseId) REFERENCES Courses(courseId))")) {
 //    echo 'good';
 //} else echo 'bad' . mysql_error();
-$query="DELETE FROM Courses WHERE courseId='85'";
+//$query="DELETE FROM Courses WHERE courseId='85'";
 //$resource=mysql_query($query);
 //mysql_query("DELETE FROM Courses WHERE courseId='86'");
 //mysql_query("DELETE FROM Courses WHERE courseId='87'");
 //mysql_query("DELETE FROM Courses WHERE courseId='40'");
 //mysql_query("DELETE FROM Courses WHERE courseId='41'");
+//if (mysql_query("DELETE FROM CMap")) echo 'good';
+//else echo 'bad'.mysql_error();
+//if (mysql_query("DELETE FROM Books")) echo 'good';
+//else echo 'bad'.mysql_error();
 if(true) {/*
     while($row=mysql_fetch_array($resource)) {
         echo $row['ISBN'] . '::' . $row['courseId'] . '::' .

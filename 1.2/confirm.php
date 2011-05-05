@@ -7,7 +7,7 @@ foreach($_GET as $attr=>&$value) {
     $value=filter_var($value, FILTER_SANITIZE_STRING);
 }
 
-if(isset($_POST['new_title'])) {
+if(isset($_POST['new_title'])) { //try to create book, then reconfirm
     $isbn=$_POST['isbn'];
     $title=$_POST['new_title'];
     $title=filter_var($title, FILTER_SANITIZE_STRING);
@@ -32,9 +32,9 @@ if(isset($_POST['new_title'])) {
             }
         }
     }
-} else if(isset($_POST['isbn']) && !isset($_GET['new']))
+} else if(isset($_POST['isbn']) && !isset($_GET['new'])) //simple confirm
     $isbn=$_POST['isbn'];
-else
+else //bad data, need creation
     $isbn="";
 $isbn=filter_var($isbn, FILTER_SANITIZE_STRING);
 require_once("util/listing.php");
