@@ -15,7 +15,7 @@
             <select name="id">
                 <option value="">Select...</option>
 <?php
-$query="SELECT * FROM COURSES";
+$query="SELECT * FROM COURSES ORDER BY courseName";
 $resource=mysql_query($query);
 if($resource) {
     while ($row=mysql_fetch_array($resource)) {
@@ -27,6 +27,7 @@ if($resource) {
             </select>
             <input type="submit" value="Find" />
         </form>
+		<? if (isset($_SESSION['id'])) { ?> <div> <p> If you didn't find your course, you can add one <a href='newCourse.php'>here</a>. </p> </div> <? } ?>
         <? require("util/footer.php"); ?>
     </body>
 </html>

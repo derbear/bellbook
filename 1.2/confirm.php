@@ -107,13 +107,13 @@ if($title!="") {?>
                         <td><input type="text" name="new_title" /></td>
                     </tr>
                 </table>
-                <div> <p> Check the following boxes where this book is used.
+                <div> <p> Select the following courses where this book is used.
                         Check 'required' if this book is required for the course.
                     </p> </div>
                 <table>
         <? require_once("util/listing.php"); ?>
 <?php
-$query="SELECT * FROM COURSES";
+$query="SELECT * FROM COURSES ORDER BY courseName";
 $resource=mysql_query($query);
 if($resource) {
     while ($row=mysql_fetch_array($resource)) { ?>
