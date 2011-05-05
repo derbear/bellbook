@@ -73,7 +73,7 @@ function install($adUser, $adPwd, $adDb, $dbLoc) {
         die('Failed to initialize database: ' . mysql_error());
     echo '<div> <em> Database successfully created </em> </div>';
 }
-error_reporting(E_ALL); //TODO remove
+error_reporting(E_ALL); //TODO #set_error_reporting
 ini_set("display_errors", 1); 
 include("admin_config.php");
 install($USER, $PASSWORD, $DATABASE, $ADDRESS);

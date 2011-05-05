@@ -12,7 +12,6 @@ connect(true);
         <? print_header(); ?>
         <h2>My Tracked Books</h2>
 <?php
-////TODO integrate into search.php
     require_once("util/listing.php");
     $id=$_SESSION['id'];
     $query="SELECT * FROM TMap WHERE studentId=$id";

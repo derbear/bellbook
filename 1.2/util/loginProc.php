@@ -9,7 +9,7 @@
 	$entered=filter_var($entered, FILTER_SANITIZE_STRING);
 
     $hashed=crypt($entered, 'dontkillthefrogs');
-    $query="SELECT * FROM Users WHERE studentId='$id'"; //TODO create function
+    $query="SELECT * FROM Users WHERE studentId='$id'";
     $success=mysql_query($query);
     $db_password="";
     $db_arr=array();

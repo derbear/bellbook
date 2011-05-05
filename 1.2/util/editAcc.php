@@ -46,7 +46,7 @@
             session_destroy();
             session_start();
             $_SESSION['id']=$id;
-            $query="SELECT * FROM Users WHERE studentId='$id'"; //TODO create function
+            $query="SELECT * FROM Users WHERE studentId='$id'";
             $success=mysql_query($query);
             $db_arr=mysql_fetch_array($success);
             $_SESSION['firstname']=$db_arr['firstName'];

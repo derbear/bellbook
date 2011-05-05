@@ -1,6 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <?php
-error_reporting(E_ALL); //TODO remove
+error_reporting(E_ALL); //TODO #set_error_reporting
 ini_set("display_errors", 1);
 require('admin_config.php');
 if (strcmp($_POST['password'], $EDIT) != 0

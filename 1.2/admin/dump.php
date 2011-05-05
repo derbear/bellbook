@@ -1,7 +1,7 @@
 <?php
 require("connect.php");
 connect(false);
-error_reporting(E_ALL); //TODO remove
+error_reporting(E_ALL); //TODO #set_error_reporting
 ini_set("display_errors", 1);
 //if(!mysql_query("UPDATE Books SET title='' WHERE courseId=$cid"))
 //    echo 'bad'.mysql_error().'<br />';
