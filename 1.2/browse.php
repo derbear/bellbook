@@ -1,12 +1,23 @@
 <? require("util/header.php");
 $criterion='title';
 $direction='ASC';
+$page_num=1;
+$per_page=10;
 if(isset($_GET['sort'])) {
-    $criterion=filter_var($_GET['sort'], FILTER_SANITIZE_STRING);
+    $criterion=$_GET['sort'];
 }
 if(isset($_GET['dir'])) {
-    $direction=filter_var($_GET['dir'], FILTER_SANITIZE_STRING);
+    $direction=$_GET['dir'];
 }
+if(isset($_GET['page'])) {
+    $page_num=$_GET['page'];
+}
+if(isset($_GET['num'])) {
+    $per_page=$_GET['num'];
+}
+$pos=(($page_num - 1) * $per_page);
+echo $pos;
+echo $per_page;
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -22,9 +33,12 @@ if(isset($_GET['dir'])) {
 require_once("util/connect.php");
 require_once("util/listing.php");
 connect(false);
-$query='SELECT * FROM Books ORDER BY '.$criterion .' ' .$direction;
+$query='SELECT * FROM Books ORDER BY '.$criterion .' ' .$direction .
+" LIMIT " . $pos . ", " . $per_page. "";
+echo $query;
 $resource=mysql_query($query);
 if($resource) {
+    echo 'thru';
     while($row=mysql_fetch_array($resource)) {
             echo '<hr />';
             echo generateListing_B($row['ISBN'], $row['title'],
@@ -32,6 +46,8 @@ if($resource) {
             ?><p><? echo '<a href=offers.php?isbn='.
             $row['ISBN'].'>See offers</a>' ?></p><?
     }
+} else {
+    echo mysql_error();
 }
 ?>
         <? require("util/footer.php"); ?>

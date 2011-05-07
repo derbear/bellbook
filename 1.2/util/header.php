@@ -1,5 +1,6 @@
 <? require_once("connect.php");
-connect(false); ?>
+connect(false);
+sanitize() ?>
 <?
 function print_header() { ?>
 <!--login info-->

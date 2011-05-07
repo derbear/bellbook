@@ -1,11 +1,5 @@
 <? require("util/header.php");
 connect(true);
-foreach($_POST as $attr=>&$value) {
-    $value=filter_var($value, FILTER_SANITIZE_STRING);
-}
-foreach($_GET as $attr=>&$value) {
-    $value=filter_var($value, FILTER_SANITIZE_STRING);
-}
 if(isset($_POST['descr'])) {
     $descr=$_POST['descr'];
 } else {
