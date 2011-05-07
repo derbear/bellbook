@@ -9,10 +9,10 @@ function print_header() { ?>
         if(isset($_SESSION['id'])) {
             echo 'You are logged in as <b>' . $_SESSION['firstname'] . ' '
             . $_SESSION['lastname'];
-            echo '</b> (<a href="util/logout.php">Log out</a>
-                | <a href="myAccount.php">My account</a>
+            echo '</b> (<a href="myAccount.php">My account</a>
                 | <a href="myBooks.php">My books</a> 
-                | <a href="trackedBooks.php">Tracked books</a>)<br />';
+                | <a href="trackedBooks.php">Tracked books</a>
+                | <a href="util/logout.php">Log out</a>)<br />';
         }
         else {
             echo 'You are not logged in. (<a href="login.php">Log in</a> | '.

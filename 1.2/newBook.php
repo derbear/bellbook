@@ -4,7 +4,21 @@ if (isset($_POST['isbn'])) {
     $isbn = $_POST['isbn'];
     $title = $_POST['new_title'];
     $title = filter_var($title, FILTER_SANITIZE_STRING);
-    $query = "INSERT INTO Books VALUES('$isbn', '$title')";
+    //enables editing of book
+    $query="SELECT * FROM Books WHERE ISBN='$isbn'";
+    $resource=mysql_query($query);
+    $present=false;
+    if($resource) {
+        while($row=mysql_fetch_array($resource)) {
+            $present=true;
+            break;
+        }
+    }
+    if(!$present) {
+        $query = "INSERT INTO Books VALUES('$isbn', '$title')";
+    } else {
+        $query="DELETE * FROM CMap WHERE ISBN='$isbn'";
+    }
     $resource = mysql_query($query);
     if (!$resource) {
         header("Location: newBook.php?message=An error occurred");
@@ -33,11 +47,11 @@ if (isset($_POST['isbn'])) {
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="style.css" />
-        <title>Add a Book</title>
+        <title>Add a Book/Edit Book Information</title>
     </head>
     <body>
         <? print_header(); ?>
-        <h2>Add a book to bellbook's database</h2>
+        <h2>Add a book to bellbook's database or edit one</h2>
             <form action="newBook.php" method="post">
                 <table>
                     <tr>
