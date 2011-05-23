@@ -2,7 +2,8 @@
 $criterion='title';
 $direction='ASC';
 $page_num=1;
-$per_page=10;
+//$per_page=10; //default
+$per_page=111111111111;
 if(isset($_GET['sort'])) {
     $criterion=$_GET['sort'];
 }
@@ -16,8 +17,6 @@ if(isset($_GET['num'])) {
     $per_page=$_GET['num'];
 }
 $pos=(($page_num - 1) * $per_page);
-echo $pos;
-echo $per_page;
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -35,10 +34,8 @@ require_once("util/listing.php");
 connect(false);
 $query='SELECT * FROM Books ORDER BY '.$criterion .' ' .$direction .
 " LIMIT " . $pos . ", " . $per_page. "";
-echo $query;
 $resource=mysql_query($query);
 if($resource) {
-    echo 'thru';
     while($row=mysql_fetch_array($resource)) {
             echo '<hr />';
             echo generateListing_B($row['ISBN'], $row['title'],
