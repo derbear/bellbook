@@ -6,6 +6,8 @@ if (isset($_POST['isbn'])) {
     $isbn = $_POST['isbn'];
     $title = $_POST['new_title'];
     $title = filter_var($title, FILTER_SANITIZE_STRING);
+    $isbn=trim($isbn); //TODO standardize trim
+    $title=trim($title);
     //enables editing of book
     $query="SELECT * FROM Books WHERE ISBN='$isbn'";
     $resource=mysql_query($query);

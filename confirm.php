@@ -9,6 +9,8 @@ if(isset($_POST['new_title'])) { //try to create book, then reconfirm
     $isbn=$_POST['isbn'];
     $title=$_POST['new_title'];
     $title=filter_var($title, FILTER_SANITIZE_STRING);
+    $isbn=trim($isbn);
+    $title=trim($title);
     $query="INSERT INTO Books VALUES('$isbn', '$title')";
     $resource=mysql_query($query);
     if(!$resource) {
@@ -98,7 +100,7 @@ if($title!="") {?>
     /////////////////////////////////////////////////////////////////////////
     if(!isset($_GET['new'])) { ?>
         <div> <p> The ISBN you entered is not yet in our database.
-                Enter its information here: </p>
+                Enter its title here: </p>
             <form action="confirm.php" method="post">
                 <table>
                     <tr>

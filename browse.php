@@ -38,10 +38,13 @@ $resource=mysql_query($query);
 if($resource) {
     while($row=mysql_fetch_array($resource)) {
             echo '<hr />';
-            echo generateListing_B($row['ISBN'], $row['title'],
+            $isbn=$row['ISBN'];
+            //echo $isbn;
+            echo generateListing_B($isbn, $row['title'],
                     mappedClasses($row['ISBN']));
-            ?><p><? echo '<a href=offers.php?isbn='.
-            $row['ISBN'].'>See offers</a>' ?></p><?
+            ?><p><? echo '<a href=offers.php?isbn=';
+            echo $isbn;
+            echo'>See offers</a>'; ?></p><?
     }
 } else {
     echo mysql_error();
