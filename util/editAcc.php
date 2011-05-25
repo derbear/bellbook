@@ -20,11 +20,11 @@
     }
     
     if ($changePass && strcmp($unhashed, $copy) != 0) {
-        echo 'Your entered password does not match your confirmed password.';
+        $msg='Your entered passwords do not match.';
     }
     else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo $email;
-        echo 'Your e-mail address is invalid.';
+//        echo $email;
+        $msg='Your e-mail address is invalid.';
     }
     else {
         $hashed=crypt($unhashed, 'dontkillthefrogs');
@@ -41,19 +41,20 @@
         }
         $success=mysql_query($query);
         if(!$success) {
-            echo 'Account update failed: ' . mysql_error();
+            $msg='An error occured.';
+//            echo 'Account update failed: ' . mysql_error();
         } else {
             session_destroy();
             session_start();
             $_SESSION['id']=$id;
-            $query="SELECT * FROM Users WHERE studentId='$id'"; //TODO create function
+            $query="SELECT * FROM Users WHERE studentId='$id'";
             $success=mysql_query($query);
             $db_arr=mysql_fetch_array($success);
             $_SESSION['firstname']=$db_arr['firstName'];
             $_SESSION['lastname']=$db_arr['lastName'];
             $_SESSION['email']=$db_arr['email'];
-            echo 'Account update success';
+            $msg='Account update successful';
         }
     }
-    header('Location: ../myAccount.php');
+    header('Location: ../myAccount.php?message='.$msg);
 ?>

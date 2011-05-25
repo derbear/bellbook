@@ -1,24 +1,38 @@
 <? require("util/header.php");
 connect(true);
-foreach($_POST as $attr=>&$value) {
-    $value=filter_var($value, FILTER_SANITIZE_STRING);
+if(isset($_POST['descr'])) {
+    $descr=$_POST['descr'];
+} else {
+    $descr="";
 }
-foreach($_GET as $attr=>&$value) {
-    $value=filter_var($value, FILTER_SANITIZE_STRING);
-}
-
-if(isset($_POST['new_title'])) {
+if(isset($_POST['new_title'])) { //try to create book, then reconfirm
     $isbn=$_POST['isbn'];
     $title=$_POST['new_title'];
     $title=filter_var($title, FILTER_SANITIZE_STRING);
     $query="INSERT INTO Books VALUES('$isbn', '$title')";
     $resource=mysql_query($query);
     if(!$resource) {
-        echo 'Error ' . mysql_error();
+//        die('Error ' . mysql_error());
     }
-} else if(isset($_POST['isbn']) && !isset($_GET['new']))
+    foreach($_POST as $attr=>$value) {
+        if(strncmp($attr, "courseN", 7)==0 && isset($value)) {
+            $query="";
+            if(substr_compare($attr, "0PT", -3)!=0) {
+                $cid=substr($attr, 7);
+                $query="INSERT INTO CMap VALUES('$isbn', '$cid', '0')";
+            } else {
+                $cid=substr($attr, 7, strlen($attr) - 7 - 3);
+                $query="UPDATE CMap SET required='1' WHERE courseId=$cid";
+            }
+            $resource=mysql_query($query);
+            if(!$resource) {
+//                echo mysql_error() . '<br />';
+            }
+        }
+    }
+} else if(isset($_POST['isbn']) && !isset($_GET['new'])) //simple confirm
     $isbn=$_POST['isbn'];
-else
+else //bad data, need creation
     $isbn="";
 $isbn=filter_var($isbn, FILTER_SANITIZE_STRING);
 require_once("util/listing.php");
@@ -30,8 +44,9 @@ if($resource) {
         $title=$row['title'];
     }
 } else {
-    echo mysql_error();
+//    echo mysql_error();
 }
+//echo $title;
 if($title=="") {
     $ptitle="Add book";
 } else {
@@ -66,22 +81,24 @@ if($title!="") {?>
                 </tr>
                 <tr>
                     <td><label for="descr"> <b>Description:</b> </label></td>
-                    <td><?echo $_POST['descr']?></td>
+                    <td><?echo $descr?></td>
                 </tr>
             </table>
         <form action="util/postBook.php" method="post">
             <input type="hidden" name="isbn" value=<?echo '"'.$isbn.'"';?> />
             <input type="hidden" name="price" value=<?echo '"'.$_POST['price'].'"';?> />
-            <input type="hidden" name="descr" value=<?echo '"'.$_POST['descr'].'"';?> />
+            <input type="hidden" name="descr" value=<?echo '"'.$descr.'"';?> />
             <input type="Submit" value="Post for sale" />
         </form>
-        <p> Not the correct book? You may have entered wrong ISBN.
-            <!--If it isn't, click <a href="confirm.php?new=1"> here</a>--></p>
+        <p> Not the correct book? You may have entered wrong ISBN. If the ISBN
+            is correct, contact <a href="mailto: derek.leung12@bcp.org">
+        Derek Leung </a> </p>
         </div>
 <?} else {
+    /////////////////////////////////////////////////////////////////////////
     if(!isset($_GET['new'])) { ?>
         <div> <p> The ISBN you entered is not yet in our database.
-                Enter its title here: </p>
+                Enter its information here: </p>
             <form action="confirm.php" method="post">
                 <table>
                     <tr>
@@ -89,12 +106,37 @@ if($title!="") {?>
                         <td><input type="text" name="new_title" /></td>
                     </tr>
                 </table>
+                <div> <p> Select the following courses where this book is used.
+                        Check 'required' if this book is required for the course.
+                    </p> </div>
+                <table>
+        <? require_once("util/listing.php"); ?>
+<?php
+$query="SELECT * FROM COURSES ORDER BY courseName";
+$resource=mysql_query($query);
+if($resource) {
+    while ($row=mysql_fetch_array($resource)) { ?>
+                    <tr>
+        <?echo '<td><input type="checkbox" name='.'"courseN'.
+        $row['courseId'].'"'. 'value='.'"'.
+        $row['courseId'].'"'.'/>'.'<b>'.$row['courseName'].'</b></td>';
+        echo '<td><input type="checkbox" name='.'"courseN'.
+        $row['courseId'].'0PT"' . 'value="true" /> required</td>';?>
+                    </tr>
+    <?}
+}
+?>
+                </table>
+                <p> If you cannot find the course name on the list above, click
+                    <a href="newCourse.php" target="_blank">here</a> to add a
+                    new course; afterwards, refresh the page. </p>
                 <input type="hidden" name="isbn" value=<?echo '"'.$isbn.'"';?> />
                 <input type="hidden" name="price" value=<?echo '"'.$_POST['price'].'"';?> />
-                <input type="hidden" name="descr" value=<?echo '"'.$_POST['descr'].'"';?> />            <input type="Submit" value="Post new book" />
+                <input type="hidden" name="descr" value=<?echo '"'.$descr.'"';?> />
+                <input type="Submit" value="Post new book" />
             </form>
         </div>
-    <? } /*else { ?>
+    <? } /*else { ?> //REMOVED due to moderation editing
         <div>The title of the book with this ISBN is incorrect.
                     <tr>
                         <td><b>ISBN</b></td>
@@ -109,6 +151,6 @@ if($title!="") {?>
 
 <!--
     Authors: Derek Leung, David Byrd
-    Project BellBook - 1.2
+    Project BellBook - 1.0
     Bellarmine College Preparatory, 2011
 -->

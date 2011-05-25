@@ -20,18 +20,19 @@ function install($adUser, $adPwd, $adDb, $dbLoc) {
     //table creation sql commands
     $USER='Users (studentId int, firstName text, lastName text, email text,
         gradYr int, password text, PRIMARY KEY (studentId))';
-    $BOOK='Books (ISBN char(10), title text, PRIMARY KEY (ISBN))';
-    $COURSE='Courses (courseId int, courseName text, teachers text,
+    $BOOK='Books (ISBN char(13), title text, PRIMARY KEY (ISBN))';
+    $COURSE='Courses (courseId int NOT NULL AUTO_INCREMENT, courseName text, teachers text,
         PRIMARY KEY (courseId))';
-    $COURSE_BOOK_MAP='CMap (ISBN char(10), courseId int,
+    $COURSE_BOOK_MAP='CMap (ISBN char(13), courseId int, required int,
         CONSTRAINT books_map FOREIGN KEY (ISBN) REFERENCES Books(ISBN),
         CONSTRAINT course_map FOREIGN KEY (courseId) REFERENCES Courses(courseId))';
-    $LISTING='Listings (listingId int NOT NULL AUTO_INCREMENT, ownerId int, ISBN char(10),
+    //optional: 1 for required, 0 for optional
+    $LISTING='Listings (listingId int NOT NULL AUTO_INCREMENT, ownerId int, ISBN char(13),
         descr text, price float(99, 2), post date, PRIMARY KEY (listingId),
         FOREIGN KEY (ownerId) REFERENCES Users (studentId))';
     $LISTING_MAP='TMap (listingId int, studentId int,
         CONSTRAINT listings_map FOREIGN KEY (listingId) REFERENCES Listings(listingId),
-        CONSTRAINT users_map FOREIGN KEY (studentId) REFERENCES Listings(ownerId))';
+        CONSTRAINT users_map FOREIGN KEY (studentId) REFERENCES Users(studentId))';
 
     //delete old tables
     $table1_destroy='DROP TABLE Users';
@@ -72,7 +73,7 @@ function install($adUser, $adPwd, $adDb, $dbLoc) {
         die('Failed to initialize database: ' . mysql_error());
     echo '<div> <em> Database successfully created </em> </div>';
 }
-error_reporting(E_ALL); //TODO remove
+error_reporting(E_ALL); //TODO #set_error_reporting
 ini_set("display_errors", 1); 
 include("admin_config.php");
 install($USER, $PASSWORD, $DATABASE, $ADDRESS);

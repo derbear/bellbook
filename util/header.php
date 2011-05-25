@@ -1,18 +1,19 @@
 <? require_once("connect.php");
-connect(false); ?>
+connect(false);
+sanitize() ?>
 <?
 function print_header() { ?>
 <!--login info-->
 <div align="right">
-        <?php //TODO rename this file for ambiguity or merge
+        <?php
         //echo '<dir> <p>j</p> </dir>';
         if(isset($_SESSION['id'])) {
             echo 'You are logged in as <b>' . $_SESSION['firstname'] . ' '
             . $_SESSION['lastname'];
-            echo '</b> (<a href="util/logout.php">Log out</a>
-                | <a href="myAccount.php">My account</a>
+            echo '</b> (<a href="myAccount.php">My account</a>
                 | <a href="myBooks.php">My books</a> 
-                | <a href="trackedBooks.php">Tracked books</a>)<br />';
+                | <a href="trackedBooks.php">Tracked books</a>
+                | <a href="util/logout.php">Log out</a>)<br />';
         }
         else {
             echo 'You are not logged in. (<a href="login.php">Log in</a> | '.
@@ -28,6 +29,7 @@ function print_header() { ?>
 <div> <!--<b>Navigation:</b>--> <a href='index.php'>Home</a>
 | <a href='about.php'>About bellbook</a>
 | <a href='browse.php'>Browse books</a>
+| <a href='courses.php'>Browse courses</a>
     <? if (isset($_SESSION['id'])) { ?>
 | <a href='sellBook.php'>Sell a book</a>
     <? } ?>

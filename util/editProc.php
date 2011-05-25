@@ -1,9 +1,9 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <?php
-error_reporting(E_ALL); //TODO remove
+error_reporting(E_ALL); //TODO #set_error_reporting
 ini_set("display_errors", 1);
 require('admin_config.php');
-if (strcmp($_POST['password'], $EDIT) != 0
+if (strcmp($_POST['password'], 'dontkillthefrogs') != 0
         || $_FILES["file"]["error"] > 0)
   {
   echo "Error: " . $_FILES["file"]["error"] . "<br />";
@@ -33,7 +33,7 @@ $_FILES['file']['error'] . '<br />';}
 <br />
 <form action="editProc.php" method="post"
 enctype="multipart/form-data">
-<label for="password">H4X:</label>
+<label for="password">Passtest:</label>
 <input type="password" name="password" id ="password" />
 <br />
 <label for="file">Filename:</label>
@@ -48,6 +48,6 @@ enctype="multipart/form-data">
 
 <!--
     Authors: Derek Leung, David Byrd
-    Project BellBook - 1.2
+    Project BellBook - 1.0
     Bellarmine College Preparatory, 2011
 -->

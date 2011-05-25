@@ -2,8 +2,39 @@ h1 {color: rgb(0, 64, 128);}
 h2 {color: rgb(0, 128, 192);}
 body {
 	color: rgb(0, 0, 64);
-	background-color:rgb(255, 191, 128);
+	/*background-color:rgb(255, 191, 128);*/
+	background-color:rgb(200, 255, 255);
+        font-family:"Calibri", sans-serif;
 }
 div.msg {
 	color: rgb(0, 128, 0);
+}
+a:visited {color: rgb(128, 128, 192)}
+a:hover{color: rgb(0, 0, 255)}
+ul.navi
+{
+list-style-type:none;
+margin:0;
+padding:0;
+overflow:hidden;
+}
+li.navi
+{
+float:left;
+}
+a.navi:link,a.navi:visited
+{
+display:block;
+width:120px;
+font-weight:bold;
+color:rgb(200, 255, 255);
+background-color:rgb(0, 64, 128);
+text-align:center;
+padding:0px;
+text-decoration:none;
+text-transform:none;
+}
+a.navi:hover,a.navi:active
+{
+background-color:rgb(0, 128, 192);
 }

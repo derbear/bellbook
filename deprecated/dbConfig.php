@@ -1,8 +1,4 @@
 <?php
-//    $ADMIN='root';
-//    $PASSWORD='bellbook'; //TODO change this
-//
-//    $DATABASE='Test1';
 
     $ADMIN='derek.leung12.admin';
     $PASSWORD='GreenSubsidy_20percent';

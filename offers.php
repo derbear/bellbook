@@ -8,7 +8,7 @@ connect(false);
 require_once("util/listing.php");
 $title=mappedTitle($isbn);
 if($title=="") {
-    header("Location: browse.php?message=Invalid ISBN");
+    header("Location: index.php?message=Invalid ISBN");
 }
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -32,7 +32,7 @@ if($resource) {
         while($row2=mysql_fetch_array($resource2)) {
             echo "<hr />";
             echo generateListing_S($isbn, $title, $row['price'], $row['post'],
-                    $row['descr'], $row2['email'], $row2['firstName'],
+                    $row['descr'], $row2['email'], $row2['studentId'], $row2['firstName'],
                     $row2['lastName']);
             if(isset($_SESSION['id'])) { ?>
 <form action="util/trackBook.php" method="post">
@@ -51,6 +51,6 @@ if($resource) {
 
 <!--
     Authors: Derek Leung, David Byrd
-    Project BellBook - 1.2
+    Project BellBook - 1.0
     Bellarmine College Preparatory, 2011
 -->

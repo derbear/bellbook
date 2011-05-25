@@ -1,4 +1,23 @@
-<? require("util/header.php"); ?>
+<? require("util/header.php");
+$criterion='title';
+$direction='ASC';
+$page_num=1;
+//$per_page=10; //default
+$per_page=111111111111;
+if(isset($_GET['sort'])) {
+    $criterion=$_GET['sort'];
+}
+if(isset($_GET['dir'])) {
+    $direction=$_GET['dir'];
+}
+if(isset($_GET['page'])) {
+    $page_num=$_GET['page'];
+}
+if(isset($_GET['num'])) {
+    $per_page=$_GET['num'];
+}
+$pos=(($page_num - 1) * $per_page);
+?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
     <head>
@@ -13,35 +32,19 @@
 require_once("util/connect.php");
 require_once("util/listing.php");
 connect(false);
-$query='SELECT * FROM Listings';
+$query='SELECT * FROM Books ORDER BY '.$criterion .' ' .$direction .
+" LIMIT " . $pos . ", " . $per_page. "";
 $resource=mysql_query($query);
 if($resource) {
     while($row=mysql_fetch_array($resource)) {
-        $owner=$row['ownerId'];
-        $query_owner="SELECT * FROM Users WHERE studentId=$owner";
-        $resource2=mysql_query($query_owner);
-        if($resource2) {
-            $row2=mysql_fetch_array($resource2);
             echo '<hr />';
-            echo generateListing_B($row['ISBN'], mappedTitle($row['ISBN']), 
+            echo generateListing_B($row['ISBN'], $row['title'],
                     mappedClasses($row['ISBN']));
             ?><p><? echo '<a href=offers.php?isbn='.
             $row['ISBN'].'>See offers</a>' ?></p><?
-//            echo generateListing_S($row['ISBN'], mappedTitle($row['ISBN']),
-//                    $row['price'], $row['post'], $row['descr'],
-//                    $row2['email'], $row2['firstName'],
-//                    $row2['lastName']);
-        if(/*$_SESSION['id']==212189*/false) {
-            ?>
-                <form action="util/removeBook.php" method="post">
-                    <input type="hidden" name='id' value=<? echo '"' .
-                    $row['listingId'] . '"' ?> />
-                    <input type="submit" value="Remove" />
-                </form>
-            <?
-            }
-        }
     }
+} else {
+    echo mysql_error();
 }
 ?>
         <? require("util/footer.php"); ?>
@@ -50,6 +53,6 @@ if($resource) {
 
 <!--
     Authors: Derek Leung, David Byrd
-    Project BellBook - 1.2
+    Project BellBook - 1.0
     Bellarmine College Preparatory, 2011
 -->

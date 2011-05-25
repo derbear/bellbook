@@ -2,7 +2,7 @@
 connect(false); ?>
 <!--login form--> 
 <div align="right">
-        <?php //TODO rename this file for ambiguity or merge
+        <?php 
         //echo '<dir> <p>j</p> </dir>';
         if(isset($_SESSION['id'])) {
             echo 'You are logged in as <b>' . $_SESSION['firstname'] . ' '

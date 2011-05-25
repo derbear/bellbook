@@ -12,7 +12,6 @@ connect(true);
         <? print_header(); ?>
         <h2>My Tracked Books</h2>
 <?php
-////TODO integrate into search.php
     require_once("util/listing.php");
     $id=$_SESSION['id'];
     $query="SELECT * FROM TMap WHERE studentId=$id";
@@ -32,7 +31,8 @@ connect(true);
                         echo "<hr />";
                         echo generateListing_S($tr_row['ISBN'], mappedTitle($tr_row['ISBN']),
                             $tr_row['price'], $tr_row['post'], $tr_row['descr'],
-                            $own_row['email'], $own_row['firstName'], $own_row['lastName']);
+                            $own_row['email'], $row2['studentId'], $own_row['firstName'],
+                            $own_row['lastName']);
                         ?>
 <form action="util/trackBook.php" method="post">
             <input type="hidden" name='list_id' value=<? echo '"' .
@@ -54,6 +54,6 @@ connect(true);
 
 <!--
     Authors: Derek Leung, David Byrd
-    Project BellBook - 1.2
+    Project BellBook - 1.0
     Bellarmine College Preparatory, 2011
 -->

@@ -24,4 +24,13 @@
                     " part of the site.");
         }
     }
+
+    function sanitize() {
+        foreach($_POST as $attr=>&$value) {
+            $value=filter_var($value, FILTER_SANITIZE_STRING);
+        }
+        foreach($_GET as $attr=>&$value) {
+            $value=filter_var($value, FILTER_SANITIZE_STRING);
+        }
+    }
 ?>

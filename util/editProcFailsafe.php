@@ -1,6 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <?php
-error_reporting(E_ALL); //TODO remove
+error_reporting(E_ALL); //TODO #set_error_reporting
 ini_set("display_errors", 1);
 if (strcmp($_POST['password'], "dontkillthefrogs") != 0
         || $_FILES["file"]["error"] > 0)
@@ -47,6 +47,6 @@ enctype="multipart/form-data">
 
 <!--
     Authors: Derek Leung, David Byrd
-    Project BellBook - 1.2
+    Project BellBook - 1.0
     Bellarmine College Preparatory, 2011
 -->
