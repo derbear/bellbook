@@ -15,14 +15,26 @@ if (isset($_POST['isbn'])) {
         }
     }
     if(!$present) {
-        $query = "INSERT INTO Books VALUES('$isbn', '$title')";
+		//die('not present');
+        $query="INSERT INTO Books VALUES('$isbn', '$title')";
     } else {
-        $query="DELETE * FROM CMap WHERE ISBN='$isbn'";
+		if(mysql_query("UPDATE Books SET title='$title' WHERE ISBN='$isbn'")) {
+			//die('update');
+		}
+		else {
+			//die('update epic fail ' . mysql_error());
+			//header("Location: newBook.php?message=Bad title update");
+			header("Location: newBook.php?message=An error occurred: ".mysql_error());
+		}
+        $query="DELETE FROM CMap WHERE ISBN='$isbn'";
     }
     $resource = mysql_query($query);
     if (!$resource) {
+		//die('bad query '. mysql_error());
         header("Location: newBook.php?message=An error occurred");
-    }
+    } else {
+		//die('went through, status '.mysql_error());
+	}
     foreach ($_POST as $attr => $value) {
         if (strncmp($attr, "courseN", 7) == 0 && isset($value)) {
             $query = "";
@@ -40,6 +52,7 @@ if (isset($_POST['isbn'])) {
         }
     }
     header("Location: newBook.php?message=Query successful; status: " . mysql_error());
+    //header("Location: newBook.php?message=Information processed successfully);
 }
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">

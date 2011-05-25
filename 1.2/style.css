@@ -9,7 +9,8 @@ body {
 div.msg {
 	color: rgb(0, 128, 0);
 }
-
+a:visited {color: rgb(128, 128, 192)}
+a:hover{color: rgb(0, 0, 255)}
 ul.navi
 {
 list-style-type:none;

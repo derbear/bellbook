@@ -12,7 +12,7 @@ if(isset($_POST['new_title'])) { //try to create book, then reconfirm
     $query="INSERT INTO Books VALUES('$isbn', '$title')";
     $resource=mysql_query($query);
     if(!$resource) {
-//        echo 'Error ' . mysql_error();
+//        die('Error ' . mysql_error());
     }
     foreach($_POST as $attr=>$value) {
         if(strncmp($attr, "courseN", 7)==0 && isset($value)) {
@@ -46,6 +46,7 @@ if($resource) {
 } else {
 //    echo mysql_error();
 }
+//echo $title;
 if($title=="") {
     $ptitle="Add book";
 } else {

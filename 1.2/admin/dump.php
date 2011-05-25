@@ -39,6 +39,14 @@ if(true) {/*
 } else {
     echo 'failed';
 }
+if(!mysql_query("ALTER TABLE Listings MODIFY COLUMN ISBN char(13)")) {
+    die('<br />bad alter'.mysql_error());
+}
+//$query="DELETE FROM Listings WHERE ownerId='42'"; //nimit's troll account
+//if(mysql_query($query))
+//	echo 'good';
+//else 
+//	echo 'error: '. mysql_error();
 $query="SELECT * FROM CMap";
 $resource=mysql_query($query);
 if($resource) {

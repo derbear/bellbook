@@ -20,14 +20,14 @@ function install($adUser, $adPwd, $adDb, $dbLoc) {
     //table creation sql commands
     $USER='Users (studentId int, firstName text, lastName text, email text,
         gradYr int, password text, PRIMARY KEY (studentId))';
-    $BOOK='Books (ISBN char(10), title text, PRIMARY KEY (ISBN))';
+    $BOOK='Books (ISBN char(13), title text, PRIMARY KEY (ISBN))';
     $COURSE='Courses (courseId int NOT NULL AUTO_INCREMENT, courseName text, teachers text,
         PRIMARY KEY (courseId))';
-    $COURSE_BOOK_MAP='CMap (ISBN char(10), courseId int, required int,
+    $COURSE_BOOK_MAP='CMap (ISBN char(13), courseId int, required int,
         CONSTRAINT books_map FOREIGN KEY (ISBN) REFERENCES Books(ISBN),
         CONSTRAINT course_map FOREIGN KEY (courseId) REFERENCES Courses(courseId))';
     //optional: 1 for required, 0 for optional
-    $LISTING='Listings (listingId int NOT NULL AUTO_INCREMENT, ownerId int, ISBN char(10),
+    $LISTING='Listings (listingId int NOT NULL AUTO_INCREMENT, ownerId int, ISBN char(13),
         descr text, price float(99, 2), post date, PRIMARY KEY (listingId),
         FOREIGN KEY (ownerId) REFERENCES Users (studentId))';
     $LISTING_MAP='TMap (listingId int, studentId int,
