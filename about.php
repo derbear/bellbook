@@ -19,8 +19,15 @@
                 <li>Development head: Derek Leung '12</li>
                 <li>Marketing head: Arun Pingali '12</li>
                 <li>Developer: David Byrd '11</li>
-                <li>Design: Ben Chan '13</li>
+                <li>Design & Testing: Ben Chan '13</li>
                 <li>Design: Danny Hernandez '12</li>
+            </ol>
+        </div>
+        <div> <p> Other acknowledgments:</p>
+            <ol>
+                <li>Conception: Kyle Suppes '12</li>
+                <li>Technical Assistance: Michael Culhane '11</li>
+                <li>Technical Assistance: Chris Thibodeau '11</li>
             </ol>
         </div>
         <? require("util/footer.php"); ?>
