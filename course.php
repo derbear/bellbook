@@ -26,9 +26,23 @@ if($resource) {
         <h2> <?php echo $cname; ?> information </h2> 
         <div> <? /*<p> The following course information applies to these teachers:
             <? echo $cteachers ?> </p>*/?>
-            <p><b>Books required:</b></p>
+            <p><b>Required books:</b></p>
             <? require("util/listing.php");
             $query="SELECT * FROM CMap WHERE courseId='$cId' AND required='1'";
+            $resource=mysql_query($query);
+            if($resource) {
+                while($row=mysql_fetch_array($resource)) {
+                    echo "<hr />";
+                    echo generateListing_B($row['ISBN'], mappedTitle($row['ISBN']),
+                            mappedClasses($row['ISBN']));
+                    ?><p><? echo '<a href=offers.php?isbn='.
+                    $row['ISBN'].'>See offers</a>' ?></p><?
+                }
+            }?>
+            <br />
+            <p><b>Optional books:</b></p>
+            <?
+            $query="SELECT * FROM CMap WHERE courseId='$cId' AND required='0'";
             $resource=mysql_query($query);
             if($resource) {
                 while($row=mysql_fetch_array($resource)) {

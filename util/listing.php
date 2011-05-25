@@ -123,13 +123,16 @@ function mappedClasses($fisbn) {
     if($resource) {
         while($row=mysql_fetch_array($resource)) {
             $cid=$row['courseId'];
-            $req=($row['required']==1);
+            $req=false;
+            if($row['required']==1) {
+                $req=true;
+            }
             $query2="SELECT * FROM Courses WHERE courseId='$cid'";
             $resource2=mysql_query($query2);
             if($resource2) {
                 $row2=mysql_fetch_array($resource2);
                 $cname=$row2['courseName'];
-                if(req) $cname='<b>'.$cname.'</b>';
+                if($req) $cname='<b>'.$cname.'</b>';
                 if(!$first) $result=$result.', ';
                 else $first=false;
                 $result=$result.$cname;

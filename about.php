@@ -18,7 +18,7 @@
             <ol>
                 <li>Development head: Derek Leung '12</li>
                 <li>Marketing head: Arun Pingali '12</li>
-                <li>Developer: David Byrd '11</li>
+                <li>Development & Marketing: David Byrd '11</li>
                 <li>Design & Testing: Ben Chan '13</li>
                 <li>Design: Danny Hernandez '12</li>
             </ol>
