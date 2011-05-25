@@ -39,9 +39,9 @@ if(true) {/*
 } else {
     echo 'failed';
 }
-if(!mysql_query("ALTER TABLE Listings MODIFY COLUMN ISBN char(13)")) {
-    die('<br />bad alter'.mysql_error());
-}
+//if(!mysql_query("ALTER TABLE TMap ADD CONSTRAINT users_map FOREIGN KEY Users(studentId) REFERENCES Users(studentId)")) {
+//    die('<br />bad alter'.mysql_error());
+//}
 //$query="DELETE FROM Listings WHERE ownerId='42'"; //nimit's troll account
 //if(mysql_query($query))
 //	echo 'good';
@@ -123,4 +123,24 @@ if($resource) {
     echo 'failed';
 }
 //phpinfo();
+$query="SELECT * FROM TMap";
+$resource=mysql_query($query);
+if($resource) {
+    while($row=mysql_fetch_array($resource)) {
+        echo $row['listingId'] . '::' . $row['studentId'];
+        echo '<br />';
+    }
+} else {
+    echo 'failed';
+}
+$query="SELECT * FROM Listings";
+$resource=mysql_query($query);
+if($resource) {
+    while($row=mysql_fetch_array($resource)) {
+        echo $row['listingId'] . '::' .$row['ownerId'] . '::' . $row['ISBN'];
+        echo '<br />';
+    }
+} else {
+    echo 'failed';
+}
 ?>

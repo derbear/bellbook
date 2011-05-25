@@ -32,7 +32,7 @@ function install($adUser, $adPwd, $adDb, $dbLoc) {
         FOREIGN KEY (ownerId) REFERENCES Users (studentId))';
     $LISTING_MAP='TMap (listingId int, studentId int,
         CONSTRAINT listings_map FOREIGN KEY (listingId) REFERENCES Listings(listingId),
-        CONSTRAINT users_map FOREIGN KEY (studentId) REFERENCES Listings(ownerId))';
+        CONSTRAINT users_map FOREIGN KEY (studentId) REFERENCES Users(studentId))';
 
     //delete old tables
     $table1_destroy='DROP TABLE Users';
