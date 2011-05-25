@@ -17,6 +17,13 @@
                 your own you will have to <a href="login.php">log in</a>
                 or <a href="register.php">make an account</a>. </p> </div>
         <? } ?>
+        <div>
+            <p>
+                Buyer beware: some courses may change to a different edition of 
+                a certain book from year to year. We advise you to verify that
+                you are getting the edition you want.
+            </p>
+        </div>
         <? require("util/footer.php"); ?>
     </body>
 </html>

@@ -7,9 +7,9 @@ $isbn=filter_var($isbn, FILTER_SANITIZE_STRING);
 connect(false);
 require_once("util/listing.php");
 $title=mappedTitle($isbn);
-if($title=="") {
-    header("Location: index.php?message=Invalid ISBN");
-}
+//if($title=="") {
+//    header("Location: index.php?message=Invalid ISBN");
+//}
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>

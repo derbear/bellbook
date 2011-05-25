@@ -1,4 +1,6 @@
-<? require("util/header.php");
+<? //error_reporting(E_ALL); //TODO #set_error_reporting
+//ini_set("display_errors", 1);
+require("util/header.php");
 connect(true);
 if (isset($_POST['isbn'])) {
     $isbn = $_POST['isbn'];
@@ -10,19 +12,22 @@ if (isset($_POST['isbn'])) {
     $present=false;
     if($resource) {
         while($row=mysql_fetch_array($resource)) {
+            //die('present '.$isbn);
             $present=true;
             break;
         }
     }
+    //die('not present '.$isbn);
     if(!$present) {
 		//die('not present');
         $query="INSERT INTO Books VALUES('$isbn', '$title')";
     } else {
+//        die('present');
 		if(mysql_query("UPDATE Books SET title='$title' WHERE ISBN='$isbn'")) {
 			//die('update');
 		}
 		else {
-			//die('update epic fail ' . mysql_error());
+			//die('update fail ' . mysql_error());
 			//header("Location: newBook.php?message=Bad title update");
 			header("Location: newBook.php?message=An error occurred: ".mysql_error());
 		}
@@ -30,7 +35,7 @@ if (isset($_POST['isbn'])) {
     }
     $resource = mysql_query($query);
     if (!$resource) {
-		//die('bad query '. mysql_error());
+		die('bad query '. mysql_error());
         header("Location: newBook.php?message=An error occurred");
     } else {
 		//die('went through, status '.mysql_error());
