@@ -10,7 +10,7 @@ connect(true);
     </head>
     <body>
         <? print_header(); ?>
-        <h2>Sell a Book</h2>
+        <div id="content-title"><h2>Sell a Book</h2></div>
         <p>Note: Enter the ISBN <strong>without</strong> the dashes.</p>
         <form action="confirm.php" method="post">
             <table>

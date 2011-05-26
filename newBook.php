@@ -71,7 +71,7 @@ if (isset($_POST['isbn'])) {
     </head>
     <body>
         <? print_header(); ?>
-        <h2>Add a book to bellbook's database or edit one</h2>
+        <div id="content-title"><h2>Add a book to bellbook's database or edit one</h2></div>
             <form action="newBook.php" method="post">
                 <table>
                     <tr>

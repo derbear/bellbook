@@ -10,7 +10,7 @@ connect(true);
     </head>
     <body>
 <? print_header(); ?>
-        <h2>My Books</h2>
+        <div id="content-title"><h2>My Books</h2></div>
         <?php
             require("util/listing.php");
             $id=$_SESSION['id'];

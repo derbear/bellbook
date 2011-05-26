@@ -23,7 +23,7 @@ if($resource) {
     </head>
     <body>
         <? print_header(); ?>
-        <div id="content-title"><h2> <?php echo $cname; ?> information </h2> </div>
+        <div id="content-title"><div id="content-title"><h2> <?php echo $cname; ?> information </h2></div> </div>
         <div> <? /*<p> The following course information applies to these teachers:
             <? echo $cteachers ?> </p>*/?>
             <p><b>Required books:</b></p>

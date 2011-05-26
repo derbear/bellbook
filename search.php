@@ -11,7 +11,7 @@
         <? require_once("util/connect.php");
         connect(false);
            require("util/listing.php");?>
-        <h2>Search results:</h2>
+        <div id="content-title"><h2>Search results:</h2></div>
         <?php
         //TODO approximations
         $sid=$_GET['query'];

@@ -20,7 +20,7 @@ $title=mappedTitle($isbn);
     </head>
     <body>
         <? print_header() ?>
-        <h2> Prices for <?echo $title;?> </h2>
+        <div id="content-title"><h2> Prices for <?echo $title;?> </h2></div>
 <?php
 $query="SELECT * FROM Listings WHERE ISBN='$isbn' ORDER BY Price ASC";
 $resource=mysql_query($query);

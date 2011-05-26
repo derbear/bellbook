@@ -8,7 +8,7 @@
     </head>
     <body>
         <? print_header(); ?>
-        <h2>Find course information</h2>
+        <div id="content-title"><h2>Find course information</h2></div>
         <div> <p> Select a course from the list below: </p> </div>
         <? require("util/listing.php"); ?>
         <form action="course.php" method="get">

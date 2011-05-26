@@ -8,7 +8,7 @@
     </head>
     <body>
         <? print_header(); ?>
-        <h2>How to use bellbook</h2>
+        <div id="content-title"><h2>How to use bellbook</h2></div>
         <div>
             <strong>To put up a book for sale: </strong>
             <ol>

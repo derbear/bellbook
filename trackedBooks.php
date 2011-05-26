@@ -10,7 +10,7 @@ connect(true);
     </head>
     <body>
         <? print_header(); ?>
-        <h2>My Tracked Books</h2>
+        <div id="content-title"><h2>My Tracked Books</h2></div>
         <p>This page shows all the books you're currently keeping track of.
            This feature is mainly for your convenience--you'll still want to
            contact whomever you wish to buy from.</p>

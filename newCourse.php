@@ -10,7 +10,7 @@ connect(true);
     </head>
     <body>
         <? print_header(); ?>
-        <h2>Add a course</h2>
+        <div id="content-title"><h2>Add a course</h2></div>
         <div>
             <form action="util/addCourse.php" method="post" >
                 <table>

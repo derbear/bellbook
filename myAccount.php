@@ -10,7 +10,7 @@ connect(true);
     </head>
     <body>
         <? print_header(); ?>
-        <h2> Account info </h2>
+        <div id="content-title"><h2> Account info </h2></div>
         <form action='util/editAcc.php' method='post' name='accountInfo'
               id='accountInfo'> 
             <table>
