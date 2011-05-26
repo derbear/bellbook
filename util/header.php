@@ -2,6 +2,8 @@
 connect(false);
 sanitize() ?>
 <?
+$pagetitle = ''; //temporary solution, all involved code is next to title attributes in the five main pages
+
 function print_header($custom_msg=null) { ?>
 
 <!--login info, header, top bar-->
@@ -40,14 +42,14 @@ function print_header($custom_msg=null) { ?>
 	<!--<div id="title"> <h1> bellbook </h1> </div>-->
 	<div id="content-container"> <!-- content container -->
 	<ul id="navigation">
-		<li class="top" id="logo"><a href='index.php'>bellbook</a></li>
-		<li id="selected"><a href='about.php'>About bellbook</a></li>
-		<li><a href='browse.php'>Browse books</a></li>
+		<li <?php if($title==='bellbook') echo 'id="selected"'?>class="top"><a href='index.php'>bellbook</a></li>
+		<li <?php if($title==='About bellbook') echo 'id="selected"'?>><a href='about.php'>About bellbook</a></li>
+		<li <?php if($title==='Browse books') echo 'id="selected"'?>><a href='browse.php'>Browse books</a></li>
 	 	<? if (isset($_SESSION['id'])) { ?>
-	 		<li><a href='courses.php'>Browse courses</a></li>
-	 		<li class="bottom"><a href='sellBook.php'>Sell a book</a></li>
+	 		<li <?php if($title==='Browse courses') echo 'id="selected"'?>><a href='courses.php'>Browse courses</a></li>
+	 		<li <?php if($title==='Sell a book') echo 'id="selected"'?>class="bottom"><a href='sellBook.php'>Sell a book</a></li>
 	 	<? } else {?>
-	 		<li class="bottom"><a href='courses.php'>Browse courses</a></li>
+	 		<li <?php if($title==='Browse courses') echo 'id="selected"'?>class="bottom"><a href='courses.php'>Browse courses</a></li>
 	 	<?php } ?>	
 	</ul>
 	

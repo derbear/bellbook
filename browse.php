@@ -23,7 +23,7 @@ $pos=(($page_num - 1) * $per_page);
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="style.css" />
-        <title>Browse for books</title>
+        <title>Browse for books</title><?php $pagetitle = 'Browse books' ?>
     </head>
     <body>
         <? print_header(); ?>

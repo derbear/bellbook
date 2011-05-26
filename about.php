@@ -4,7 +4,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="style.css" />
-        <title>About bellbook</title>
+        <title>About bellbook</title><?php $pagetitle = 'About bellbook' ?>
     </head>
     <body>
         <? print_header(); //opens real-content conten-container and content divs?>
