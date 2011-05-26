@@ -3,6 +3,7 @@
 * footer.php
 * modified by Ben Chan (Nano8Blazex) on May 26, 2011
 */
+?>
 
 
 	</div> <!-- real content -->  

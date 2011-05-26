@@ -94,7 +94,7 @@ function generateListing_B($fisbn, $ftitle, $fclist) {
         <td>$ftitle</td>
     </tr> 
     <tr>
-        <td><b>$clabel</b></td>
+        <td class='leftcol'><b>$clabel</b></td>
         <td>$fclist</td>
 </table>
 "; }

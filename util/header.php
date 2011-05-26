@@ -6,7 +6,7 @@ function print_header($custom_msg=null) { ?>
 
 <!--login info, header, top bar-->
 <div id="my-info">
-	<div id="logo-container"></div>
+	<div id="logo-container"><p><a href="index.php">bellbook</a></p></div>
 	<form action='search.php' method='get' name='Search' id='search'>
 		<input type='text' name="query" id='search-box'> <input type='submit' id='submit' value='Search Books' >
 	</form>
