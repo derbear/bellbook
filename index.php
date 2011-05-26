@@ -4,7 +4,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="style.css" />
-        <title>bellbook</title> <?php $pagetitle = 'bellbook' ?>
+        <title>bellbook</title> <?php $pagetitle = 'bellbook'; ?>
     </head>
     <body>
         <? print_header() ?>
@@ -21,7 +21,7 @@
             <p>
                 Buyer beware: some courses may change to a different edition of 
                 a certain book from year to year. We advise you to verify that
-                you are getting the edition you want.
+                you are getting the edition you want. 
             </p>
         </div>
         <? require("util/footer.php"); ?>

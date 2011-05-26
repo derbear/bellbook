@@ -4,7 +4,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="style.css" />
-        <title>Course Lookup</title><?php $pagetitle = 'Browse courses' ?>
+        <title>Course Lookup</title><?php $pagetitle = 'Browse courses'; ?>
     </head>
     <body>
         <? print_header(); ?>

@@ -70,9 +70,9 @@ a img {
 div#my-info {
 	position: fixed;
 	/*height: 30px;*/
-	/*background: #007CE8;*/
-	background: -webkit-gradient(linear, left top, left bottom, from(#003061), to(#00254A));
-	background: -moz-linear-gradient(top,  #003061,  #00254A);
+	background: #003061;
+	background: #003061 -webkit-gradient(linear, left top, left bottom, from(#003061), to(#00254A));
+	background: #003061 -moz-linear-gradient(top,  #003061,  #00254A);
 	width: 100%;
 	height: auto;
 	border-bottom: 1px solid #002040;
@@ -182,10 +182,10 @@ div#content {
 			width: 200px;
 			/* expand height */
 			top:-4; left: 0; bottom: -5;
-			background-color: #113961;
+			background: #113961;
 			
-			background: -webkit-gradient(linear, left top, right top, from(#113961), to(#072340));
-			background: -moz-linear-gradient(left,  #113961,  #072340);		
+			background: #113961 -webkit-gradient(linear, left top, right top, from(#113961), to(#072340));
+			background: #113961 -moz-linear-gradient(left,  #113961,  #072340);		
 			
 			margin: 0px;
 			font-size: 0.75em;
@@ -209,17 +209,22 @@ div#content {
 			#navigation li {
 				display: block;
 				text-align: right;
-				padding: 0.5em 1em;
 				list-style: none;
 				font-size: 1.5em;
 				line-height: 1.3em;
-				
+				padding: 9px 20px;
 				border-bottom: 1px solid #072340;
 				border-top: 1px solid #113961;
 				
 				float: right;
 				width: 140px;
 			}
+			/* for Internet Explorer */
+			/*\*/
+			* html #navigation li {
+				width: 180px;
+			}
+			/**/
 			#navigation li a {
 				text-decoration: none;
 				color: #FFDFA8;
@@ -247,6 +252,12 @@ div#content {
 			font-size: 0.8em;
 			min-height: 160px; /*to avoid covering up the sidebar, adjust accordingly. There should be a less-hackish way but im too tired to find it.*/
 		}
+		/* for Internet Explorer */
+		/*\*/
+		* html #real-content {
+			height: 160px;
+		}
+		/**/
 			.msg {
 				margin-bottom: 10px;
 				padding: 5px 10px;
