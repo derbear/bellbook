@@ -81,7 +81,7 @@ if($title=="") {
     </head>
     <body>
         <? print_header(); ?>
-        <h2><? echo $ptitle; ?></h2>
+        <div id="content-title"><h2><? echo $ptitle; ?></h2></div>
 <?php //TODO implement rectify
 if($title!="") {?>
         <div><p>Confirm offer:</p>

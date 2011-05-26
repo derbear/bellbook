@@ -8,7 +8,7 @@
     </head>
     <body>
         <? print_header() ?>
-        <div> <p>Welcome to bellbook!</p> </div>
+        <div id="content-title"><h2> Welcome To bellbook! </h2></div> 
         <? if (isset($_SESSION['id'])) { ?>
         <div> <p>To get started, click on one of the links above, or search for
                 a book. </p> </div>
@@ -32,4 +32,5 @@
     Authors: Derek Leung, David Byrd
     Project BellBook - 1.0
     Bellarmine College Preparatory, 2011
+    barely modified by Ben Chan
 -->

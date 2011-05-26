@@ -8,23 +8,23 @@
 <!--listing-->
 <table>
     <tr>
-        <td><b>ISBN: </b></td>
+        <td class='leftcol'><b>ISBN </b></td>
         <td>$fisbn</td>
     </tr>
     <tr>
-        <td><b>Title: </b></td>
+        <td class='leftcol'><b>Title </b></td>
         <td>$ftitle</td>
     </tr>
     <tr>
-        <td><b>Price: </b></td>
+        <td class='leftcol'><b>Price </b></td>
         <td>$fprice</td>
     </tr>
     <tr>
-        <td><b>Date posted: </b></td>
+        <td class='leftcol'><b>Date posted </b></td>
         <td>$fdate</td>
     </tr>
     <tr>
-        <td><b>Notes: </b></td>
+        <td class='leftcol'><b>Notes </b></td>
         <td>$fdescr</td>
     </tr>
 </table>
@@ -44,31 +44,31 @@
 <!--listing-->
 <table>
     <tr>
-        <td><b>ISBN: </b></td>
+        <td class='leftcol'><b>ISBN </b></td>
         <td>$fisbn</td>
     </tr>
     <tr>
-        <td><b>Title: </b></td>
+        <td class='leftcol'><b>Title </b></td>
         <td>$ftitle</td>
     </tr>
     <tr>
-        <td><b>Price: </b></td>
+        <td class='leftcol'><b>Price </b></td>
         <td>$fprice</td>
     </tr>
     <tr>
-        <td><b>Date posted: </b></td>
+        <td class='leftcol'><b>Date posted </b></td>
         <td>$fdate</td>
     </tr>
     <tr>
-        <td><b>Seller: </b></td>
+        <td class='leftcol'><b>Seller </b></td>
         <td><a href='$account'>$ffname" . " " . "$flname</a></td>
     </tr>
     <tr>
-        <td><b>Contact: </b></td>
+        <td class='leftcol'><b>Contact </b></td>
         <td><a href='$mail'>$fcontact</a></td>
     </tr>
     <tr>
-        <td><b>Notes: </b></td>
+        <td class='leftcol'><b>Notes </b></td>
         <td>$fdescr</td>
     </tr>
 </table>
@@ -82,15 +82,15 @@
  */
 function generateListing_B($fisbn, $ftitle, $fclist) {
     if($fclist=="") $clabel="";
-    else $clabel="Courses: ";
+    else $clabel="Courses ";
     return "
 <table>
     <tr>
-        <td><b>ISBN: </b></td>
+        <td class='leftcol'><b>ISBN </b></td>
         <td>$fisbn</td>
     </tr>
     <tr>
-        <td><b>Title: </b></td>
+        <td class='leftcol'><b>Title </b></td>
         <td>$ftitle</td>
     </tr> 
     <tr>

@@ -27,17 +27,19 @@ $pos=(($page_num - 1) * $per_page);
     </head>
     <body>
         <? print_header(); ?>
-        <h2>Browse books</h2>
+        <div id="content-title"><h2>Browse Books</h2></div> 
+		<hr class="title-line"/>
 <?php
 require_once("util/connect.php");
 require_once("util/listing.php");
 connect(false);
+$i=0;
 $query='SELECT * FROM Books ORDER BY '.$criterion .' ' .$direction .
 " LIMIT " . $pos . ", " . $per_page. "";
 $resource=mysql_query($query);
 if($resource) {
     while($row=mysql_fetch_array($resource)) {
-            echo '<hr />';
+            if($i>0)echo '<hr />'; $i++;
             $isbn=$row['ISBN'];
             //echo $isbn;
             echo generateListing_B($isbn, $row['title'],
@@ -55,7 +57,7 @@ if($resource) {
 </html>
 
 <!--
-    Authors: Derek Leung, David Byrd
+    Authors: Derek Leung, David Byrd, bc
     Project BellBook - 1.0
     Bellarmine College Preparatory, 2011
 -->
