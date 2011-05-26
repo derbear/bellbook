@@ -109,7 +109,7 @@ div#my-info {
 			padding: 0;
 			border: none;
 		}
-		#search #submit {
+		#my-info #submit {
 			position: absolute;
 			width: 100px;
 			top: 0px; left: 200px; bottom: 0px;
