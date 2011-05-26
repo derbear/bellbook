@@ -11,6 +11,9 @@ connect(true);
     <body>
         <? print_header(); ?>
         <h2>My Tracked Books</h2>
+        <p>This page shows all the books you're currently keeping track of.
+           This feature is mainly for your convenience--you'll still want to
+           contact whomever you wish to buy from.</p>
 <?php
     require_once("util/listing.php");
     $id=$_SESSION['id'];

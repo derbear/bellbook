@@ -5,7 +5,20 @@ if(isset($_POST['descr'])) {
 } else {
     $descr="";
 }
-if(isset($_POST['new_title'])) { //try to create book, then reconfirm
+$err='';
+if(!(strlen($_POST['isbn'])==10||strlen($_POST['isbn'])==13)) {
+    $err.='Please enter a valid 10 or 13-digit ISBN. The length of your entered
+        ISBN is '.strlen($_POST['isbn'].'. ');
+}
+if(strlen($_POST['price']==0)||!is_numeric($_POST['price'])) {
+    $err.='Please enter a valid price. ';
+}
+if(strlen($err)>0) {
+    header('Location: sellBook.php?message='.$err);
+    die();
+}
+if(isset($_POST['new_title'])&&strlen($_POST['new_title'])!=0) {
+    //try to create book, then reconfirm
     $isbn=$_POST['isbn'];
     $title=$_POST['new_title'];
     $title=filter_var($title, FILTER_SANITIZE_STRING);
@@ -32,10 +45,14 @@ if(isset($_POST['new_title'])) { //try to create book, then reconfirm
             }
         }
     }
-} else if(isset($_POST['isbn']) && !isset($_GET['new'])) //simple confirm
+} else if(isset($_POST['new_title'])) { //bad input
+        $_GET['message']='Please enter a valid title. ';
+        $isbn="";
+} else if(isset($_POST['isbn']) && !isset($_GET['new'])) { //simple confirm
     $isbn=$_POST['isbn'];
-else //bad data, need creation
+} else { //bad data, need creation
     $isbn="";
+}
 $isbn=filter_var($isbn, FILTER_SANITIZE_STRING);
 require_once("util/listing.php");
 $query="SELECT * FROM Books WHERE ISBN='$isbn'";

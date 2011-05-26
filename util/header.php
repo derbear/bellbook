@@ -2,7 +2,7 @@
 connect(false);
 sanitize() ?>
 <?
-function print_header() { ?>
+function print_header($custom_msg=null) { ?>
 <!--login info-->
 <div align="right">
         <?php
