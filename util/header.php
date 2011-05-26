@@ -40,7 +40,7 @@ function print_header($custom_msg=null) { ?>
 	<!--<div id="title"> <h1> bellbook </h1> </div>-->
 	<div id="content-container"> <!-- content container -->
 	<ul id="navigation">
-		<li class="top" id="logo"><a href='index.php'>Bellbook</a></li>
+		<li class="top" id="logo"><a href='index.php'>bellbook</a></li>
 		<li id="selected"><a href='about.php'>About bellbook</a></li>
 		<li><a href='browse.php'>Browse books</a></li>
 	 	<? if (isset($_SESSION['id'])) { ?>

@@ -131,16 +131,16 @@ div#my-info {
 			border-left: 1px solid #004182;
 			list-style: none;
 		}
-		#body li.first {
+		body #login-info li.first {
 			border-left: none;
 		}
-		#body li.last {
+		body #login-info li.last {
 			border-right: none;
 		}
-		#body li.bottom {
+		body #content li.bottom {
 			border-bottom: none;
 		}
-		#body li.top {
+		body #content li.top {
 			border-top: none;
 		}
 		#login-info a {
