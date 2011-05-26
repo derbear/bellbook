@@ -28,7 +28,6 @@ $pos=(($page_num - 1) * $per_page);
     <body>
         <? print_header(); ?>
         <div id="content-title"><h2>Browse Books</h2></div> 
-        <a href=offers.php?isbn=9780071623209>See offers</a></p><hr />
 		<hr class="title-line"/>
 <?php
 require_once("util/connect.php");
