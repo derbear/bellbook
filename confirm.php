@@ -1,5 +1,6 @@
 <? require("util/header.php");
 connect(true);
+$_POST['price']=trim($_POST['price'], '$');
 if(isset($_POST['descr'])) {
     $descr=$_POST['descr'];
 } else {
