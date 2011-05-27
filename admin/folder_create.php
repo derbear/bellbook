@@ -3,7 +3,7 @@ error_reporting(E_ALL); //TODO #set_error_reporting
 ini_set("display_errors", 1);
 if(isset($_GET['name'])) {
     $dir=$_GET['name'];
-    $success=mkdir($dir);
+    $success=mkdir('../' . $dir);
     if($success) {
         echo $dir." was successfully created! ";
     } else {

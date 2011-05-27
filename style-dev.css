@@ -64,7 +64,7 @@ a img {
 
 
 /* BELLBOOK by bc */
-#body {	background: url('images/bg.png') repeat;}
+body {	background: url('images/bg.png') repeat;}
 
 /* MY INFO BAR ON TOP */
 div#my-info {
