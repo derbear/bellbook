@@ -156,7 +156,7 @@ div#my-info {
 /* CONTENT */
 div#content {
 	position: relative;
-	padding: 60px 50px 50px 50px; /*+10 on top to accomadate top bar */
+	padding: 90px 50px 50px 50px; /*+10 on top to accomadate top bar */
 }
 	#title {
 		margin-bottom: 10px;
@@ -255,7 +255,7 @@ div#content {
 		/* for Internet Explorer */
 		/*\*/
 		* html #real-content {
-			height: 160px;
+			height: 260px;
 		}
 		/**/
 			.msg {
