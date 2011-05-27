@@ -360,6 +360,10 @@ div#content {
 		text-shadow: 1px 1px 0px #BDCEDE;
 		text-align: center;
 	}
+	td b {
+		font-weight: 800;
+		color: #BD0000;
+	}
 	#real-content .offers {
 		font-size: 1.1em;
 		margin-bottom: 15px;
