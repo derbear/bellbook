@@ -10,8 +10,8 @@
         <? print_header() ?>
         <div id="content-title"><h2> Welcome To bellbook! </h2></div> 
         <? if (isset($_SESSION['id'])) { ?>
-        <div> <p>To get started, click on one of the links above, or search for
-                a book. </p> </div>
+        <div> <p>To get started, click on one of the tabs at the left, 
+				or search for a book. </p> </div>
         <? } else { ?>
         <div> <p>You can browse or search for books, but if you want to sell
                 your own you will have to <a href="login.php">log in</a>

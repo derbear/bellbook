@@ -43,26 +43,26 @@ function dump() {
     //if(!mysql_query("ALTER TABLE TMap ADD CONSTRAINT users_map FOREIGN KEY Users(studentId) REFERENCES Users(studentId)")) {
     //    die('<br />bad alter'.mysql_error());
     //}
-    $query="DELETE FROM CMap WHERE ISBN=''"; //testdata
-    if(mysql_query($query))
-    	echo 'good';
-    else
-    	echo 'error: '. mysql_error();
-    $query="DELETE FROM Books WHERE ISBN=''"; //testdata
-    if(mysql_query($query))
-    	echo 'good';
-    else
-    	echo 'error: '. mysql_error();
-    $query="DELETE FROM CMap WHERE ISBN='1111111111'"; //testdata
-    if(mysql_query($query))
-    	echo 'good';
-    else
-    	echo 'error: '. mysql_error();
-    $query="DELETE FROM Books WHERE ISBN='1111111111'"; //testdata
-    if(mysql_query($query))
-    	echo 'good';
-    else
-    	echo 'error: '. mysql_error();
+//    $query="DELETE FROM CMap WHERE ISBN=''"; //testdata
+//    if(mysql_query($query))
+//    	echo 'good';
+//    else
+//    	echo 'error: '. mysql_error();
+//    $query="DELETE FROM Books WHERE ISBN=''"; //testdata
+//    if(mysql_query($query))
+//    	echo 'good';
+//    else
+//    	echo 'error: '. mysql_error();
+//    $query="DELETE FROM CMap WHERE ISBN='1111111111'"; //testdata
+//    if(mysql_query($query))
+//    	echo 'good';
+//    else
+//    	echo 'error: '. mysql_error();
+//    $query="DELETE FROM Books WHERE ISBN='1111111111'"; //testdata
+//    if(mysql_query($query))
+//    	echo 'good';
+//    else
+//    	echo 'error: '. mysql_error();
     //$query="DELETE FROM Courses WHERE courseId='2'";
     //$resource=mysql_query($query);
     //if($resource) {
@@ -73,7 +73,8 @@ function dump() {
     ////    }
     //} else {
     //    echo 'failed';
-    //}
+    
+	echo '<b>Users/studentId->Users/lastName, Users/firstName</b><br />';
     $query="SELECT * FROM Users";
     $resource=mysql_query($query);
     if($resource) {
@@ -100,6 +101,7 @@ function dump() {
     } else {
         echo 'failed' . mysql_error();
     }*/
+	echo '<b>Books/ISBN->Books/title</b><br />';
     $query="SELECT * FROM Books";
     $resource=mysql_query($query);
     if($resource) {
@@ -117,6 +119,7 @@ function dump() {
     //else {
     //    echo 'failure: ' . mysql_error();
     //}
+	echo '<b>Courses/courseId->Courses/courseName</b><br />';
     $query="SELECT * FROM Courses";
     $resource=mysql_query($query);
     if($resource) {
@@ -128,6 +131,7 @@ function dump() {
         echo 'failed';
     }
     //phpinfo();
+	echo '<b>[Tracker]/[listing component]->[Tracker]/[owner of tracker]</b><br />';
     $query="SELECT * FROM TMap";
     $resource=mysql_query($query);
     if($resource) {
@@ -138,6 +142,7 @@ function dump() {
     } else {
         echo 'failed';
     }
+	echo "<b>[Offer]/[offer's ID]::[Offer]/[seller's ID]::[Offer]/[ISBN]</b><br />";
     $query="SELECT * FROM Listings";
     $resource=mysql_query($query);
     if($resource) {
@@ -148,6 +153,7 @@ function dump() {
     } else {
         echo 'failed';
     }
+	echo "<b>[Courses]/[ISBN]::[Courses]/courseId::[Courses]/required[boolean]</b><br />";
     $query="SELECT * FROM CMap";
     $resource=mysql_query($query);
     if($resource) {
