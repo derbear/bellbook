@@ -21,12 +21,12 @@ connect(true);
     $query="SELECT * FROM TMap WHERE studentId=$id";
     $resource=mysql_query($query);
     if($resource) {
+        $i=0;
         while($row=mysql_fetch_array($resource)) {
             $listId=$row['listingId'];
             $tr_query="SELECT * FROM Listings WHERE listingId=$listId";
             $tr_rsrc=mysql_query($tr_query);
             if($tr_rsrc) {
-            	$i=0;
                 while($tr_row=mysql_fetch_array($tr_rsrc)) {
                     $owner=$tr_row['ownerId'];
                     $owner_query="SELECT * FROM Users WHERE studentId=$owner";

@@ -443,7 +443,7 @@ div#content {
 	line-height: 2.5em;
 	margin-bottom: 10px;
 }
-.item.color2 .offers a, .item.color2 .remove{
+.item.color2 .offers a, .item.color2 .remove, .item.color2 .track{
 	-moz-box-shadow: #E3E3E3 2px 2px 0px;
 	-webkit-box-shadow: #E3E3E3 2px 2px 0px;
 	box-shadow: #E3E3E3 2px 2px 0px;
@@ -496,7 +496,7 @@ div#content {
 		border: 1px solid #FF9C9C;
 		color: #D45050;
 	}
-	.remove {
+	.remove, .track {
 		font-size: 1.1em;
 		border: none;
 		margin: 10px 0;
@@ -513,11 +513,11 @@ div#content {
 		-webkit-box-shadow: #CCDCE8 2px 2px 0px;
 		box-shadow: #CCDCE8 2px 2px 0px;
 	}
-	.remove:hover{
+	.remove:hover, .track:hover{
 		background: #FFE0BD;
 		color: #CF822B;
 	}
-	.remove:active {
+	.remove:active, .track:active {
 		background: #7D7D7D;
 		color: #F2F2F2;
 		text-shadow: 1px 1px 0px #404040;
@@ -526,6 +526,13 @@ div#content {
 		-moz-box-shadow: none;
 		-webkit-box-shadow: none;
 		box-shadow: none;
+	}
+	.track {
+		background: #FFE7D6;
+		color: #E89B43;
+		border-top: 1px solid #FFEDE0;
+		border-bottom: 1px solid #FFD8BD;
+		text-shadow: 1px 1px 0px #FFDBC2;
 	}
 
 /* EXTRAS */
