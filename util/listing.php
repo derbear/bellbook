@@ -83,6 +83,7 @@
 function generateListing_B($fisbn, $ftitle, $fclist) {
     if($fclist=="") $clabel="";
     else $clabel="Courses ";
+<<<<<<< .working
     return "
 <table>
     <tr>
@@ -98,6 +99,18 @@ function generateListing_B($fisbn, $ftitle, $fclist) {
         <td>$fclist</td>
 </table>
 "; }
+=======
+    $return = "
+		<div class='item-title'>$ftitle</div>
+		<div class='item-isbn item-info'><p>ISBN: $fisbn</p></div>";
+	if(!$clabel=="") {
+		foreach($fclist as $key => $val) { 
+			$return = $return . "<div class='item-course item-info'><p>$val</p></div>";
+		}
+	}	
+	return $return;
+}
+>>>>>>> .merge-right.r81
 
 /**
  * Finds the title associated with the ISBN
