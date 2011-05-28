@@ -1,35 +1,23 @@
 <?php
+	/**
+	 * All listings generated require enclosure using a div tag w/ class item for proper formatting.
+	 * This div tag is usually added alongside the remove/see offers button that goes with listings
+	 * A more ingenious solution that keeps everything in this file (instead of divs all over the place) would be useful.
+	 */
+	 
     /**
      * Listing on myBooks
      * @return a formatted listing of the book's ISBN, title, and description.
      */
     function generateListing($fisbn, $ftitle, $fprice, $fdate, $fdescr) {
-        return "
-<!--listing-->
-<table>
-    <tr>
-        <td class='leftcol'><b>ISBN </b></td>
-        <td>$fisbn</td>
-    </tr>
-    <tr>
-        <td class='leftcol'><b>Title </b></td>
-        <td>$ftitle</td>
-    </tr>
-    <tr>
-        <td class='leftcol'><b>Price </b></td>
-        <td>$fprice</td>
-    </tr>
-    <tr>
-        <td class='leftcol'><b>Date posted </b></td>
-        <td>$fdate</td>
-    </tr>
-    <tr>
-        <td class='leftcol'><b>Notes </b></td>
-        <td>$fdescr</td>
-    </tr>
-</table>
-<!--//listing-->
-"; } 
+    	$return = "
+	    	<div class='item-title'>$ftitle</div>
+				<div class='item-price item-info'><p>$fprice</p></div>
+				<div class='item-isbn item-info'><p>ISBN: $fisbn</p></div>
+				<div class='item-date item-info'><p>Posted: $fdate</p></div>
+				<div class='item-notes item-info'><p><span class='required'>Notes:</span> $fdescr</p></div>";
+		return $return;
+	} 
 
     /**
      * Listing on search
@@ -40,64 +28,37 @@
             $fcontact, $fid, $ffname, $flname) {
         $mail="mailto:" . $fcontact;
         $account="account.php?id=$fid";
-        return "
-<!--listing-->
-<table>
-    <tr>
-        <td class='leftcol'><b>ISBN </b></td>
-        <td>$fisbn</td>
-    </tr>
-    <tr>
-        <td class='leftcol'><b>Title </b></td>
-        <td>$ftitle</td>
-    </tr>
-    <tr>
-        <td class='leftcol'><b>Price </b></td>
-        <td>$fprice</td>
-    </tr>
-    <tr>
-        <td class='leftcol'><b>Date posted </b></td>
-        <td>$fdate</td>
-    </tr>
-    <tr>
-        <td class='leftcol'><b>Seller </b></td>
-        <td><a href='$account'>$ffname" . " " . "$flname</a></td>
-    </tr>
-    <tr>
-        <td class='leftcol'><b>Contact </b></td>
-        <td><a href='$mail'>$fcontact</a></td>
-    </tr>
-    <tr>
-        <td class='leftcol'><b>Notes </b></td>
-        <td>$fdescr</td>
-    </tr>
-</table>
-<!--//listing-->"; }
+        $return = "
+        	<div class='item-title'>$ftitle</div>
+				<div class='item-price item-info'><p>$fprice</p></div>
+				<div class='item-isbn item-info'><p>ISBN: $fisbn</p></div>
+				<div class='item-seller item-info'><p>Seller: <a href='$account'>$ffname" . " " . "$flname</a></p></div>
+				<div class='item-date item-info'><p>Posted: $fdate</p></div>
+				<div class='item-contact item-info'><p>Contact: <a href='$mail'>$fcontact</a></p></div>
+				<div class='item-notes item-info'><p><span class='required'>Notes:</span> $fdescr</p></div>
+        ";
+        return $return;
+   	}
 
 /**
  * Listing for books
  * @param <type> $fisbn Book ISBN
  * @param <type> $ftitle Book title
- * @param <type> $fclist (string) Array containing courses used for books
+ * @param <type> $fclist Array containing courses used for books
  */
 function generateListing_B($fisbn, $ftitle, $fclist) {
-    if($fclist=="") $clabel="";
+    if(count($fclist)==0) $clabel="";
     else $clabel="Courses ";
-    return "
-<table>
-    <tr>
-        <td class='leftcol'><b>ISBN </b></td>
-        <td>$fisbn</td>
-    </tr>
-    <tr>
-        <td class='leftcol'><b>Title </b></td>
-        <td>$ftitle</td>
-    </tr> 
-    <tr>
-        <td class='leftcol'><b>$clabel</b></td>
-        <td>$fclist</td>
-</table>
-"; }
+    $return = "
+		<div class='item-title'>$ftitle</div>
+		<div class='item-isbn item-info'><p>ISBN: $fisbn</p></div>";
+	if(!$clabel==="") {
+		foreach($fclist as $key => $val) { 
+			$return = $return . "<div class='item-course item-info'><p>$val</p></div>";
+		}
+	}	
+	return $return;
+}
 
 /**
  * Finds the title associated with the ISBN
@@ -115,11 +76,11 @@ function mappedTitle($fisbn) {
     return "";
 }
 
-function mappedClasses($fisbn) {
+function mappedClasses($fisbn) { /* returns a string with courses separated by a comma and space */
     $query="SELECT * FROM CMap WHERE ISBN='$fisbn'";
     $resource=mysql_query($query);
     $first=true;
-    $result="";
+    $result=array();
     if($resource) {
         while($row=mysql_fetch_array($resource)) {
             $cid=$row['courseId'];
@@ -132,10 +93,10 @@ function mappedClasses($fisbn) {
             if($resource2) {
                 $row2=mysql_fetch_array($resource2);
                 $cname=$row2['courseName'];
-                if($req) $cname='<b>'.$cname.'</b>';
-                if(!$first) $result=$result.', ';
+                if($req) $cname='<span class="required">Required:</span> '.$cname;
+                if(!$first);
                 else $first=false;
-                $result=$result.$cname;
+                $result[] = $cname;
             }
         }
     }

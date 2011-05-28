@@ -14,6 +14,7 @@ connect(true);
         <p>This page shows all the books you're currently keeping track of.
            This feature is mainly for your convenience--you'll still want to
            contact whomever you wish to buy from.</p>
+        <hr class="title-line"/>
 <?php
     require_once("util/listing.php");
     $id=$_SESSION['id'];
@@ -25,29 +26,34 @@ connect(true);
             $tr_query="SELECT * FROM Listings WHERE listingId=$listId";
             $tr_rsrc=mysql_query($tr_query);
             if($tr_rsrc) {
+            	$i=0;
                 while($tr_row=mysql_fetch_array($tr_rsrc)) {
                     $owner=$tr_row['ownerId'];
                     $owner_query="SELECT * FROM Users WHERE studentId=$owner";
                     $own_rsrc=mysql_query($owner_query);
                     if($own_rsrc) {
                         $own_row=mysql_fetch_array($own_rsrc);
-                        echo "<hr />";
-                        echo generateListing_S($tr_row['ISBN'], mappedTitle($tr_row['ISBN']),
+                        $addClass = "";
+			            $i++; if ($i%2==0) $addClass = " color2"; //alternate colors in display
+			            $newcode = "<div class='item$addClass'>" . generateListing_S($tr_row['ISBN'], 
+			            	mappedTitle($tr_row['ISBN']),
                             $tr_row['price'], $tr_row['post'], $tr_row['descr'],
                             $own_row['email'], $row2['studentId'], $own_row['firstName'],
                             $own_row['lastName']);
+			            echo $newcode;
                         ?>
-<form action="util/trackBook.php" method="post">
-            <input type="hidden" name='list_id' value=<? echo '"' .
-            $row['listingId'] . '"' ?> />
-            <input type="hidden" name='oper' value='0' />
-            <input type="submit" value="Remove" />
-        </form>
+			<form action="util/trackBook.php" method="post">
+	            <input type="hidden" name='list_id' value=<? echo '"' .
+	            $row['listingId'] . '"' ?> />
+	            <input type="hidden" name='oper' value='0' />
+	            <input type="submit" value="Remove" class="remove"/>
+	        </form>
+	        </div> <!-- end item -->
                         <?
-                    }
-                }
-            }
-        }
+                    } //end if
+                } //end while
+            } //end if
+        } // end while
     }
 ?>
         <? require("util/footer.php"); ?>

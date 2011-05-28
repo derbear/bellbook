@@ -389,7 +389,8 @@ div#content {
 	}
 	#real-content .offers {
 		font-size: 1.1em;
-		margin-bottom: 15px;
+		margin-top: 5px;
+		margin-bottom: 10px;
 	}
 	.offers a {
 		text-decoration: none;
@@ -397,17 +398,135 @@ div#content {
 		-webkit-border-radius: 4px;
 		border-radius: 4px;
 		padding: 5px 10px;
-		background: #FFE7D6;
-		color: #E89B43;
-		border: 1px solid #FFDBC2;
+		background: #FFDDBA;
+		color: #D97D21;
+		border-top: 1px solid #FFE6CC;
+		border-bottom: 1px solid #FFCF9E;
 		text-shadow: 1px 1px 0px #FFDEC7;
-		-moz-box-shadow: #EBE5E1 2px 2px 2px;
-		-webkit-box-shadow: #EBE5E1 2px 2px 2px;
-		box-shadow: #EBE5E1 2px 2px 2px;
+		-moz-box-shadow: #CCDCE8 2px 2px 0px;
+		-webkit-box-shadow: #CCDCE8 2px 2px 0px;
+		box-shadow: #CCDCE8 2px 2px 0px;
 	}
 	.offers a:hover{
 		background: #FFE0BD;
 		color: #CF822B;
+	}
+	
+/* ITEMS (book listings v2) */
+.item, .item-info { 
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+}
+#real-content .item hr {
+	background-color: #A5B5D1;
+}
+.item-info {
+	padding: 5px 10px;
+	display: inline;
+}
+.item-info p{
+	display: inline-block;
+}
+.item {
+	background: #F2F7FF;
+	color: #000D26;
+	border: 1px solid #C7DBFF;
+	padding: 10px 20px;
+	line-height: 2.5em;
+	margin-bottom: 10px;
+}
+.item.color2 {
+	background: #F2F2F2;
+	color: black;
+	border: 1px solid #D4D4D4;
+	padding: 10px 20px;
+	line-height: 2.5em;
+	margin-bottom: 10px;
+}
+.item.color2 .offers a, .item.color2 .remove{
+	-moz-box-shadow: #E3E3E3 2px 2px 0px;
+	-webkit-box-shadow: #E3E3E3 2px 2px 0px;
+	box-shadow: #E3E3E3 2px 2px 0px;
+}
+	.item-title {
+		font-size: 2.5em; 
+		line-height: 1em;
+		margin-top: 10px;
+		margin-bottom: 8px;
+	}
+	.item-isbn {
+		background: #D1F3FF;
+		border: 1px solid #5ED4FF;
+		color: #14495C;
+	}
+	.item-course-required {
+	}
+	.item-info .required {
+		color: #DB3232;
+		display: inline;
+		background: #FFE6E6;
+	}
+	.item-course, .item-seller, .item-date {
+		background: #D9FFD9;
+		border: 1px solid #7CEB7E;
+		color: #106E12;
+	}
+	.item-contact {
+		background: #FFE9D4;
+		border: 1px solid #FFCF9E;
+		color: #DB7916;
+	}
+	.item-contact a, .item-seller a {
+		text-decoration: none;
+		color: #FF5900;
+	}
+	.item-contact a:hover, .item-seller a:hover {
+		color: #B57141;
+	}
+	.item-notes {
+		background: #D4E1FF;
+		border: 1px solid #9CB9FF;
+		color: #1E4194;
+		display: block;
+		margin-top: 2px;
+		line-height: 1.7em;
+	}
+	.item-price {
+		background: #FFE3E3;
+		border: 1px solid #FF9C9C;
+		color: #D45050;
+	}
+	.remove {
+		font-size: 1.1em;
+		border: none;
+		margin: 10px 0;
+		-moz-border-radius: 4px;
+		-webkit-border-radius: 4px;
+		border-radius: 4px;
+		padding: 5px 10px;
+		background: #DBDBDB;
+		color: #7D7D7D;
+		border-top: 1px solid #EDEDED;
+		border-bottom: 1px solid #C9C9C9;
+		text-shadow: 1px 1px 0px #C9C9C9;
+		-moz-box-shadow: #CCDCE8 2px 2px 0px;
+		-webkit-box-shadow: #CCDCE8 2px 2px 0px;
+		box-shadow: #CCDCE8 2px 2px 0px;
+	}
+	.remove:hover{
+		background: #FFE0BD;
+		color: #CF822B;
+	}
+	.remove:active {
+		background: #7D7D7D;
+		color: #F2F2F2;
+		text-shadow: 1px 1px 0px #404040;
+		border-top: 1px solid #404040;
+		border-bottom: 1px solid #C9C9C9;
+		-moz-box-shadow: none;
+		-webkit-box-shadow: none;
+		box-shadow: none;
 	}
 
 /* EXTRAS */
