@@ -45,8 +45,7 @@ if($resource) {
             $offerbutton = "<p class='offers'><a href=offers.php?isbn=$isbn>See offers</a></p>";
             $newcode = "<div class='item$addClass'>" . generateListing_B($isbn, $row['title'],
                     mappedClasses($row['ISBN'])) . $offerbutton . '</div>';
-            echo $newcode;
-            
+            echo $newcode;   
     }
 } else {
     echo mysql_error();

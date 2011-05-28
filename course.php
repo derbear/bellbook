@@ -23,7 +23,8 @@ if($resource) {
     </head>
     <body>
         <? print_header(); ?>
-        <div id="content-title"><div id="content-title"><h2> <?php echo $cname; ?> information </h2></div> </div>
+        <div id="content-title"><h2> <?php echo $cname; ?> information </h2></div>
+        <hr class="title-line"/>
         <div> <? /*<p> The following course information applies to these teachers:
             <? echo $cteachers ?> </p>*/?>
             <p><b>Required books:</b></p>
@@ -31,13 +32,16 @@ if($resource) {
             $query="SELECT * FROM CMap WHERE courseId='$cId' AND required='1'";
             $resource=mysql_query($query);
             if($resource) {
-                while($row=mysql_fetch_array($resource)) {
-                    echo "<hr />";
-                    echo generateListing_B($row['ISBN'], mappedTitle($row['ISBN']),
-                            mappedClasses($row['ISBN']));
-                    ?><p><? echo '<a href=offers.php?isbn='.
-                    $row['ISBN'].'>See offers</a>' ?></p><?
-                }
+                $i=0;
+			    while($row=mysql_fetch_array($resource)) {
+			    		$addClass = "";
+			            $i++; if ($i%2==0) $addClass = " color2"; //alternate colors in display
+			            $isbn=$row['ISBN'];
+			            $offerbutton = "<p class='offers'><a href=offers.php?isbn=$isbn>See offers</a></p>";
+			            $newcode = "<div class='item$addClass'>" . generateListing_B($isbn, mappedTitle($row['ISBN']),
+			                    mappedClasses($row['ISBN'])) . $offerbutton . '</div>';
+			            echo $newcode;   
+			    }
             }?>
             <br />
             <p><b>Optional books:</b></p>
@@ -45,13 +49,16 @@ if($resource) {
             $query="SELECT * FROM CMap WHERE courseId='$cId' AND required='0'";
             $resource=mysql_query($query);
             if($resource) {
-                while($row=mysql_fetch_array($resource)) {
-                    echo "<hr />";
-                    echo generateListing_B($row['ISBN'], mappedTitle($row['ISBN']),
-                            mappedClasses($row['ISBN']));
-                    ?><p><? echo '<a href=offers.php?isbn='.
-                    $row['ISBN'].'>See offers</a>' ?></p><?
-                }
+                $i=0;
+			    while($row=mysql_fetch_array($resource)) {
+			    		$addClass = "";
+			            $i++; if ($i%2==0) $addClass = " color2"; //alternate colors in display
+			            $isbn=$row['ISBN'];
+			            $offerbutton = "<p class='offers'><a href=offers.php?isbn=$isbn>See offers</a></p>";
+			            $newcode = "<div class='item$addClass'>" . generateListing_B($isbn, mappedTitle($row['ISBN']),
+			                    mappedClasses($row['ISBN'])) . $offerbutton . '</div>';
+			            echo $newcode;   
+			    }
             }
             ?>
         </div>

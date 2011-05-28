@@ -52,7 +52,7 @@ function generateListing_B($fisbn, $ftitle, $fclist) {
     $return = "
 		<div class='item-title'>$ftitle</div>
 		<div class='item-isbn item-info'><p>ISBN: $fisbn</p></div>";
-	if(!$clabel==="") {
+	if(!$clabel=="") {
 		foreach($fclist as $key => $val) { 
 			$return = $return . "<div class='item-course item-info'><p>$val</p></div>";
 		}
