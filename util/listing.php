@@ -12,7 +12,7 @@
     function generateListing($fisbn, $ftitle, $fprice, $fdate, $fdescr) {
     	$return = "
 	    	<div class='item-title'>$ftitle</div>
-				<div class='item-price item-info'><p>$fprice</p></div>
+				<div class='item-price item-info'><p>$$fprice</p></div>
 				<div class='item-isbn item-info'><p>ISBN: $fisbn</p></div>
 				<div class='item-date item-info'><p>Posted: $fdate</p></div>
 				<div class='item-notes item-info'><p><span class='required'>Notes:</span> $fdescr</p></div>";
@@ -30,7 +30,7 @@
         $account="account.php?id=$fid";
         $return = "
         	<div class='item-title'>$ftitle</div>
-				<div class='item-price item-info'><p>$fprice</p></div>
+				<div class='item-price item-info'><p>$$fprice</p></div>
 				<div class='item-isbn item-info'><p>ISBN: $fisbn</p></div>
 				<div class='item-seller item-info'><p>Seller: <a href='$account'>$ffname" . " " . "$flname</a></p></div>
 				<div class='item-date item-info'><p>Posted: $fdate</p></div>
