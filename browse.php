@@ -33,20 +33,20 @@ $pos=(($page_num - 1) * $per_page);
 require_once("util/connect.php");
 require_once("util/listing.php");
 connect(false);
+$i=0;
 $query='SELECT * FROM Books ORDER BY '.$criterion .' ' .$direction .
 " LIMIT " . $pos . ", " . $per_page. "";
 $resource=mysql_query($query);
 if($resource) {
-	$i=0;
     while($row=mysql_fetch_array($resource)) {
-    		$addClass = "";
-            $i++; if ($i%2==0) $addClass = " color2"; //alternate colors in display
+            if($i>0)echo '<hr />'; $i++;
             $isbn=$row['ISBN'];
-            $offerbutton = "<p class='offers'><a href=offers.php?isbn=$isbn>See offers</a></p>";
-            $newcode = "<div class='item$addClass'>" . generateListing_B($isbn, $row['title'],
-                    mappedClasses($row['ISBN'])) . $offerbutton . '</div>';
-            echo $newcode;
-            
+            //echo $isbn;
+            echo generateListing_B($isbn, $row['title'],
+                    mappedClasses($row['ISBN']));
+            ?><p class="offers"><? echo '<a href=offers.php?isbn=';
+            echo $isbn;
+            echo'>See offers</a>'; ?></p><?
     }
 } else {
     echo mysql_error();
@@ -57,7 +57,7 @@ if($resource) {
 </html>
 
 <!--
-    Authors: Derek Leung, David Byrd, Ben Chan
+    Authors: Derek Leung, David Byrd, bc
     Project BellBook - 1.0
     Bellarmine College Preparatory, 2011
 -->
