@@ -389,7 +389,8 @@ div#content {
 	}
 	#real-content .offers {
 		font-size: 1.1em;
-		margin-bottom: 15px;
+		margin-bottom: 10px;
+		margin-top: 5px;
 	}
 	.offers a {
 		text-decoration: none;
