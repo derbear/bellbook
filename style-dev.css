@@ -273,13 +273,13 @@ div#content {
 			margin-left: 200px;
 			padding: 30px;
 			line-height: 1.75em;
-			font-size: 0.8em;
-			min-height: 160px; /*to avoid covering up the sidebar, adjust accordingly. There should be a less-hackish way but im too tired to find it.*/
+			font-size: 0.8em; /*1em after this setting = 13 pixels*/
+			min-height: 16em; /*to avoid covering up the sidebar, adjust accordingly. There should be a less-hackish way but im too tired to find it.*/
 		}
 		/* for Internet Explorer */
 		/*\*/
 		* html #real-content {
-			height: 260px;
+			height: 23.1em;
 		}
 		/**/
 			.msg {

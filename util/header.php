@@ -49,13 +49,11 @@ function print_header($custom_msg=null) { global $pagetitle;?>
 		<li <?php if($pagetitle==='bellbook') echo 'id="selected"'?>class="top"><a href='index.php'>bellbook</a></li>
 		<li <?php if($pagetitle==='About bellbook') echo 'id="selected"'?>><a href='about.php'>About bellbook</a></li>
 		<li <?php if($pagetitle==='Browse books') echo 'id="selected"'?>><a href='browse.php'>Browse books</a></li>
+		<li <?php if($pagetitle==='Browse courses') echo 'id="selected"'?>><a href='courses.php'>Browse courses</a></li>
 	 	<? if (isset($_SESSION['id'])) { ?>
-	 		<li <?php if($pagetitle==='Browse courses') echo 'id="selected"'?>><a href='courses.php'>Browse courses</a></li>
-	 		<li <?php if($pagetitle==='Sell a book') echo 'id="selected"'?>class="bottom"><a href='sellBook.php'>Sell a book</a></li>
-	 	<? } else {?>
-	 		<li <?php if($pagetitle==='Browse courses') echo 'id="selected"'?>class="bottom"><a href='courses.php'>Browse courses</a></li>
-	 	<?php } ?>	
-		<li <?php if($pagetitle==='bellbook Help') echo 'id="selected"'?>><a href='help.php'>Help</a></li>
+	 		<li <?php if($pagetitle==='Sell a book') echo 'id="selected"'?>><a href='sellBook.php'>Sell a book</a></li>
+	 	<? } ?>	
+		<li <?php if($pagetitle==='bellbook Help') echo 'id="selected"'?>class="bottom"><a href='help.php'>Help</a></li>
 	</ul>
 	
 	<!--begin page content-->
