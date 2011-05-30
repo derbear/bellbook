@@ -9,7 +9,10 @@
     <body>
         <? print_header(); ?>
         <div id="content-title"><h2>Find course information</h2></div>
-        <div> <p> Select a course from the list below: </p> </div>
+        <div> <p> Here you can find book information for courses that you are 
+                planning to take. Remember to verify any information you see
+                displayed here. <br />
+                Select a course from the list below: </p> </div>
         <? require("util/listing.php"); ?>
         <form action="course.php" method="get">
             <select name="id">

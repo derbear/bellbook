@@ -11,7 +11,7 @@
 	        <div id="content-title"><h2> About bellbook </h2></div> 
 	
 	        <div> <p> bellbook is a web application written PHP, for students of
-	                Bellarmine College Prep. Its purpose is for easy coordination
+	                Bellarmine College Prep. Its purpose is to coordinate
 	                of buying and selling of books between incoming and
 	                outgoing freshmen, sophomores, juniors, and seniors. </p> 
 	        </div>
@@ -19,9 +19,9 @@
 	        <div> <p> Contributors:</p> 
 	            <ol>
 	                <li>Development head: Derek Leung '12</li>
+	                <li>Design head: Ben Chan '13</li>
 	                <li>Marketing head: Arun Pingali '12</li>
 	                <li>Development & Marketing: David Byrd '11</li>
-	                <li>Design & Testing: Ben Chan '13</li>
 	                <li>Design: Danny Hernandez '12</li>
 	            </ol>
 	        </div>

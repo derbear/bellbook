@@ -55,6 +55,7 @@ function print_header($custom_msg=null) { global $pagetitle;?>
 	 	<? } else {?>
 	 		<li <?php if($pagetitle==='Browse courses') echo 'id="selected"'?>class="bottom"><a href='courses.php'>Browse courses</a></li>
 	 	<?php } ?>	
+		<li <?php if($pagetitle==='bellbook Help') echo 'id="selected"'?>><a href='help.php'>Help</a></li>
 	</ul>
 	
 	<!--begin page content-->
