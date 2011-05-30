@@ -180,7 +180,7 @@ div#my-info {
 /* CONTENT */
 div#content {
 	position: relative;
-	padding: 90px 50px 50px 50px; /*+10 on top to accomadate top bar */
+	padding: 90px 50px 50px 50px; /*+90 + 50 + 50 + 50 on top to accomadate top bar,*/
 }
 	#title {
 		margin-bottom: 10px;
@@ -196,32 +196,35 @@ div#content {
 		
 		margin-bottom: 30px;
 	}
-		.shadow, ul#navigation, #content-container {
+		.shadow, div#navigation-container, #content-container {
 			-moz-box-shadow: #AAA 2px 2px 2px;
 			-webkit-box-shadow: #AAA 2px 2px 2px;
 			box-shadow: #AAA 2px 2px 2px;
 		}
-		ul#navigation {
+		div#navigation-container {
 			position: absolute;
 			width: 200px;
 			/* expand height */
 			top:-4; left: 0; bottom: -5;
+			margin: 0px;
 			background: #113961;
 			
 			background: #113961 -webkit-gradient(linear, left top, right top, from(#113961), to(#072340));
 			background: #113961 -moz-linear-gradient(left,  #113961,  #072340);		
-			
-			margin: 0px;
-			font-size: 0.75em;
 			color: #E8F4FF;
+			font-size: 0.75em;
 			
 			border: 1px solid #072340;
-			border-right: none;
-			padding: 10px 0;
-			
+			border-right: none;			
 			text-shadow: -1px 1px 0px #113961;
 		}
-		ul#navigation, #selected {
+		ul#navigation {
+			margin: 0px;
+			width: 200px;
+			float: right; /*expand to fit floated elements */
+			padding: 10px 0;
+		}
+		div#navigation-container, #selected {
 			-moz-border-radius-bottomleft: 8px;
 			-moz-border-radius-topleft: 8px;
 			-webkit-border-radius-bottomleft: 8px;

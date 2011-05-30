@@ -45,6 +45,7 @@ function print_header($custom_msg=null) { global $pagetitle;?>
 <div id="content">
 	<!--<div id="title"> <h1> bellbook </h1> </div>-->
 	<div id="content-container"> <!-- content container -->
+	<div id="navigation-container">
 	<ul id="navigation">
 		<li <?php if($pagetitle==='bellbook') echo 'id="selected"'?>class="top"><a href='index.php'>bellbook</a></li>
 		<li <?php if($pagetitle==='About bellbook') echo 'id="selected"'?>><a href='about.php'>About bellbook</a></li>
@@ -55,6 +56,7 @@ function print_header($custom_msg=null) { global $pagetitle;?>
 	 	<? } ?>	
 		<li <?php if($pagetitle==='bellbook Help') echo 'id="selected"'?>class="bottom"><a href='help.php'>Help</a></li>
 	</ul>
+	</div>
 	
 	<!--begin page content-->
 	<div id="real-content">
