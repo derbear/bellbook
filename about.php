@@ -41,7 +41,7 @@
 </html>
 
 <!--
-    Authors: Derek Leung, David Byrd + Ben Chan (resturcturing)[may 15, 2011]
+    Authors: Derek Leung + Ben Chan (resturcturing)[may 15, 2011]
     Project BellBook - 1.0
     Bellarmine College Preparatory, 2011
 -->

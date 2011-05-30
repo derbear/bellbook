@@ -33,7 +33,7 @@
 </html>
 
 <!--
-    Authors: Derek Leung, David Byrd
+    Authors: Derek Leung
     Project BellBook - 1.0
     Bellarmine College Preparatory, 2011
 -->

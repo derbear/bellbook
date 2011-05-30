@@ -42,7 +42,7 @@ connect(true);
 </html>
 
 <!--
-    Authors: Derek Leung, David Byrd, Ben Chan
+    Authors: Derek Leung, Ben Chan
     Project BellBook - 1.0
     Bellarmine College Preparatory, 2011
 -->
