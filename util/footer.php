@@ -15,7 +15,7 @@
 		        in any way for the price, edition, or quality of books posted by 
 		        students to this site. </div>
 		<div id="help">If you need help or wish to contribute to bellbook, contact
-		        <a href="mailto:derek.leung12@bcp.org"> Derek Leung</a><?php echo $pagetitle;?></div>
+		        <a href="mailto:derek.leung12@bcp.org"> Derek Leung</a><?php// echo $pagetitle;?></div>
 	</div> <!-- end footer -->
 
 </div> <!-- content -->
