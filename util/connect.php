@@ -1,6 +1,11 @@
 <?php function connect($private=false) {
+        //var data
+        $ADMIN='derek.leung12.admin';
+        $PASSWORD='GreenSubsidy_20percent';
+        $DATABASE='12_bellbook';
+        $ADDRESS='localhost';
+
         //connects to database and starts session
-        require("dbConfig.php");
         $con=mysql_connect($ADDRESS, $ADMIN, $PASSWORD);
         if(!$con) {
             //echo 'bad connection';
