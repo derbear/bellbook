@@ -2,7 +2,7 @@
 connect(true);
 //remove dashes and $
 $_POST['price']=trim($_POST['price'], '$');
-$_POST['title']=str_replace('-', $_POST['title'], '');
+$_POST['title']=str_replace('-', '', $_POST['title']);
 //
 if(isset($_POST['descr'])) {
     $descr=$_POST['descr'];
