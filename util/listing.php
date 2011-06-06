@@ -102,4 +102,30 @@ function mappedClasses($fisbn) { /* returns a string with courses separated by a
     }
     return $result;
 }
+
+/**
+ * Given either an ISBN-10 or ISBN-13, determines which it is and finds mapped
+ * counterpart, if available. 
+ * @param <type> $fisbn the ISBN to look for
+ * @return <type> an array with the mappings: 10->ISBN10 and 13->ISBN13. Empty
+ * entries denote that Aliases table does not contain query. 
+ */
+function ISBNalias($fisbn) {
+    $query="SELECT * FROM Aliases WHERE ";
+    if(strlen($fisbn==10)) {
+        $query.="ISBN10='$fisbn'";
+        $arr['10']=$fisbn;
+    } else if (strlen($fisbn==13)) {
+        $query.="ISBN13='$fisbn'";
+        $arr['13']=$fisbn;
+    }
+    $resource=mysql_query($query);
+    if($resource) {
+        while($row=mysql_fetch_array($resource)) {
+            $arr['10']=$row['ISBN10'];
+            $arr['13']=$row['ISBN13'];
+        }
+    }
+    return $arr;
+}
 ?>
