@@ -4,11 +4,17 @@ function dump() {
     connect(false);
     error_reporting(E_ALL); //TODO #set_error_reporting
     ini_set("display_errors", 1);
+//    if(!mysql_query("ALTER TABLE Aliases DROP FOREIGN KEY short_map")) {
+//        echo mysql_error();
+//    }
+//    if(!mysql_query("ALTER TABLE Aliases DROP FOREIGN KEY long_map")) {
+//        echo mysql_error();
+//    }
 //    $ALIAS_MAP='Aliases (ISBN10 char(10), ISBN13 char(13),
 //        CONSTRAINT short_map FOREIGN KEY (ISBN10) REFERENCES Books(ISBN),
 //        CONSTRAINT long_map FOREIGN KEY (ISBN13) REFERENCES Books(ISBN))';
 //    $table6_create='CREATE TABLE ' . $ALIAS_MAP; //10-13 mappings
-//    if($table6_create) {
+//    if(mysql_query($table6_create)) {
 //        echo 'good create';
 //    } else {
 //        echo 'bad create: '.mysql_error();
@@ -57,16 +63,21 @@ function dump() {
 //    	echo 'good';
 //    else
 //    	echo 'error: '. mysql_error();
-//    $query="DELETE FROM Books WHERE ISBN=''"; //testdata
-//    if(mysql_query($query))
-//    	echo 'good';
-//    else
-//    	echo 'error: '. mysql_error();
-//    $query="DELETE FROM CMap WHERE ISBN='1234567890'"; //testdata
-//    if(mysql_query($query))
-//    	echo 'good';
-//    else
-//    	echo 'error: '. mysql_error();
+    $query="DELETE FROM CMap WHERE ISBN='1111111111333'"; //testdata
+    if(mysql_query($query))
+    	echo 'good';
+    else
+    	echo 'error: '. mysql_error();
+    $query="DELETE FROM Books WHERE ISBN='1111111111333'"; //testdata
+    if(mysql_query($query))
+    	echo 'good';
+    else
+    	echo 'error: '. mysql_error();
+    $query="DELETE FROM Aliases WHERE ISBN13='1111111111333'"; //testdata
+    if(mysql_query($query))
+    	echo 'good';
+    else
+    	echo 'error: '. mysql_error();
 //    $query="DELETE FROM Books WHERE ISBN='978055321247'"; //Frankenstein
 //    if(mysql_query($query))
 //    	echo 'good';
