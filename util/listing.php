@@ -10,14 +10,15 @@
      * @return a formatted listing of the book's ISBN, title, and description.
      */
     function generateListing($fisbn, $ftitle, $fprice, $fdate, $fdescr) {
+        $formatted=formatISBN($fisbn);
     	$return = "
 	    	<div class='item-title'>$ftitle</div>
 				<div class='item-price item-info'><p>$$fprice</p></div>
-				<div class='item-isbn item-info'><p>ISBN: $fisbn</p></div>
+                                $formatted
 				<div class='item-date item-info'><p>Posted: $fdate</p></div>
 				<div class='item-notes item-info'><p><span class='required'>Notes:</span> $fdescr</p></div>";
 		return $return;
-	} 
+    }
 
     /**
      * Listing on search
@@ -28,10 +29,11 @@
             $fcontact, $fid, $ffname, $flname) {
         $mail="mailto:" . $fcontact;
         $account="account.php?id=$fid";
+        $formatted=formatISBN($fisbn);
         $return = "
         	<div class='item-title'>$ftitle</div>
 				<div class='item-price item-info'><p>$$fprice</p></div>
-				<div class='item-isbn item-info'><p>ISBN: $fisbn</p></div>
+				$formatted
 				<div class='item-seller item-info'><p>Seller: <a href='$account'>$ffname" . " " . "$flname</a></p></div>
 				<div class='item-date item-info'><p>Posted: $fdate</p></div>
 				<div class='item-contact item-info'><p>Contact: <a href='$mail'>$fcontact</a></p></div>
@@ -47,11 +49,12 @@
  * @param <type> $fclist Array containing courses used for books
  */
 function generateListing_B($fisbn, $ftitle, $fclist) {
+    $formatted=formatISBN($fisbn);
     if(count($fclist)==0) $clabel="";
     else $clabel="Courses ";
     $return = "
 		<div class='item-title'>$ftitle</div>
-		<div class='item-isbn item-info'><p>ISBN: $fisbn</p></div>";
+		$formatted";
 	if(!$clabel=="") {
 		foreach($fclist as $key => $val) { 
 			$return = $return . "<div class='item-course item-info'><p>$val</p></div>";
@@ -112,10 +115,10 @@ function mappedClasses($fisbn) { /* returns a string with courses separated by a
  */
 function ISBNalias($fisbn) {
     $query="SELECT * FROM Aliases WHERE ";
-    if(strlen($fisbn==10)) {
+    if(strlen($fisbn)==10) {
         $query.="ISBN10='$fisbn'";
         $arr['10']=$fisbn;
-    } else if (strlen($fisbn==13)) {
+    } else if (strlen($fisbn)==13) {
         $query.="ISBN13='$fisbn'";
         $arr['13']=$fisbn;
     }
@@ -127,5 +130,24 @@ function ISBNalias($fisbn) {
         }
     }
     return $arr;
+}
+
+/**
+ * Returns formatted ISBN-10 and ISBN-13 data
+ * @param <type> $fisbn ISBN to format (unknown type)
+ * @return <type> formatted ISBN
+ */
+function formatISBN($fisbn) {
+    $isbnarr=ISBNalias($fisbn);
+    $isbn13=$isbnarr['13'];
+    $isbn10=$isbnarr['10'];
+    $isbndata="";
+    if(isset($isbn13) && strlen($isbn13)==13) {
+        $isbndata.="<div class='item-isbn item-info'><p>ISBN-13: $isbn13</p></div>";
+    }
+    if(isset($isbn10) && strlen($isbn10)==10) {
+        $isbndata.="<div class='item-isbn item-info'><p>ISBN-10: $isbn10</p></div>";
+    }
+    return $isbndata;
 }
 ?>
