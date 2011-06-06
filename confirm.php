@@ -79,6 +79,7 @@ if(isset($_POST['new_title'])&&strlen($_POST['new_title'])!=0
         $_GET['message']='Please enter a valid title. ';
         $isbn=$_POST['isbn'];
     }
+    $isbn=$_POST['isbn'];
 } else if(isset($_POST['isbn']) && !isset($_GET['new'])) { //simple confirm
     $isbn=$_POST['isbn'];
     $len=strlen($isbn);
@@ -174,7 +175,7 @@ if($title!="") {?>
     /////////////////////////////////////////////////////////////////////////
     if(!isset($_GET['new'])) { ?>
         <div> <p> The ISBN you entered is not yet in our database.
-                Enter its title here: </p>
+                Enter its title, and its alternate ISBN if it has one: </p>
             <form action="confirm.php" method="post">
                 <table>
                     <tr>
@@ -213,7 +214,7 @@ if($resource) {
                 </table>
                 <p> If you cannot find the course name on the list above, click
                     <a href="newCourse.php" target="_blank">here</a> to add a
-                    new course; afterwards, refresh the page. </p>
+                    new course, and then refresh the page. </p>
                 <input type="hidden" name="isbn" value=<?echo '"'.$isbn.'"';?> />
                 <input type="hidden" name="price" value=<?echo '"'.$_POST['price'].'"';?> />
                 <input type="hidden" name="descr" value=<?echo '"'.$descr.'"';?> />
