@@ -1,6 +1,6 @@
 <?php
 function dump() {
-    require("connect.php");
+    require_once("connect.php");
     connect(false);
     error_reporting(E_ALL); //TODO #set_error_reporting
     ini_set("display_errors", 1);
@@ -63,21 +63,6 @@ function dump() {
 //    	echo 'good';
 //    else
 //    	echo 'error: '. mysql_error();
-    $query="DELETE FROM CMap WHERE ISBN='1111111111333'"; //testdata
-    if(mysql_query($query))
-    	echo 'good';
-    else
-    	echo 'error: '. mysql_error();
-    $query="DELETE FROM Books WHERE ISBN='1111111111333'"; //testdata
-    if(mysql_query($query))
-    	echo 'good';
-    else
-    	echo 'error: '. mysql_error();
-    $query="DELETE FROM Aliases WHERE ISBN13='1111111111333'"; //testdata
-    if(mysql_query($query))
-    	echo 'good';
-    else
-    	echo 'error: '. mysql_error();
 //    $query="DELETE FROM Books WHERE ISBN='978055321247'"; //Frankenstein
 //    if(mysql_query($query))
 //    	echo 'good';
@@ -147,7 +132,7 @@ function dump() {
     $resource=mysql_query($query);
     if($resource) {
         while($row=mysql_fetch_array($resource)) {
-            echo '['.$row['ISBN10'].']' . '<->' . $row['ISBN13'];
+            echo '['.$row['ISBN10'].']' . '<->' . '['.$row['ISBN13'].']';
             echo '<br />';
         }
     } else {
