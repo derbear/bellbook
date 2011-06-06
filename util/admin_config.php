@@ -4,4 +4,5 @@ $PASSWORD='GreenSubsidy_20percent';
 $DATABASE='12_bellbook';
 $ADDRESS='localhost';
 $EDIT='dontkillthefrogs';
+$TEST='TESTINGTESTING123';
 ?>
