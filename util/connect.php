@@ -1,10 +1,5 @@
 <?php function connect($private=false) {
-        //var data
-        $ADMIN='derek.leung12.admin';
-        $PASSWORD='GreenSubsidy_20percent';
-        $DATABASE='12_bellbook';
-        $ADDRESS='localhost';
-
+        require("admin_config.php");
         //connects to database and starts session
         $con=mysql_connect($ADDRESS, $ADMIN, $PASSWORD);
         if(!$con) {

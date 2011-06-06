@@ -142,6 +142,17 @@ function dump() {
     } else {
         echo 'failed';
     }
+    	echo '<b>Aliases/ISBN10<->Aliases/ISBN13</b><br />';
+    $query="SELECT * FROM Aliases";
+    $resource=mysql_query($query);
+    if($resource) {
+        while($row=mysql_fetch_array($resource)) {
+            echo '['.$row['ISBN10'].']' . '<->' . $row['ISBN13'];
+            echo '<br />';
+        }
+    } else {
+        echo 'failed';
+    }
     //$query="INSERT INTO Courses Values('231', 'U.S. History AP', 'Sullivan, Troyan')";
     //if(mysql_query($query)) {
     //    //echo 'success';
@@ -196,5 +207,5 @@ function dump() {
         echo 'failed';
     }
 }
-dump();
+//dump();
 ?>
