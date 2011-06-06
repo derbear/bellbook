@@ -33,9 +33,7 @@ function install($adUser, $adPwd, $adDb, $dbLoc) {
     $LISTING_MAP='TMap (listingId int, studentId int,
         CONSTRAINT listings_map FOREIGN KEY (listingId) REFERENCES Listings(listingId),
         CONSTRAINT users_map FOREIGN KEY (studentId) REFERENCES Users(studentId))';
-    $ALIAS_MAP='Aliases (ISBN10 char(10), ISBN13 char(13),
-        CONSTRAINT short_map FOREIGN KEY (ISBN10) REFERENCES Books(ISBN),
-        CONSTRAINT long_map FOREIGN KEY (ISBN13) REFERENCES Books(ISBN))';
+    $ALIAS_MAP='Aliases (ISBN10 char(10), ISBN13 char(13))';
 
     //delete old tables
     $table1_destroy='DROP TABLE Users';
