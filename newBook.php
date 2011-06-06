@@ -4,6 +4,8 @@ require("util/header.php");
 connect(true);
 if (isset($_POST['isbn'])) {
     $isbn = $_POST['isbn'];
+    if(isset($_POST['alt_isbn']))
+        $alt_isbn=$_POST['alt_isbn'];
     $title = $_POST['new_title'];
     $title = filter_var($title, FILTER_SANITIZE_STRING);
     $isbn=trim($isbn); //TODO standardize trim
@@ -22,6 +24,14 @@ if (isset($_POST['isbn'])) {
     //die('not present '.$isbn);
     if(!$present) {
 		//die('not present');
+        if(isset($alt_isbn)&&strlen($alt_isbn)!=0) {
+            if(!mysql_query("DELETE FROM ALIASES WHERE ISBN13='$isbn'")) {
+                header("Location: newBook.php?message=An error occurred: ".mysql_error());
+            }
+            if(!mysql_query("INSERT INTO Aliases Values('$alt_isbn', '$isbn'")) {
+                header("Location: newBook.php?message=An error occurred: ".mysql_error());
+            }
+        }
         $query="INSERT INTO Books VALUES('$isbn', '$title')";
     } else {
 //        die('present');
@@ -76,6 +86,10 @@ if (isset($_POST['isbn'])) {
                 <table>
                     <tr>
                         <td><b>ISBN</b></td>
+                        <td><input type="isbn" name="isbn" /></td>
+                    </tr>
+                    <tr>
+                        <td><b>Alternate ISBN</b></td>
                         <td><input type="isbn" name="isbn" /></td>
                     </tr>
                     <tr>
