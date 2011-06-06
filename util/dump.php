@@ -4,6 +4,15 @@ function dump() {
     connect(false);
     error_reporting(E_ALL); //TODO #set_error_reporting
     ini_set("display_errors", 1);
+//    $ALIAS_MAP='Aliases (ISBN10 char(10), ISBN13 char(13),
+//        CONSTRAINT short_map FOREIGN KEY (ISBN10) REFERENCES Books(ISBN),
+//        CONSTRAINT long_map FOREIGN KEY (ISBN13) REFERENCES Books(ISBN))';
+//    $table6_create='CREATE TABLE ' . $ALIAS_MAP; //10-13 mappings
+//    if($table6_create) {
+//        echo 'good create';
+//    } else {
+//        echo 'bad create: '.mysql_error();
+//    }
     //if(!mysql_query("UPDATE Books SET title='' WHERE courseId=$cid"))
     //    echo 'bad'.mysql_error().'<br />';
     //if(mysql_query("DROP TABLE CMap")) {
@@ -31,19 +40,19 @@ function dump() {
     //else echo 'bad'.mysql_error();
     //if (mysql_query("DELETE FROM Books")) echo 'good';
     //else echo 'bad'.mysql_error();
-    if(true) {/*
-        while($row=mysql_fetch_array($resource)) {
-            echo $row['ISBN'] . '::' . $row['courseId'] . '::' .
-            $row['required'] . ' ';
-            echo '<br />';
-        }*/
-    } else {
-        echo 'failed';
-    }
+//    if(true) {/*
+//        while($row=mysql_fetch_array($resource)) {
+//            echo $row['ISBN'] . '::' . $row['courseId'] . '::' .
+//            $row['required'] . ' ';
+//            echo '<br />';
+//        }*/
+//    } else {
+//        echo 'failed';
+//    }
     //if(!mysql_query("ALTER TABLE TMap ADD CONSTRAINT users_map FOREIGN KEY Users(studentId) REFERENCES Users(studentId)")) {
     //    die('<br />bad alter'.mysql_error());
     //}
-//    $query="DELETE FROM CMap WHERE ISBN=''"; //testdata
+//    $query="Update Books SET ISBN='9780553212471' WHERE ISBN='978055321247'"; //Frankenstein
 //    if(mysql_query($query))
 //    	echo 'good';
 //    else
@@ -53,17 +62,27 @@ function dump() {
 //    	echo 'good';
 //    else
 //    	echo 'error: '. mysql_error();
-//    $query="DELETE FROM CMap WHERE ISBN='1111111111'"; //testdata
+//    $query="DELETE FROM CMap WHERE ISBN='1234567890'"; //testdata
 //    if(mysql_query($query))
 //    	echo 'good';
 //    else
 //    	echo 'error: '. mysql_error();
-//    $query="DELETE FROM Books WHERE ISBN='1111111111'"; //testdata
+//    $query="DELETE FROM Books WHERE ISBN='978055321247'"; //Frankenstein
 //    if(mysql_query($query))
 //    	echo 'good';
 //    else
 //    	echo 'error: '. mysql_error();
-    //$query="DELETE FROM Courses WHERE courseId='2'";
+//    $query="DELETE FROM Users WHERE studentId='111111'"; //bob
+//    if(mysql_query($query))
+//    	echo 'good';
+//    else
+//    	echo 'error: '. mysql_error();
+//    $query="DELETE FROM Users WHERE studentId='42'"; //bro
+//    if(mysql_query($query))
+//    	echo 'good';
+//    else
+//    	echo 'error: '. mysql_error();
+//    	    //$query="DELETE FROM Courses WHERE courseId='2'";
     //$resource=mysql_query($query);
     //if($resource) {
     ////    while($row=mysql_fetch_array($resource)) {

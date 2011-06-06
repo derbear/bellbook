@@ -33,6 +33,9 @@ function install($adUser, $adPwd, $adDb, $dbLoc) {
     $LISTING_MAP='TMap (listingId int, studentId int,
         CONSTRAINT listings_map FOREIGN KEY (listingId) REFERENCES Listings(listingId),
         CONSTRAINT users_map FOREIGN KEY (studentId) REFERENCES Users(studentId))';
+    $ALIAS_MAP='Aliases (ISBN10 char(10), ISBN13 char(13),
+        CONSTRAINT short_map FOREIGN KEY (ISBN10) REFERENCES Books(ISBN),
+        CONSTRAINT long_map FOREIGN KEY (ISBN13) REFERENCES Books(ISBN))';
 
     //delete old tables
     $table1_destroy='DROP TABLE Users';
@@ -41,7 +44,9 @@ function install($adUser, $adPwd, $adDb, $dbLoc) {
     $table4_destroy='DROP TABLE Listings';
     $table5_destroy='DROP TABLE CMap';
     $table6_destroy='DROP TABLE TMap';
+    $table7_destroy='DROP TABLE Aliases';
     $success=mysql_select_db($DATABASE);
+    $success=mysql_query($table7_destroy) && $success;
     $success=mysql_query($table6_destroy) && $success;
     $success=mysql_query($table5_destroy) && $success;
     $success=mysql_query($table4_destroy) && $success;
@@ -61,6 +66,7 @@ function install($adUser, $adPwd, $adDb, $dbLoc) {
     $table4_create='CREATE TABLE ' . $COURSE;
     $table5_create='CREATE TABLE ' . $COURSE_BOOK_MAP;
     $table6_create='CREATE TABLE ' . $LISTING_MAP;
+    $table6_create='CREATE TABLE ' . $ALIAS_MAP;
     
     if (!(mysql_select_db($DATABASE)
             && mysql_query($table1_create)
@@ -69,6 +75,7 @@ function install($adUser, $adPwd, $adDb, $dbLoc) {
             && mysql_query($table4_create)
             && mysql_query($table5_create)
             && mysql_query($table6_create)
+            && mysql_query($table7_create)
             ))
         die('Failed to initialize database: ' . mysql_error());
     echo '<div> <em> Database successfully created </em> </div>';
