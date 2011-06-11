@@ -8,7 +8,20 @@ require_once("../../util/connect.php");
 connect(false);
 error_reporting(E_ALL); //TODO #set_error_reporting
 ini_set("display_errors", 1);
-
+mysql_select_db('12_bellbook');
+$REQUEST='Requests (studentId int, ISBN char(13), courseId int, descr text,
+    price float(99, 2), post date, filled int)';
+$table8_create='CREATE TABLE ' . $REQUEST;
+if(mysql_query($table8_create)) {
+    echo 'good';
+} else {
+    echo 'bad: ' .mysql_error();
+}
+//$query="ALTER TABLE Listings ADD completed int";
+//if(mysql_query($query))
+//    echo 'good';
+//else
+//    echo 'error: '. mysql_error();
 //$query="UPDATE Listings SET ISBN='0030565448' WHERE ISBN='0-03-056544-8'";
 //if(mysql_query($query))
 //    echo 'good';
