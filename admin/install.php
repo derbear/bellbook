@@ -35,7 +35,7 @@ function install($adUser, $adPwd, $adDb, $dbLoc) {
         CONSTRAINT users_map FOREIGN KEY (studentId) REFERENCES Users(studentId))';
     $ALIAS_MAP='Aliases (ISBN10 char(10), ISBN13 char(13))';
     $REQUEST='Requests (studentId int, ISBN char(13), courseId int, descr text,
-        price float(99, 2), post date, filled int,)';
+        price float(99, 2), post date, filled int)';
 
     //delete old tables
     $table1_destroy='DROP TABLE Users';
