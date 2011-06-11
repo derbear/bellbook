@@ -14,21 +14,21 @@ ini_set("display_errors", 1);
 //    echo 'good';
 //else
 //    echo 'error: '. mysql_error();
-$query="DELETE FROM CMap WHERE ISBN='1111111111333'"; //testdata
-if(mysql_query($query))
-    echo 'good';
-else
-    echo 'error: '. mysql_error();
-$query="DELETE FROM Books WHERE ISBN='1111111111333'"; //testdata
-if(mysql_query($query))
-    echo 'good';
-else
-    echo 'error: '. mysql_error();
-$query="DELETE FROM Aliases WHERE ISBN13='1111111111333'"; //testdata
-if(mysql_query($query))
-    echo 'good';
-else
-    echo 'error: '. mysql_error();
+//$query="DELETE FROM CMap WHERE ISBN='1111111111333'"; //testdata
+//if(mysql_query($query))
+//    echo 'good';
+//else
+//    echo 'error: '. mysql_error();
+//$query="DELETE FROM Books WHERE ISBN='1111111111333'"; //testdata
+//if(mysql_query($query))
+//    echo 'good';
+//else
+//    echo 'error: '. mysql_error();
+//$query="DELETE FROM Aliases WHERE ISBN13='1111111111333'"; //testdata
+//if(mysql_query($query))
+//    echo 'good';
+//else
+//    echo 'error: '. mysql_error();
 //$query="SELECT * FROM Books";
 //$resource=mysql_query($query);
 //while($row=mysql_fetch_array($resource)) {
@@ -75,6 +75,23 @@ else
 //    $query="INSERT INTO Aliases Values('$isbn10', '$isbn13')";
 //    if(!mysql_query($query)) {
 //        echo 'Error: ' .mysql_error();
+//    }
+//}
+//$query="SELECT * FROM Books";
+//$resource=mysql_query($query);
+//while($row=mysql_fetch_array($resource)) {
+//    $isbn=$row['ISBN'];
+//    $original=$isbn;
+//    if(strlen($isbn)==10) {
+//        $resource2=mysql_query("SELECT * FROM Aliases WHERE ISBN10='$isbn'");
+//        while($row2=mysql_fetch_array($resource2)) {
+//            if(strlen($row2['ISBN13'])==13) {
+//                $isbn=$row2['ISBN13'];
+//            }
+//        }
+//    }
+//    if($isbn!=$original) {
+//        $resource3=mysql_query("DELETE FROM Books WHERE ISBN='$original'");
 //    }
 //}
 dump();

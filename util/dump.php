@@ -173,7 +173,7 @@ function dump() {
     $resource=mysql_query($query);
     if($resource) {
         while($row=mysql_fetch_array($resource)) {
-            echo $row['listingId'] . '::' .$row['ownerId'] . '::' . $row['ISBN'];
+            echo $row['post'].'::'.$row['listingId'] . '::' .$row['ownerId'] . '::' . $row['ISBN'];
             echo '<br />';
         }
     } else {
