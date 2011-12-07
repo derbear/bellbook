@@ -58,6 +58,15 @@ if($resource) {
                     $row2['studentId'], $row2['firstName'],
                     $row2['lastName']);
             echo $newcode;
+			if(false) {//$_SESSION['id']==212189) { //TODO permissions
+				?>
+				<form action="util/removeBook.php" method="post">
+					<input type="hidden" name='id' value=<? echo '"' .
+						$row['listingId'] . '"' ?> />
+                    <input type="submit" value="Remove" />
+				</form>
+				<?
+			}
             if(isset($_SESSION['id'])) { ?>
 		<form action="util/trackBook.php" method="post">
             <input type="hidden" name='list_id' value=<? echo '"' .

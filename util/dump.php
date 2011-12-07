@@ -88,7 +88,6 @@ function dump() {
     ////    }
     //} else {
     //    echo 'failed';
-    
 	echo '<b>Users/studentId->Users/lastName, Users/firstName</b><br />';
     $query="SELECT * FROM Users";
     $resource=mysql_query($query);
