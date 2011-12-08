@@ -1,5 +1,5 @@
 <?php function connect($private=false) {
-		require("admin_config.php");
+		require("./admin/admin_config.php");
 
         //connects to database and starts session
 		//$USER='derek.leung12.admin';
