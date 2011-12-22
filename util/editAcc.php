@@ -57,4 +57,3 @@
         }
     }
     header('Location: ../myAccount.php?message='.$msg);
-?>

@@ -1,8 +1,7 @@
 <?php
-$USER='derek.leung12.admin';
-$PASSWORD='GreenSubsidy_20percent';
-$DATABASE='12_bellbook';
+$USER='root';
+$PASSWORD='';
+$DATABASE='bellbooki';
 $ADDRESS='localhost';
 $EDIT='dontkillthefrogs';
 $TEST='TESTINGTESTING123';
-?>

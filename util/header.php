@@ -70,4 +70,4 @@ function print_header($custom_msg=null) { global $pagetitle;?>
 ?>
 <!--//header-->
 <!--page content-->
-<? } ?>
+<? } 

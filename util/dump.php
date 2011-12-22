@@ -191,5 +191,3 @@ function dump() {
         echo 'failed';
     }
 }
-//dump();
-?>

@@ -17,4 +17,3 @@ if(isset($_GET['name'])) {
 </form>
 <?
 }
-?>

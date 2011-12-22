@@ -24,5 +24,3 @@
 //        echo '1';
     }
     header("Location: ../trackedBooks.php");
-
-?>

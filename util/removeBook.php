@@ -23,5 +23,3 @@
 //        echo 'success';
 //    else
 //        echo mysql_error();
-
-?>

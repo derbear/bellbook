@@ -25,6 +25,3 @@
             Derek Leung. Error message: '.mysql_error();
     header("Location: ../myBooks.php?message=".$msg);
     
-
-
-?>

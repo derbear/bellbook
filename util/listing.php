@@ -150,4 +150,3 @@ function formatISBN($fisbn) {
     }
     return $isbndata;
 }
-?>
