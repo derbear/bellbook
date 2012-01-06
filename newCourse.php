@@ -10,7 +10,7 @@ connect(true);
     </head>
     <body>
         <? print_header(); ?>
-        <h2>Add a course</h2>
+        <div id="content-title"><h2>Add a course</h2></div>
         <div>
             <form action="util/addCourse.php" method="post" >
                 <table>
@@ -27,7 +27,7 @@ connect(true);
 </html>
 
 <!--
-    Authors: Derek Leung, David Byrd
+    Authors: Derek Leung
     Project BellBook - 1.0
     Bellarmine College Preparatory, 2011
 -->

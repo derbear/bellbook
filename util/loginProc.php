@@ -48,10 +48,3 @@
         //}
         header("Location: ../index.php?message=Welcome, " . $_SESSION['firstname']);
     }
-?> <!--
-<html>
-    <head>
-    <title>Login </title>
-    </head>
-    <body>
-</html> -->

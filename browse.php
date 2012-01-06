@@ -1,4 +1,4 @@
-<? require("util/header.php");
+<?php require("util/header.php");
 $criterion='title';
 $direction='ASC';
 $page_num=1;
@@ -23,11 +23,12 @@ $pos=(($page_num - 1) * $per_page);
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="style.css" />
-        <title>Browse for books</title>
+        <title>Browse for books</title><?php $pagetitle = 'Browse books'; ?>
     </head>
     <body>
         <? print_header(); ?>
-        <h2>Browse books</h2>
+        <div id="content-title"><h2>Browse Books</h2></div> 
+		<hr class="title-line"/>
 <?php
 require_once("util/connect.php");
 require_once("util/listing.php");
@@ -36,12 +37,15 @@ $query='SELECT * FROM Books ORDER BY '.$criterion .' ' .$direction .
 " LIMIT " . $pos . ", " . $per_page. "";
 $resource=mysql_query($query);
 if($resource) {
+	$i=0;
     while($row=mysql_fetch_array($resource)) {
-            echo '<hr />';
-            echo generateListing_B($row['ISBN'], $row['title'],
-                    mappedClasses($row['ISBN']));
-            ?><p><? echo '<a href=offers.php?isbn='.
-            $row['ISBN'].'>See offers</a>' ?></p><?
+    		$addClass = "";
+            $i++; if ($i%2==0) $addClass = " color2"; //alternate colors in display
+            $isbn=$row['ISBN'];
+            $offerbutton = "<p class='offers'><a href=offers.php?isbn=$isbn>See offers</a></p>";
+            $newcode = "<div class='item$addClass'>" . generateListing_B($isbn, $row['title'],
+                    mappedClasses($row['ISBN'])) . $offerbutton . '</div>';
+            echo $newcode;   
     }
 } else {
     echo mysql_error();
@@ -52,7 +56,7 @@ if($resource) {
 </html>
 
 <!--
-    Authors: Derek Leung, David Byrd
+    Authors: Derek Leung, Ben Chan
     Project BellBook - 1.0
     Bellarmine College Preparatory, 2011
 -->

@@ -1,7 +1,12 @@
 <?php function connect($private=false) {
+		require("admin_config.php");
+
         //connects to database and starts session
-        require("dbConfig.php");
-        $con=mysql_connect($ADDRESS, $ADMIN, $PASSWORD);
+		//$USER='derek.leung12.admin';
+		//$PASSWORD='GreenSubsidy_20percent';
+		//$DATABASE='12_bellbook';
+		//$ADDRESS='localhost';
+        $con=mysql_connect($ADDRESS, $USER, $PASSWORD);
         if(!$con) {
             //echo 'bad connection';
             //echo mysql_error();
@@ -33,4 +38,3 @@
             $value=filter_var($value, FILTER_SANITIZE_STRING);
         }
     }
-?>

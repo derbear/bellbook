@@ -10,7 +10,7 @@ connect(true);
     </head>
     <body>
         <? print_header(); ?>
-        <h2> Account info </h2>
+        <div id="content-title"><h2> Account info </h2></div>
         <form action='util/editAcc.php' method='post' name='accountInfo'
               id='accountInfo'> 
             <table>
@@ -52,7 +52,7 @@ connect(true);
 </html>
 
 <!--
-    Authors: Derek Leung, David Byrd
+    Authors: Derek Leung
     Project BellBook - 1.0
     Bellarmine College Preparatory, 2011
 -->

@@ -11,7 +11,8 @@
         <? require_once("util/connect.php");
         connect(false);
            require("util/listing.php");?>
-        <h2>Search results:</h2>
+        <div id="content-title"><h2>Search results:</h2></div>
+        <hr class="title-line"/>
         <?php
         //TODO approximations
         $sid=$_GET['query'];
@@ -28,6 +29,7 @@ UNION
 //        echo $query . '::';
         $resource=mysql_query($query);
         if($resource) {
+        	$i=0;
             while($row=mysql_fetch_array($resource)) {
                 //fetch owner info
                 $owner=$row['ownerId'];
@@ -35,18 +37,20 @@ UNION
                 $resource2=mysql_query($query_owner);
                 if($resource2) {
                     $row2=mysql_fetch_array($resource2);
-                    echo '<hr />';
-//                    echo 't1 <br />';
-                    echo generateListing_S($row['ISBN'], mappedTitle($row['ISBN']),
+                    $addClass = "";
+		            $i++; if ($i%2==0) $addClass = " color2"; //alternate colors in display
+		            $newcode = "<div class='item$addClass'>" . generateListing_S($row['ISBN'], mappedTitle($row['ISBN']),
                             $row['price'], $row['post'], $row['descr'],
                             $row2['email'], $row2['studentId'], $row2['firstName'],
-                            $row2['lastName']); ?>
+                            $row2['lastName']);
+		            echo $newcode;
+		            ?>
 <form action="util/trackBook.php" method="post">
             <input type="hidden" name='list_id' value=<? echo '"' .
             $row['listingId'] . '"' ?> />
             <input type="hidden" name='oper' value='1' />
-            <input type="submit" value="Track" />
-        </form> <?
+            <input type="submit" value="Track" class="track"/>
+        </form></div> <?
                 }
             }
         }
@@ -78,7 +82,7 @@ UNION
 </html>
 
 <!--
-    Authors: Derek Leung, David Byrd
+    Authors: Derek Leung, Ben Chan
     Project BellBook - 1.0
     Bellarmine College Preparatory, 2011
 -->

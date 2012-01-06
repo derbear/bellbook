@@ -10,4 +10,3 @@ if(mysql_query($query)) {
 } else {
     header('Location: ../newCourse.php?message=Course addition unsuccessful');
 }
-?>

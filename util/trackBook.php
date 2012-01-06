@@ -1,6 +1,4 @@
 <?php
-    error_reporting(E_ALL); //TODO #set_error_reporting
-    ini_set("display_errors", 1);
     $private=true;
     require_once("connect.php");
     connect(true);
@@ -26,5 +24,3 @@
 //        echo '1';
     }
     header("Location: ../trackedBooks.php");
-
-?>

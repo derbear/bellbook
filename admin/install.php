@@ -28,11 +28,14 @@ function install($adUser, $adPwd, $adDb, $dbLoc) {
         CONSTRAINT course_map FOREIGN KEY (courseId) REFERENCES Courses(courseId))';
     //optional: 1 for required, 0 for optional
     $LISTING='Listings (listingId int NOT NULL AUTO_INCREMENT, ownerId int, ISBN char(13),
-        descr text, price float(99, 2), post date, PRIMARY KEY (listingId),
+        descr text, price float(99, 2), post date, completed int, PRIMARY KEY (listingId),
         FOREIGN KEY (ownerId) REFERENCES Users (studentId))';
     $LISTING_MAP='TMap (listingId int, studentId int,
         CONSTRAINT listings_map FOREIGN KEY (listingId) REFERENCES Listings(listingId),
         CONSTRAINT users_map FOREIGN KEY (studentId) REFERENCES Users(studentId))';
+    $ALIAS_MAP='Aliases (ISBN10 char(10), ISBN13 char(13))';
+    $REQUEST='Requests (studentId int, ISBN char(13), courseId int, descr text,
+        price float(99, 2), post date, filled int)';
 
     //delete old tables
     $table1_destroy='DROP TABLE Users';
@@ -41,7 +44,11 @@ function install($adUser, $adPwd, $adDb, $dbLoc) {
     $table4_destroy='DROP TABLE Listings';
     $table5_destroy='DROP TABLE CMap';
     $table6_destroy='DROP TABLE TMap';
+    $table7_destroy='DROP TABLE Aliases';
+    $table8_destroy='DROP TABLE Requests';
     $success=mysql_select_db($DATABASE);
+    $success=mysql_query($table8_destroy) && $success;
+    $success=mysql_query($table7_destroy) && $success;
     $success=mysql_query($table6_destroy) && $success;
     $success=mysql_query($table5_destroy) && $success;
     $success=mysql_query($table4_destroy) && $success;
@@ -61,6 +68,8 @@ function install($adUser, $adPwd, $adDb, $dbLoc) {
     $table4_create='CREATE TABLE ' . $COURSE;
     $table5_create='CREATE TABLE ' . $COURSE_BOOK_MAP;
     $table6_create='CREATE TABLE ' . $LISTING_MAP;
+    $table7_create='CREATE TABLE ' . $ALIAS_MAP;
+    $table8_create='CREATE TABLE ' . $REQUEST;
     
     if (!(mysql_select_db($DATABASE)
             && mysql_query($table1_create)
@@ -69,6 +78,8 @@ function install($adUser, $adPwd, $adDb, $dbLoc) {
             && mysql_query($table4_create)
             && mysql_query($table5_create)
             && mysql_query($table6_create)
+            && mysql_query($table7_create)
+            && mysql_query($table8_create)
             ))
         die('Failed to initialize database: ' . mysql_error());
     echo '<div> <em> Database successfully created </em> </div>';
@@ -77,5 +88,3 @@ error_reporting(E_ALL); //TODO #set_error_reporting
 ini_set("display_errors", 1); 
 include("admin_config.php");
 install($USER, $PASSWORD, $DATABASE, $ADDRESS);
-
-?>

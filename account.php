@@ -57,18 +57,23 @@ if($firstname=="" || !isset($_GET['id'])) {
             if(!$resource) {
                 echo 'Error: ' . mysql_error();
             }
+            echo '<hr class="title-line"/>';
+            $i=0; // this code is similar to that in browse.php and trackedBooks. One day we should make a function that does it
             while ($row=mysql_fetch_array($resource)) {
-                echo '<hr />';
-                echo generateListing($row['ISBN'], mappedTitle($row['ISBN']), $row['price'],
-                        $row['post'], $row['descr']); ?>
-            <?}
+	            $addClass = "";
+	            $i++; if ($i%2==0) $addClass = " color2"; //alternate colors in display
+	            $newcode = "<div class='item$addClass'>" . generateListing($row['ISBN'], 
+	            		mappedTitle($row['ISBN']), $row['price'],
+                        $row['post'], $row['descr']) . "</div>";
+	            echo $newcode;
+	        }
         ?>
         <? require("util/footer.php"); ?>
     </body>
 </html>
 
 <!--
-    Authors: Derek Leung, David Byrd
+    Authors: Derek Leung
     Project BellBook - 1.0
     Bellarmine College Preparatory, 2011
 -->

@@ -4,12 +4,15 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="style.css" />
-        <title>Course Lookup</title>
+        <title>Course Lookup</title><?php $pagetitle = 'Browse courses'; ?>
     </head>
     <body>
         <? print_header(); ?>
-        <h2>Find course information</h2>
-        <div> <p> Select a course from the list below: </p> </div>
+        <div id="content-title"><h2>Find course information</h2></div>
+        <div> <p> Here you can find book information for courses that you are 
+                planning to take. Remember to verify any information you see
+                displayed here. <br />
+                Select a course from the list below: </p> </div>
         <? require("util/listing.php"); ?>
         <form action="course.php" method="get">
             <select name="id">
@@ -33,7 +36,7 @@ if($resource) {
 </html>
 
 <!--
-    Authors: Derek Leung, David Byrd
+    Authors: Derek Leung
     Project BellBook - 1.0
     Bellarmine College Preparatory, 2011
 -->
