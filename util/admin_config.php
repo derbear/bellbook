@@ -1,7 +1,7 @@
 <?php
 $USER='root';
 $PASSWORD='';
-$DATABASE='bellbooki';
+$DATABASE='12_bellbook';
 $ADDRESS='localhost';
 $EDIT='dontkillthefrogs';
 $TEST='TESTINGTESTING123';

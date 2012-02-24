@@ -1,6 +1,6 @@
 <?php
-$USER='databse_username_here';
-$PASSWORD='database_password_here';
-$DATABASE='database_name_here';
+$USER='root';
+$PASSWORD='';
+$DATABASE='12_bellbook';
 $ADDRESS='localhost';
 $EDIT='dontkillthefrogs';

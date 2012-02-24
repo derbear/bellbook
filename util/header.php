@@ -9,12 +9,22 @@ function print_header($custom_msg=null) { global $pagetitle;?>
 
 <!--login info, header, top bar-->
 <!-- jquery -->
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
 <script type="text/javascript" src="includes/extras.js"></script>
+<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.8.18.custom.css" />
+<script>
+    $(function() {
+            $("#search-box").autocomplete({
+                source: "autocomplete.php",
+                minLength: 2
+            });
+        });
+</script>
 <div id="my-info">
 	<div id="logo-container"><p><a href="index.php">bellbook</a></p></div>
 	<form action='search.php' method='get' name='Search' id='search'>
-		<input type='text' name="query" id='search-box'> <input type='submit' id='submit' value='Search Books' >
+		<input type='text' name="query" id='search-box' /> <input type='submit' id='submit' value='Search Books' />
 	</form>
 	<ul id="login-info">
 	<?php
