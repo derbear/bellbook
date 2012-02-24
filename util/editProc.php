@@ -7,6 +7,7 @@ if (strcmp($_POST['password'], 'dontkillthefrogs') != 0
         || $_FILES["file"]["error"] > 0)
   {
   echo "Error: " . $_FILES["file"]["error"] . "<br />";
+  echo strcmp($_POST['password'], 'dontkillthefrogs');
   }
 else
   {
