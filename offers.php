@@ -7,6 +7,15 @@ $isbn=filter_var($isbn, FILTER_SANITIZE_STRING);
 connect(false);
 require_once("util/listing.php");
 $title=mappedTitle($isbn);
+$page_num = 1;
+$per_page = 10;
+if(isset($_GET['page'])) {
+    $page_num=$_GET['page'];
+}
+if(isset($_GET['num'])) {
+    $per_page=$_GET['num'];
+}
+$pos=(($page_num - 1) * $per_page);
 //if($title=="") {
 //    header("Location: index.php?message=Invalid ISBN");
 //}
@@ -35,6 +44,7 @@ if(!$all)
     $query="SELECT * FROM Listings WHERE ISBN='$isbn' ORDER BY Price ASC";
 else
     $query="SELECT * FROM Listings ORDER BY post DESC";
+$query.= " LIMIT " . $pos . ", " . $per_page . "";
 $resource=mysql_query($query);
 if($resource) {
 	$i=0;
@@ -77,6 +87,12 @@ if($resource) {
         	} ?></div><?
         }
     }
+    $isbn_str = "";
+    if(isset($_GET['isbn'])) {
+        $isbn_str = "&isbn=" . $isbn;
+    }
+    echo "<div class='item-seller item-info'>"; // temporary formatting - might want a separate class for this
+    echo "<a href='offers.php?page=" . ($page_num+1) . "&num=" . $per_page . $isbn_str ."'>More</a> </div>";
 }
 ?>
         <? require("util/footer.php"); ?>

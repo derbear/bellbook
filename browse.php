@@ -3,7 +3,7 @@ $criterion='title';
 $direction='ASC';
 $page_num=1;
 //$per_page=10; //default
-$per_page=111111111111;
+$per_page=10;
 if(isset($_GET['sort'])) {
     $criterion=$_GET['sort'];
 }
@@ -47,6 +47,8 @@ if($resource) {
                     mappedClasses($row['ISBN'])) . $offerbutton . '</div>';
             echo $newcode;   
     }
+    echo "<div class='item-seller item-info'>"; // temporary formatting - might want a separate class for this
+    echo "<a href='browse.php?page=" . ($page_num+1) . "&num=" . $per_page . "'>More</a> </div>";
 } else {
     echo mysql_error();
 }
