@@ -41,9 +41,10 @@ $pos=(($page_num - 1) * $per_page);
         <hr class="title-line"/>
 <?php
 if(!$all)
-    $query="SELECT * FROM Listings WHERE ISBN='$isbn' ORDER BY Price ASC";
+    $crit = "FROM Listings WHERE ISBN='$isbn' ORDER BY Price ASC";
 else
-    $query="SELECT * FROM Listings ORDER BY post DESC";
+    $crit = "FROM Listings ORDER BY post DESC";
+$query="SELECT * " . $crit;
 $query.= " LIMIT " . $pos . ", " . $per_page . "";
 $resource=mysql_query($query);
 if($resource) {
@@ -87,12 +88,19 @@ if($resource) {
         	} ?></div><?
         }
     }
-    $isbn_str = "";
-    if(isset($_GET['isbn'])) {
-        $isbn_str = "&isbn=" . $isbn;
+    $resource2 = mysql_query("SELECT COUNT(*) " . $crit);
+    if($resource2) {
+        $total_r = mysql_fetch_row($resource2);
+        $total = $total_r[0];
+        if($total - $per_page > $pos) {
+            $isbn_str = "";
+            if(isset($_GET['isbn'])) {
+                $isbn_str = "&isbn=" . $isbn;
+            }
+            echo "<div class='item-seller item-info'>"; // temporary formatting - might want a separate class for this
+            echo "<a href='offers.php?page=" . ($page_num+1) . "&num=" . $per_page . $isbn_str ."'>More</a> </div>";
+        }
     }
-    echo "<div class='item-seller item-info'>"; // temporary formatting - might want a separate class for this
-    echo "<a href='offers.php?page=" . ($page_num+1) . "&num=" . $per_page . $isbn_str ."'>More</a> </div>";
 }
 ?>
         <? require("util/footer.php"); ?>
