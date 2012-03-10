@@ -36,7 +36,10 @@ class BrowseController extends BBLoggedInFrontendController
 		
 		$this->pageTitle = $searchParams['searchInput'];
 
-		$this->render('search');
+		$this->render('search', array(
+			'searchResults'=>$this->_generateBrowseBookList($searchParams), /*CActiveDataProvide*/
+			'searchInput'=>$searchParams, // so user can see what was searched
+		));
 	}
 
 	// Uncomment the following methods and override them if needed
@@ -65,4 +68,24 @@ class BrowseController extends BBLoggedInFrontendController
 		);
 	}
 	*/
+	
+	
+	/* Private functions for listing */
+	
+	/**
+	 * _generateBrowseBookList generates a list of books from which user selects a book to buy..
+	 * 
+	 * @access private
+	 * @param BrowseForm $searchParams the params for which 
+	 * 		we should generate a searchmodel and from that a provider
+	 * @return CActiveDataProvider with search results
+	 */
+	private function _generateBrowseBookList($searchParams) {
+		// translate the BrowseForm ($searchParams) into a tangible Book Model
+		$searchModel = $searchParams->createCorrespondingBookModelForSearch();
+		
+		// get the list from the searchModel
+		return $searchModel->search();
+	}
+	
 }

@@ -1,3 +1,11 @@
+<?php
+
+/* Benjamin Chan
+ *
+ * Layout for use with BBFrontendControllers only
+ */
+
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -31,12 +39,13 @@
 		<form id="search-form" action="<?php echo $this->createUrl("browse/search"); ?>" method="get">
 			<input id="search-bar" type="text" value="<?php echo $this->pageTitle; ?>" name="BrowseForm[searchInput]"/>
 			<input id="search-icon"  type="submit" value=""/>
+			<input id="search-sort-by" type="hidden" name="Book_sort" value="title" /> <!-- specify default search -->
 		</form>
 		<div id="menu-and-options">
-			<div id="page-options">
-				Sort by: <a class="selected" href="">relevance</a> <a href="">seller</a> <a href="">date</a>
-			</div>
+			
 			<?php
+			
+			echo $this->htmlOptions;
 			
 			/*$this->widget('zii.widgets.CMenu', array(
 				'items'=>$this->menu,
@@ -78,7 +87,7 @@
 </div> <!-- end content -->
 
 <div id="footer">
-	Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
+	Copyright &copy; <?php echo date('Y'); ?> by My Company.
 	All Rights Reserved.<br/>
 </div><!-- footer -->
 

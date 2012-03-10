@@ -60,7 +60,7 @@ class BBLoggedInFrontendController extends BBFrontendController
 				<li><a href="{$this->createUrl('site/logout')}">Log Out</a></li>
 			</ul>
 		</li>
-		<li><a id="title-logo" href="">BellBook</a></li>
+		<li><a id="title-logo" href="{$this->createUrl('browse/')}">BellBook</a></li>
 	</ul>
 	
 VEV;

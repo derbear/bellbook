@@ -15,6 +15,7 @@ class BBFrontendController extends Controller
 	 */
 	public $menu=array();
 	public $htmlMenu; /*plain text non-widget menu outputted in main layout */
+	public $htmlOptions = ""; /*plain text non-widget menu of options (e.g. sorting) to be displayed in menu bar (in main layout)*/
 	
 	/**
 	 * @var bool whether this controller is "logged in" or not. Defaults to false.

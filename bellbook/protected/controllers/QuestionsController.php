@@ -1,6 +1,6 @@
 <?php
 
-class QuestionsController extends Controller
+class QuestionsController extends BBUnknownFrontendController
 {
 	public function actionAbout()
 	{

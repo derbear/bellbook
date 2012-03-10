@@ -15,6 +15,7 @@ class BBAdminController extends Controller
 	 * @var array context menu items. This property will be assigned to {@link CMenu::items}.
 	 */
 	public $menu=array();
+	public $htmlMenu; /*plain text non-widget menu outputted in main layout */
 	/**
 	 * @var array the breadcrumbs of the current page. The value of this property will
 	 * be assigned to {@link CBreadcrumbs::links}. Please refer to {@link CBreadcrumbs::links}

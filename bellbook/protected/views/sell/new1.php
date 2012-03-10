@@ -119,11 +119,6 @@ Or Create A Book if One Doesn't Already Exist Already in our Database
 	</div>
 	
 	
-	<div class="row">
-		<?php echo $form->labelEx($createModel,'course_id'); ?>
-		<?php echo $form->textField($createModel,'course_id'); ?>
-		<?php echo $form->error($createModel,'course_id'); ?>
-	</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($createModel->isNewRecord ? 'Create' : 'Save'); ?>

@@ -186,26 +186,46 @@ N8B
 
 <<<N8B
 
+CREATE  TABLE IF NOT EXISTS {{nm_course_book_map}} (
+  `course_id` INT NOT NULL ,
+  `book_id` INT NOT NULL ,
+  PRIMARY KEY (`course_id`, `book_id`) ,
+  INDEX `fk_course` (`course_id` ASC) ,
+  INDEX `fk_book` (`book_id` ASC) ,
+  CONSTRAINT `fk_course0`
+    FOREIGN KEY (`course_id` )
+    REFERENCES `course` (`course_id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_book0`
+    FOREIGN KEY (`book_id` )
+    REFERENCES `book` (`book_id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_unicode_ci;
+
+
+N8B
+
+,
+
+<<<N8B
+
 CREATE  TABLE IF NOT EXISTS {{book}} (
   `book_id` INT NOT NULL AUTO_INCREMENT ,
   `title` VARCHAR(255) NULL ,
-  `course_id` INT NULL ,
   `ISBN` VARCHAR(45) NULL ,
   `author_firstname` VARCHAR(60) NULL ,
   `author_lastname` VARCHAR(60) NULL ,
   `publisher` VARCHAR(128) NULL ,
   `year_published` SMALLINT NULL ,
   `place_published` VARCHAR(45) NULL ,
-  `other_data` VARCHAR(45) NULL ,
-  `image_url` TEXT NULL ,
+  `other_data` VARCHAR(45) NULL COMMENT 'editors, translators, resources, etc.' ,
+  `image_url` TEXT NULL COMMENT 'url to the image relative to installation\'s resource directory, or from the web?' ,
   PRIMARY KEY (`book_id`) ,
-  INDEX `fk_book_course` (`course_id` ASC) ,
-  INDEX `isbn` (`ISBN` ASC) ,
-  CONSTRAINT `fk_book_course`
-    FOREIGN KEY (`course_id` )
-    REFERENCES {{course}} (`course_id` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  INDEX `isbn` (`ISBN` ASC) )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_unicode_ci;
@@ -527,7 +547,9 @@ N8B
 							"DROP TABLE IF EXISTS {{sell_offer}}",
 							"DROP TABLE IF EXISTS {{book}}",
 							"DROP TABLE IF EXISTS {{course}}",
-							"DROP TABLE IF EXISTS {{user}}"
+							"DROP TABLE IF EXISTS {{user}}",
+							"DROP TABLE IF EXISTS {{nm_course_book_map}}"
+
 							);
 	
 		try {

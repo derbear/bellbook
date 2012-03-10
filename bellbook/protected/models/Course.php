@@ -59,7 +59,7 @@ class Course extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'books' => array(self::HAS_MANY, 'Book', 'course_id'),
+			'books' => array(self::MANY_MANY, 'Book', '{{nm_course_book_map}}(course_id, book_id)'),
 			'followingUsers' => array(self::MANY_MANY, 'User', '{{followed_course_map}}(followed_id, user_id)'),
 			'myInstructors' => array(self::MANY_MANY, 'Instructor', '{{nm_course_instructor_map}}(course_id, instructor_id)'),
 		);

@@ -6,7 +6,6 @@
  * The followings are the available columns in table '{{book}}':
  * @property integer $book_id
  * @property string $title
- * @property integer $course_id
  * @property string $ISBN (13 - 10 is being phased out)
  * @property string $author_firstname
  * @property string $author_lastname
@@ -17,7 +16,7 @@
  * @property string $image_url
  *
  * The followings are the available model relations:
- * @property Course $course
+ * @property Course[] $courses
  * @property User[] $followingUsers
  * @property SellOffer[] $sellOffers
  *
@@ -30,6 +29,7 @@ class Book extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
+	 * @param string $className active record class name
 	 * @return Book the static model class
 	 */
 	public static function model($className=__CLASS__)
@@ -58,7 +58,7 @@ class Book extends CActiveRecord
 			array('book_id', 'numerical', 'integerOnly'=>true, 'allowEmpty'=>false, 'on'=>'reference'),
 			array('book_id', 'exist', 'on'=>'reference'),
 			array('ISBN, title, author_firstname, author_lastname, publisher, year_published', 'required', 'on'=>'new'),
-			array('course_id, year_published', 'numerical', 'integerOnly'=>true),
+			array('year_published', 'numerical', 'integerOnly'=>true),
 			array('title', 'length', 'max'=>255),
 			array('ISBN, place_published, other_data', 'length', 'max'=>45),
 			array('author_firstname, author_lastname', 'length', 'max'=>60),
@@ -66,7 +66,7 @@ class Book extends CActiveRecord
 			array('image_url', 'url'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('title, course_id, ISBN, author_firstname, author_lastname, publisher, year_published, place_published', 'safe', 'on'=>'search'),
+			array('title, book_id, ISBN, author_firstname, author_lastname, publisher, year_published, place_published', 'safe', 'on'=>'search'),
 		);
 	}
 	
@@ -171,7 +171,7 @@ class Book extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'course' => array(self::BELONGS_TO, 'Course', 'course_id'),
+			'courses' => array(self::MANY_MANY, 'Course', '{{nm_course_book_map}}(book_id, course_id)'),
 			'followingUsers' => array(self::MANY_MANY, 'User', '{{followed_book_map}}(followed_id, user_id)'),
 			'sellOffers' => array(self::HAS_MANY, 'SellOffer', 'book_id', 'index'=>'sell_offer_id'), //so sellOffers[0] becomes the sell offer w/ pk 0 that we have
 		);
@@ -185,10 +185,9 @@ class Book extends CActiveRecord
 		return array(
 			'book_id' => 'Book ID',
 			'title' => 'Title',
-			'course_id' => 'Course',
 			'ISBN' => 'ISBN',
 			'author_firstname' => 'Author Firstname',
-			'author_lastname' => 'Author Lastname',
+			'author_lastname' => 'Author',
 			'publisher' => 'Publisher',
 			'year_published' => 'Year Published',
 			'place_published' => 'Place Published',
@@ -211,13 +210,12 @@ class Book extends CActiveRecord
 		// load relations
 		$criteria->with = array(
 			'sellOffers',
-			'course',
+			'courses',
 		);
 		
 		// generate WHERE clauses
 		//$criteria->compare('book_id',$this->book_id);
 		$criteria->compare('title',$this->title,true);
-		$criteria->compare('course_id',$this->course_id);
 		$criteria->compare('ISBN',$this->ISBN,true);
 		$criteria->compare('author_firstname',$this->author_firstname,true);
 		$criteria->compare('author_lastname',$this->author_lastname,true);
@@ -229,7 +227,11 @@ class Book extends CActiveRecord
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
-			'pagination'=>array('pageSize' => 20,),
+			'pagination'=>array('pageSize' => 1,),
+			// default: sort by recommended:
+			'sort' => array(
+				'defaultOrder' => 'title ASC',
+			),
 		));
 	}
 	

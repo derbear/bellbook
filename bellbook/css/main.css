@@ -142,27 +142,50 @@ div#header {
 		background-position: bottom left, bottom right;
 	}
 	
-		div#page-options {
+		div.page-options {
 			position: absolute;
 			left: 2px; bottom: 0px;
 			height: 10px;
 			padding: 0 7px 8px 7px;
 			color: #8c8c8c;
 		}
+			
+			.page-options ul {
+				display: inline;
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+			
+			.page-options ul li {
+				display: inline;
+			}
 		
-			#page-options a {
+			.page-options ul li a {
 				margin-left: 5px;
 				color: #8c8c8c; 
 			}
 			
-			#page-options a:hover {
+			.page-options ul li a:hover {
 				color: #67C2B4; 
 			}
 			
-			#page-options a.selected {
+			.page-options ul li a.selected,
+			.page-options ul li a.asc,
+			.page-options ul li a.desc {
 				border: 1px dashed #84AFB0;
 				padding: 3px 4px 4px 4px;
 				color: #84AFB0;
+			}
+			
+			.page-options ul li a.desc,
+			.page-options ul li a.asc {
+				padding-right: 15px;
+				background: url(../images/header/options-drop-down-arrow.png) no-repeat right center;
+			}
+			
+			.page-options ul li a.asc {
+				background: url(../images/header/options-drop-up-arrow.png) no-repeat right center;
 			}
 		
 		ul#menu {
@@ -373,6 +396,9 @@ div#footer {
 	margin: 0 auto;
 	width: 884px; 
 	background-color: white;
+	color: #C9C9C9;
+	text-align: center;
+	font-size: 0.5em;
 }
 
 

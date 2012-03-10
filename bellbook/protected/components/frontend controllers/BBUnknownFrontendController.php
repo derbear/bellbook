@@ -53,7 +53,7 @@ class BBUnknownFrontendController extends BBFrontendController
 				<li><a href="{$this->createUrl('register/index')}">Register</a></li>
 			</ul>
 		</li>
-		<li><a id="title-logo" href="">BellBook</a></li>
+		<li><a id="title-logo" href="{$this->createUrl('questions/')}">BellBook</a></li>
 	</ul>
 	
 VEV;
