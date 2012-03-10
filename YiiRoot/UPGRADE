@@ -1,5 +1,5 @@
 
-         Upgrading Instructions for Yii Framework v1.1.8
+         Upgrading Instructions for Yii Framework v1.1.10
          ===============================================
 
 !!!IMPORTANT!!!
@@ -17,6 +17,68 @@ General upgrade intructions
   release and update.
 - Check if everything is OK, if not — revert from backup and post
   issues to Yii issue tracker.
+
+
+Upgrading from v1.1.9
+---------------------
+- Previously xSendFile() was returning false if the file was not found.
+This has been removed to allow relative file paths. If you are relying on this check,
+you will need to do it manually before calling xSendFile().
+
+Upgrading from v1.1.8
+---------------------
+- CConfiguration::createObject, CController::paginate and CHtml::getActiveId deprecated since 1.0.x were removed. Use
+  Yii::createComponent, new CPagination directly and CHtml::activeId respectively.
+
+- In CErrorHandler::handleException() the checking for ajax call has been removed
+as it was preventing to customize the display of the exception during an ajax call.
+
+- Previously in case of validation error the CSS "error" class was not added to the row container at all when
+checkBoxList or radioButtonList where used. This is fixed now and proper "error" CSS class is added to the row
+container but in case of validation error, all labels from the list are shown in red because of the CSS rule.
+
+To fix this and display only the attribute label in red:
+
+in <projectdir>/css/form.css the line:
+
+     div.form div.error label
+
+should be changed to
+
+     div.form div.error label:first-child
+
+- If you've used "through" ActiveRecord option in your relation definitions it's good to update code as shown below.
+Old style of defining this option still works but is now deprecated.
+
+Change
+
+~~~
+class Group extends CActiveRecord
+{
+    public function relations()
+    {
+  		return array(
+  			'roles'=>array(self::HAS_MANY,'Role','group_id'),
+  			'users'=>array(self::HAS_MANY,'User','user_id','through'=>'roles'),
+  		);
+  	}
+}
+~~~
+
+to
+
+~~~
+class Group extends CActiveRecord
+{
+    public function relations()
+  	{
+  		return array(
+  			'roles'=>array(self::HAS_MANY,'Role','group_id'),
+  			'users'=>array(self::HAS_MANY,'User',array('user_id'=>'id'),'through'=>'roles'),
+  		);
+  	}
+}
+~~~
 
 
 Upgrading from v1.1.7
