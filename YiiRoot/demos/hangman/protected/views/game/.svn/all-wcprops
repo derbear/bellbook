@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/bellbook~bellbook_source/!svn/ver/121/branch/2.0%20experimental%20(Ben)/YiiRoot/demos/hangman/protected/views/game
+END
+win.php
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/bellbook~bellbook_source/!svn/ver/121/branch/2.0%20experimental%20(Ben)/YiiRoot/demos/hangman/protected/views/game/win.php
+END
+lose.php
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/bellbook~bellbook_source/!svn/ver/121/branch/2.0%20experimental%20(Ben)/YiiRoot/demos/hangman/protected/views/game/lose.php
+END
+play.php
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/bellbook~bellbook_source/!svn/ver/121/branch/2.0%20experimental%20(Ben)/YiiRoot/demos/hangman/protected/views/game/play.php
+END
+guess.php
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/bellbook~bellbook_source/!svn/ver/121/branch/2.0%20experimental%20(Ben)/YiiRoot/demos/hangman/protected/views/game/guess.php
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/bellbook~bellbook_source/!svn/ver/121/branch/2.0%20experimental%20(Ben)/YiiRoot/framework/db/schema/pgsql
+END
+CPgsqlSchema.php
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/bellbook~bellbook_source/!svn/ver/121/branch/2.0%20experimental%20(Ben)/YiiRoot/framework/db/schema/pgsql/CPgsqlSchema.php
+END
+CPgsqlTableSchema.php
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/bellbook~bellbook_source/!svn/ver/121/branch/2.0%20experimental%20(Ben)/YiiRoot/framework/db/schema/pgsql/CPgsqlTableSchema.php
+END
+CPgsqlColumnSchema.php
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/bellbook~bellbook_source/!svn/ver/121/branch/2.0%20experimental%20(Ben)/YiiRoot/framework/db/schema/pgsql/CPgsqlColumnSchema.php
+END

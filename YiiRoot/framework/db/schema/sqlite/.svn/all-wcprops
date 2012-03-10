@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/bellbook~bellbook_source/!svn/ver/121/branch/2.0%20experimental%20(Ben)/YiiRoot/framework/db/schema/sqlite
+END
+CSqliteCommandBuilder.php
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/bellbook~bellbook_source/!svn/ver/121/branch/2.0%20experimental%20(Ben)/YiiRoot/framework/db/schema/sqlite/CSqliteCommandBuilder.php
+END
+CSqliteColumnSchema.php
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/bellbook~bellbook_source/!svn/ver/121/branch/2.0%20experimental%20(Ben)/YiiRoot/framework/db/schema/sqlite/CSqliteColumnSchema.php
+END
+CSqliteSchema.php
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/bellbook~bellbook_source/!svn/ver/121/branch/2.0%20experimental%20(Ben)/YiiRoot/framework/db/schema/sqlite/CSqliteSchema.php
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/bellbook~bellbook_source/!svn/ver/121/branch/2.0%20experimental%20(Ben)/YiiRoot/framework/db/ar
+END
+CActiveRecord.php
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/bellbook~bellbook_source/!svn/ver/121/branch/2.0%20experimental%20(Ben)/YiiRoot/framework/db/ar/CActiveRecord.php
+END
+CActiveRecordBehavior.php
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/bellbook~bellbook_source/!svn/ver/121/branch/2.0%20experimental%20(Ben)/YiiRoot/framework/db/ar/CActiveRecordBehavior.php
+END
+CActiveFinder.php
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/bellbook~bellbook_source/!svn/ver/121/branch/2.0%20experimental%20(Ben)/YiiRoot/framework/db/ar/CActiveFinder.php
+END

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/bellbook~bellbook_source/!svn/ver/150/branch/2.0%20experimental%20(Ben)/bellbook/protected/controllers/admin
+END
+SecretController.php
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/bellbook~bellbook_source/!svn/ver/135/branch/2.0%20experimental%20(Ben)/bellbook/protected/controllers/admin/SecretController.php
+END
+InstallController.php
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/bellbook~bellbook_source/!svn/ver/150/branch/2.0%20experimental%20(Ben)/bellbook/protected/controllers/admin/InstallController.php
+END
+TestController.php
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/bellbook~bellbook_source/!svn/ver/135/branch/2.0%20experimental%20(Ben)/bellbook/protected/controllers/admin/TestController.php
+END
+UsersController.php
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/bellbook~bellbook_source/!svn/ver/135/branch/2.0%20experimental%20(Ben)/bellbook/protected/controllers/admin/UsersController.php
+END
+MaintenanceController.php
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/bellbook~bellbook_source/!svn/ver/135/branch/2.0%20experimental%20(Ben)/bellbook/protected/controllers/admin/MaintenanceController.php
+END
+UpdateController.php
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/bellbook~bellbook_source/!svn/ver/135/branch/2.0%20experimental%20(Ben)/bellbook/protected/controllers/admin/UpdateController.php
+END

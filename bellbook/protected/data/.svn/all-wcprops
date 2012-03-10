@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/bellbook~bellbook_source/!svn/ver/126/branch/2.0%20experimental%20(Ben)/bellbook/protected/data
+END
+schema.mysql.sql
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/bellbook~bellbook_source/!svn/ver/126/branch/2.0%20experimental%20(Ben)/bellbook/protected/data/schema.mysql.sql
+END
+testdrive.db
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/bellbook~bellbook_source/!svn/ver/126/branch/2.0%20experimental%20(Ben)/bellbook/protected/data/testdrive.db
+END
+schema.sqlite.sql
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/bellbook~bellbook_source/!svn/ver/126/branch/2.0%20experimental%20(Ben)/bellbook/protected/data/schema.sqlite.sql
+END

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/bellbook~bellbook_source/!svn/ver/121/branch/2.0%20experimental%20(Ben)/YiiRoot/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema
+END
+Exception.php
+K 25
+svn:wc:ra_dav:version-url
+V 166
+/svn/bellbook~bellbook_source/!svn/ver/121/branch/2.0%20experimental%20(Ben)/YiiRoot/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Exception.php
+END
+InterchangeBuilder.php
+K 25
+svn:wc:ra_dav:version-url
+V 175
+/svn/bellbook~bellbook_source/!svn/ver/121/branch/2.0%20experimental%20(Ben)/YiiRoot/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/InterchangeBuilder.php
+END
+schema.ser
+K 25
+svn:wc:ra_dav:version-url
+V 163
+/svn/bellbook~bellbook_source/!svn/ver/121/branch/2.0%20experimental%20(Ben)/YiiRoot/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema.ser
+END
+Validator.php
+K 25
+svn:wc:ra_dav:version-url
+V 166
+/svn/bellbook~bellbook_source/!svn/ver/121/branch/2.0%20experimental%20(Ben)/YiiRoot/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Validator.php
+END
+ValidatorAtom.php
+K 25
+svn:wc:ra_dav:version-url
+V 170
+/svn/bellbook~bellbook_source/!svn/ver/121/branch/2.0%20experimental%20(Ben)/YiiRoot/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/ValidatorAtom.php
+END
+Interchange.php
+K 25
+svn:wc:ra_dav:version-url
+V 168
+/svn/bellbook~bellbook_source/!svn/ver/121/branch/2.0%20experimental%20(Ben)/YiiRoot/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Interchange.php
+END

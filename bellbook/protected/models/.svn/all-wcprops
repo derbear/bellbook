@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/bellbook~bellbook_source/!svn/ver/153/branch/2.0%20experimental%20(Ben)/bellbook/protected/models
+END
+Book.php
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/bellbook~bellbook_source/!svn/ver/153/branch/2.0%20experimental%20(Ben)/bellbook/protected/models/Book.php
+END
+Instructor.php
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/bellbook~bellbook_source/!svn/ver/137/branch/2.0%20experimental%20(Ben)/bellbook/protected/models/Instructor.php
+END
+LoginForm.php
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/bellbook~bellbook_source/!svn/ver/126/branch/2.0%20experimental%20(Ben)/bellbook/protected/models/LoginForm.php
+END
+Setting.php
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/bellbook~bellbook_source/!svn/ver/135/branch/2.0%20experimental%20(Ben)/bellbook/protected/models/Setting.php
+END
+User.php
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/bellbook~bellbook_source/!svn/ver/153/branch/2.0%20experimental%20(Ben)/bellbook/protected/models/User.php
+END
+ContactForm.php
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/bellbook~bellbook_source/!svn/ver/126/branch/2.0%20experimental%20(Ben)/bellbook/protected/models/ContactForm.php
+END
+Course.php
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/bellbook~bellbook_source/!svn/ver/137/branch/2.0%20experimental%20(Ben)/bellbook/protected/models/Course.php
+END
+BuyOffer.php
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/bellbook~bellbook_source/!svn/ver/153/branch/2.0%20experimental%20(Ben)/bellbook/protected/models/BuyOffer.php
+END
+SellOffer.php
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/bellbook~bellbook_source/!svn/ver/153/branch/2.0%20experimental%20(Ben)/bellbook/protected/models/SellOffer.php
+END
+Comment.php
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/bellbook~bellbook_source/!svn/ver/135/branch/2.0%20experimental%20(Ben)/bellbook/protected/models/Comment.php
+END
+UserRating.php
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/bellbook~bellbook_source/!svn/ver/135/branch/2.0%20experimental%20(Ben)/bellbook/protected/models/UserRating.php
+END
+LoginInfo.php
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/bellbook~bellbook_source/!svn/ver/150/branch/2.0%20experimental%20(Ben)/bellbook/protected/models/LoginInfo.php
+END
+BrowseForm.php
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/bellbook~bellbook_source/!svn/ver/152/branch/2.0%20experimental%20(Ben)/bellbook/protected/models/BrowseForm.php
+END

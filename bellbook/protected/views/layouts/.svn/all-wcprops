@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/bellbook~bellbook_source/!svn/ver/145/branch/2.0%20experimental%20(Ben)/bellbook/protected/views/layouts
+END
+loggedout.php
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/bellbook~bellbook_source/!svn/ver/141/branch/2.0%20experimental%20(Ben)/bellbook/protected/views/layouts/loggedout.php
+END
+column1.php
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/bellbook~bellbook_source/!svn/ver/126/branch/2.0%20experimental%20(Ben)/bellbook/protected/views/layouts/column1.php
+END
+column2.php
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/bellbook~bellbook_source/!svn/ver/126/branch/2.0%20experimental%20(Ben)/bellbook/protected/views/layouts/column2.php
+END
+main.php
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/bellbook~bellbook_source/!svn/ver/141/branch/2.0%20experimental%20(Ben)/bellbook/protected/views/layouts/main.php
+END
+admin.php
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/bellbook~bellbook_source/!svn/ver/141/branch/2.0%20experimental%20(Ben)/bellbook/protected/views/layouts/admin.php
+END
+loggedin.php
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/bellbook~bellbook_source/!svn/ver/145/branch/2.0%20experimental%20(Ben)/bellbook/protected/views/layouts/loggedin.php
+END

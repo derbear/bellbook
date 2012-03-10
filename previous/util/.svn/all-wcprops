@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/bellbook~bellbook_source/!svn/ver/121/branch/2.0%20experimental%20(Ben)/previous/util
+END
+connect.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/bellbook~bellbook_source/!svn/ver/121/branch/2.0%20experimental%20(Ben)/previous/util/connect.php
+END
+loginProc.php
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/bellbook~bellbook_source/!svn/ver/121/branch/2.0%20experimental%20(Ben)/previous/util/loginProc.php
+END
+editAcc.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/bellbook~bellbook_source/!svn/ver/121/branch/2.0%20experimental%20(Ben)/previous/util/editAcc.php
+END
+footer.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/bellbook~bellbook_source/!svn/ver/121/branch/2.0%20experimental%20(Ben)/previous/util/footer.php
+END
+postBook.php
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/bellbook~bellbook_source/!svn/ver/121/branch/2.0%20experimental%20(Ben)/previous/util/postBook.php
+END
+regProc.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/bellbook~bellbook_source/!svn/ver/121/branch/2.0%20experimental%20(Ben)/previous/util/regProc.php
+END
+editProcFailsafe.php
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/bellbook~bellbook_source/!svn/ver/121/branch/2.0%20experimental%20(Ben)/previous/util/editProcFailsafe.php
+END
+index.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/bellbook~bellbook_source/!svn/ver/121/branch/2.0%20experimental%20(Ben)/previous/util/index.php
+END
+removeBook.php
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/bellbook~bellbook_source/!svn/ver/121/branch/2.0%20experimental%20(Ben)/previous/util/removeBook.php
+END
+logout.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/bellbook~bellbook_source/!svn/ver/121/branch/2.0%20experimental%20(Ben)/previous/util/logout.php
+END
+listing.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/bellbook~bellbook_source/!svn/ver/121/branch/2.0%20experimental%20(Ben)/previous/util/listing.php
+END
+editProc.php
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/bellbook~bellbook_source/!svn/ver/121/branch/2.0%20experimental%20(Ben)/previous/util/editProc.php
+END
+addCourse.php
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/bellbook~bellbook_source/!svn/ver/121/branch/2.0%20experimental%20(Ben)/previous/util/addCourse.php
+END
+trackBook.php
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/bellbook~bellbook_source/!svn/ver/121/branch/2.0%20experimental%20(Ben)/previous/util/trackBook.php
+END
+edit.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/bellbook~bellbook_source/!svn/ver/121/branch/2.0%20experimental%20(Ben)/previous/util/edit.php
+END
+header.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/bellbook~bellbook_source/!svn/ver/121/branch/2.0%20experimental%20(Ben)/previous/util/header.php
+END
