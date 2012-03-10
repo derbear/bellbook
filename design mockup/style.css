@@ -1,0 +1,400 @@
+/* ON TOP IS A BROWSER RESET taken from multiple worthy sources and slightly modified, resets the css. Then code by Ben Chan (Vervious) follows after the browser reset */
+
+/* modified/created by Ben Chan (Nano8Blazex) on 5/26/2011 */
+/* Minified using YUI
+
+/**
+ * SenCSS - Sensible Standards CSS framework
+ * Modified to validate (modification done by Nano8Blazex)
+ * Copyright (c) 2008-2010 Kilian Valkhof (kilianvalkhof.com)
+ * Visit sencss.kilianvalkhof.com for more information and changelogs.
+ * Licensed under the MIT license. http://www.opensource.org/licenses/mit-license.php
+ *
+ */
+html,body,div,span,object,iframe,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,var,fieldset,form,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,dialog,figure,footer,header,hgroup,menu,nav,section,time,mark,audio,video{margin:0;padding:0;vertical-align:baseline}article,aside,dialog,figure,footer,header,hgroup,menu,nav,section,time,mark,audio,video{display:block}body{background:#fff;color:#000;font:75%/1.5em Arial,Helvetica,"DejaVu Sans","Liberation sans","Bitstream Vera Sans",sans-serif;position:relative}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:''}:focus{outline:none}/* Baseline and common looks - Sets a vertical rhythm and styles the different elements. */a{text-decoration:underline;border:0}a:hover,a:focus{text-decoration:none}a img{border:0}abbr,acronym{border-bottom:1px dotted;cursor:help;font-variant:small-caps}address,cite,em,i{font-style:italic}blockquote p{margin:0 1.5em 1.5em;padding:0.75em}code,kbd,tt{font-family:"Courier New",Courier,monospace,serif;line-height:1}del{text-decoration:line-through}dfn{border-bottom:1px dashed;font-style:italic}dl{margin:0 0 1.5em}dt{font-weight: 800}dd{margin-left:1.5em}h1,h2,h3,h4,h5,h6{padding:0}h1{font-size:2em;margin:0 0 0.75em}h2{font-size:1.5em;margin:0 0 1em}h3{font-size:1.1666em;margin:0 0 1.286em}h4{font-size:1em;margin:0 0 1.5em}h5{font-size:0.8333em;margin:0 0 1.8em}h6{font-size:0.666em;margin:0 0 2.25em}img{display:inline-block;vertical-align:text-bottom}ins{text-decoration:overline}mark{background-color:#ff9;color:#000;font-style:italic}ol{list-style:outside decimal}p{margin:0 0 1.5em}pre{font-family:"Courier New",Courier,monospace,serif;margin:0 0 1.5em}sub{top:0.4em;font-size:0.85em;line-height:1;position:relative;vertical-align:baseline}sup{font-size:0.85em;line-height:1;position:relative;bottom:0.5em;vertical-align:baseline}strong,b{font-weight:500}ul{list-style:outside disc}ul,ol{margin:0 0 1.5em 1.5em;padding:0}li ul,li ol{padding:0;margin:0 0 1.5em 1.5em}table{border-collapse:collapse;border-spacing:0;margin:0 0 1.5em;padding:0}caption{font-style:italic;text-align:left}tr.alt td{background:#eee}td{border:1px solid #000;padding:0.333em;vertical-align:middle}th{padding:0.333em;vertical-align:middle}button{cursor:pointer;display:block;font-size:1em;height:2em;line-height:1.5em;margin:0.8em 0 0;padding:0 0.5em;position:relative}fieldset{border:0;margin:0 0 1.5em;position:relative;padding:1.5em 0 0}fieldset fieldset{clear:both;margin:0 0 0.75em;padding:0 0 0 1.5em}textarea{border:1px solid #ccc;border-bottom-color:#eee;border-right-color:#eee;box-sizing:border-box;width:100%;margin:0;padding:.29em 0}select{border:1px solid #ccc;border-bottom-color:#eee;border-right-color:#eee;font-size:1em;line-height:1.5em;margin-bottom:0.75em;padding:0.25em;height:2.25em}optgroup{font-style:normal;text-indent:0.2em}optgroup+optgroup{margin-top:1em}option{font-size:1em;height:1.5em;padding:0;text-indent:1em}label{cursor:pointer;height:1.5em;margin:0;padding:0;width:100%}label input{position:relative;background:0;border:0;height:1em;line-height:1.5em;margin:0 0.5em 0 0;padding:0;width:auto}input{position:relative}legend{font-size:1.1666em;left:0;margin:0;padding:0}
+
+/* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html, with some modifications by Vervious 05-25-2011
+-------------------------------------------------------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	background: transparent;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+	position: relative;
+}
+body {
+	line-height: 1;
+	font-size: 1em;
+	font-family:"Helvetica Neue", Arial, sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+	clear: both;
+	font-weight: normal;
+}
+ol, ul {
+	margin-left: 20px;
+}
+blockquote {
+	quotes: none;
+}
+blockquote:before, blockquote:after {
+	content: '';
+	content: none;
+}
+del {
+	text-decoration: line-through;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a img {
+	border: none;
+}
+
+/* Bellbook (Vervious 03-06-2012
+-------------------------------------------------------------- */
+
+body {
+	font-family: "helvetica neue",arial,sans-serif;
+	font-size: 0.7em; 
+	color: #211922;
+}
+
+body a {
+	text-decoration: none;
+}
+
+div#header {
+	position: fixed;
+	z-index: 1;
+	top: 0px; left: 0px; right: 0px;
+	/*margin: 0px 60px 0px 60px;*/
+	margin: 0 auto;
+	width: 900px; /* real total width = 884px, the 900 is to cover up shadows */
+	padding: 48px 0 0px 0;
+	background-color: white;
+	/*height: 60px;*/ /*preset height of #content-area*/
+}
+	
+	#header div#border-bottom {
+		position: absolute;
+		bottom: -1px;
+		left: 8px;
+		width: 884px;
+		height: 2px;
+		background: url(header/bottom-border.png) repeat-x bottom center;
+	}
+	
+	div#content-area {
+		margin: 10px auto;
+		width: 884px;
+		height: 42px;
+	}
+	
+	form#search-form {
+		position: absolute;
+		left: 50px; bottom: 0px; height: 30px;
+		border-right: 1px solid  #c0c0c0;
+		padding: 0;
+	}
+	
+		#search-form input#search-bar {
+			border: none;
+			height: 40px; margin-top: -10px;
+			padding-right: 8px;
+			font-size: 2.2em;
+			font-family: "HelveticaNeue-Light", Helvetica, Arial, sans-serif; 
+			color: #585858;
+			background: url(header/dashed-line.png) repeat-x left bottom;
+			width: 298px;
+		}
+		
+		input#search-icon {
+			position: absolute;
+			bottom: 0; left: -50px;
+			height: 40px;
+			width: 40px;
+			border: 1px solid #252525;
+			padding: 0; margin: 0;
+			background: url(header/search-icon.png) no-repeat center center;
+			cursor: pointer;
+		}
+		
+	div#menu-and-options {
+		position: absolute;
+		height: 30px;
+		right: 0px;
+		bottom: 0px;
+		width: 530px;
+		background-image: url(header/left-border.png), url(header/right-border.png);
+		background-repeat: no-repeat, no-repeat;
+		background-position: bottom left, bottom right;
+	}
+	
+		div#page-options {
+			position: absolute;
+			left: 2px; bottom: 0px;
+			height: 10px;
+			padding: 0 7px 8px 7px;
+			color: #8c8c8c;
+		}
+		
+			#page-options a {
+				margin-left: 5px;
+				color: #8c8c8c; 
+			}
+			
+			#page-options a:hover {
+				color: #67C2B4; 
+			}
+			
+			#page-options a.selected {
+				border: 1px dashed #84AFB0;
+				padding: 3px 4px 4px 4px;
+				color: #84AFB0;
+			}
+		
+		ul#menu {
+			position: absolute;
+			right: 2px; bottom: 0px;
+			padding: 0 7px 0px 7px;
+			color: #8c8c8c;
+		}
+			#menu li {
+				margin-left: 10px; margin-bottom: 0px;
+				padding: 0px;
+				list-style: none;
+				float: left;
+			}
+			
+				#menu li a {
+					display: block;
+					padding: 5px 0px 8px 0px;
+				}
+				
+				#menu li a:hover {
+					color: #67C2B4;
+				}
+		
+			#menu a,
+			#menu span {
+				color: #8c8c8c; 
+			}
+			
+			#menu li:hover a#profile-link {
+				color: #67C2B4; 
+			}
+			
+			#menu a#title-logo {
+				color: #0a6587
+			}
+			
+			#menu li#profile {
+			}
+			
+				#menu a#profile-link {
+					border-bottom: 1px dashed #8c8c8c;
+					padding-right: 15px;
+					padding-bottom: 7px;
+					padding-left: 6px;
+					background: url(header/drop-down-arrow.png) no-repeat right center;
+					cursor: pointer;
+				}
+				
+				#menu #profile:hover #profile-link {
+					border: none;
+					/*border-bottom: 1px dashed #67C2B4;*/
+					background: url(header/drop-down-arrow-highlighted.png) no-repeat right center;
+				}
+				
+					#profile ul#profile-nav {
+						position: absolute;
+						z-index: 2;
+						top: 100%; right: -40%;;
+						background: white;
+						display: none;
+						
+						border-top: 1px dashed #67C2B4;
+						border-bottom: 1px solid #c0c0c0;
+						border-right: 1px solid #c0c0c0;
+						border-left: 1px solid #c0c0c0;
+					}
+						
+						#profile-nav li {
+							margin: 0;
+							white-space: nowrap;
+							list-style: none;
+						}
+							
+						#profile-nav li a {
+							display: block;
+							padding: 10px 10px;
+						}
+						
+						#profile-nav li a:hover {
+							color: #67C2B4;
+						}
+					
+					#profile:hover ul#profile-nav {
+						display: block;
+					}
+					
+					
+
+
+div#content {
+	/*margin-top being combined height of #header (110px), + padding as a 18px margin - 9px padding because of the way we handle listing's margins */
+	padding-top: 8px;
+	margin: 110px auto 30px auto;
+	width: 900px;
+}
+
+div.book-listing {
+	float: left;
+	width: 207px;
+	height: 259px;
+	margin: 9px;
+	
+}
+	
+	div.book-listing-bg {
+		position: absolute;
+		left: -5px; 
+		top: -5px;
+		width: 217px;
+		height: 269px;
+		background: url(browse/listing-bg.png) no-repeat bottom center;
+	}
+	
+	a.book-link {
+		display: block;
+		left: 0; right: 0; top: 0; bottom: 0;
+		position: absolute;
+	}
+
+	div.book-pic {
+		width: 100%;
+		height: 100%;
+		background-repeat: no-repeat;
+		background-position: center top;
+		background-size: 100%, auto;
+	}
+	
+	div.book-info {
+		position: absolute;
+		bottom: 0px;
+		left: 0px; right: 0px; /* basically width: 100% */
+		line-height: 1.4em;
+		background: white;
+		padding: 10px;
+	}
+	
+		div.book-info-top {
+			position: absolute;
+			left: -5px;
+			top: -1px;
+			width: 217px;
+			height: 6px;
+			background: url(browse/listing-info-top.png) no-repeat top left;
+		}
+		
+		.book-info h2 {
+			font-family: "HelveticaNeue-CondensedBlack", "HelveticaNeueBlackCondensed", "HelveticaNeue-Black-Condensed", "Helvetica Neue Black Condensed", "HelveticaNeueBlack", "HelveticaNeue-Black", "Helvetica Neue Black", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnBold', "Arial Narrow", "Arial", sans-serif; 
+			font-weight:800; 
+			font-stretch:condensed;
+			font-size: 1.27em; /*14px*/
+			line-height: 1.3em;
+		}
+		
+		.book-info h2 a { /* title link */
+			color: #2e2e2e;
+		}
+		
+		.book-info p.book-author {
+			margin-top: 3px;
+			color: #2e2e2e;
+		}
+		
+		.book-info p.book-isbn,
+		.book-info p.book-pub {
+			font-size: 0.909em;
+			color: #8a8a8a;
+			line-height: 1.11em;
+		}
+		
+		.book-info div.book-courses {
+			font-size: 0.909em;
+			color: #2e2e2e;
+			margin-top: 1px;
+		}
+		
+		.book-info div.book-courses a {
+			color: #118f00; /*'not required' color*/
+		}
+		
+		.book-info div.book-courses a.required {
+			color: #900000;
+		}
+	
+div#loading {
+	margin: 50px auto 50px auto;
+	width: 884px;
+	height: 40px;
+	background: url(header/bottom-border.png) repeat-x bottom center;
+}
+	
+	#loading-upper-border {
+		position: absolute;
+		top: 0px; left: 0; right: 0;
+		height: 2px;
+		background: url(header/upper-border.png) repeat-x top center;
+	}
+
+	div#animation {
+		background: white;
+		height: 90px; width: 90px;
+		top: -25px;
+		margin: 0 auto;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

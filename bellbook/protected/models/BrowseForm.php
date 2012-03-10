@@ -2,7 +2,7 @@
 
 /**
  * BrowseForm class.
- * BrowseForm is a data structure that collects search parameters for the buy/index and buy/browse actions.
+ * BrowseForm is a data structure that collects search parameters for the browse actions.
  *
  * BrowseForm also happens to define how search works by translating itself into a corresponding Book model with which to actually search.
  * In this class are search:

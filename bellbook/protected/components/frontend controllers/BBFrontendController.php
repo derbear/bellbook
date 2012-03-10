@@ -14,6 +14,13 @@ class BBFrontendController extends Controller
 	 * @var array context menu items. This property will be assigned to {@link CMenu::items}.
 	 */
 	public $menu=array();
+	public $htmlMenu; /*plain text non-widget menu outputted in main layout */
+	
+	/**
+	 * @var bool whether this controller is "logged in" or not. Defaults to false.
+	 * NOTE: These and other properties are used in layouts.
+	 */
+	protected $loggedIn=false;
 	
 	/**
 	 * @var array the breadcrumbs of the current page. The value of this property will

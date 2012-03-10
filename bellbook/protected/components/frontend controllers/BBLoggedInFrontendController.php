@@ -13,17 +13,58 @@ class BBLoggedInFrontendController extends BBFrontendController
 	/**
 	 * @var string the default layout for the controller view.
 	 */
-	public $layout='//layouts/loggedin';
+	public $layout='//layouts/main';
+	
+	/**
+	 * @var bool whether this controller is "logged in" or not at layout render time
+	 */
+	protected $loggedIn=true;
+	
 	/**
 	 * @var array context menu items. This property will be assigned to {@link CMenu::items}.
 	 */
-	public $menu=array();
+	public $menu=array(
+		"a"=> array(
+			"label"=>"questions",
+			"url"=>array('about'),
+		),
+	);
 	/**
 	 * @var array the breadcrumbs of the current page. The value of this property will
 	 * be assigned to {@link CBreadcrumbs::links}. Please refer to {@link CBreadcrumbs::links}
 	 * for more details on how to specify this property.
 	 */
 	public $breadcrumbs=array();
+	
+	
+	/**
+	 * init the controller.
+	 * 
+	 * @access public
+	 * @return void
+	 */
+	public function init() {
+		parent::init();	
+	
+		/* establish the menu we will use */
+		$this->htmlMenu = <<<VEV
+	
+	<ul id="menu">
+		<li><a href="{$this->createUrl('questions/index')}">questions</a></li>
+		<li id="profile">
+			<a id="profile-link" href="{$this->createUrl('you/index')}">Vervious</a>
+			<ul id="profile-nav">
+				<li><a href="{$this->createUrl('you/index')}">My Profile</a></li>
+				<li><a href="{$this->createUrl('you/settings')}">Transaction Settings</a></li>
+				<li><a href="{$this->createUrl('sell/index')}">Sell A Book</a></li>
+				<li><a href="{$this->createUrl('site/logout')}">Log Out</a></li>
+			</ul>
+		</li>
+		<li><a id="title-logo" href="">BellBook</a></li>
+	</ul>
+	
+VEV;
+	}
 	
 	/**
 	 * filters function - force access control filter (accessRules) to be applied to every action.

@@ -29,11 +29,11 @@ class BBSiteRouter
     // guest or not, but we may change this later to make the role/authorization more clear (e.g. a role to "UseSite"
     if($sender->user->isGuest) {
     	// not logged in
-		$sender->defaultController = 'features';
+		$sender->defaultController = 'questions';
 		return;
     } else {
     	// is logged in
-    	$sender->defaultController = 'welcome';
+    	$sender->defaultController = 'browse';
         return;
     }
     // it shouldn't ever get here, but just in case...

@@ -2808,3 +2808,773 @@ Stack trace:
 #28 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/branch/2.0 experimental (Ben)/YiiRoot/framework/base/CApplication.php(158): CWebApplication->processRequest()
 #29 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/branch/2.0 experimental (Ben)/bellbook/index.php(45): CApplication->run()
 #30 {main} REQUEST_URI=/development/bellbook/branch/2.0%20experimental%20(Ben)/bellbook/index.php/buy
+2012/03/10 05:20:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "browse".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('browse')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/browse
+---
+2012/03/10 05:20:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/spin.min.js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('js/spin.min.js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/js/spin.min.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/browse
+---
+2012/03/10 05:20:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/browse.js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('js/browse.js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/js/browse.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/browse
+---
+2012/03/10 05:21:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/spin.min.js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('js/spin.min.js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/js/spin.min.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/register
+---
+2012/03/10 05:21:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/browse.js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('js/browse.js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/js/browse.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/register
+---
+2012/03/10 05:21:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/browse.js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('js/browse.js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/js/browse.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/login
+---
+2012/03/10 05:21:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/spin.min.js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('js/spin.min.js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/js/spin.min.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/login
+---
+2012/03/10 05:23:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(276): CController->run('js')
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('site/js/spin.mi...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#5 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/site/js/spin.min.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/site/login
+---
+2012/03/10 05:23:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(276): CController->run('js')
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('site/js/browse....')
+#3 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#5 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/site/js/browse.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/site/login
+---
+2012/03/10 05:23:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "a".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('a')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/a
+---
+2012/03/10 05:23:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/browse.js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('js/browse.js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/js/browse.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/a
+---
+2012/03/10 05:23:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/spin.min.js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('js/spin.min.js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/js/spin.min.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/a
+---
+2012/03/10 05:24:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/spin.min.js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('js/spin.min.js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/js/spin.min.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/login
+---
+2012/03/10 05:24:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/browse.js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('js/browse.js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/js/browse.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/login
+---
+2012/03/10 05:35:03 [error] [exception.CException] exception 'CException' with message 'LoginController has an extra endWidget() call in its view.' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CBaseController.php:211
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/protected/views/layouts/main.php(45): CBaseController->endWidget()
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CBaseController.php(127): require('/Applications/X...')
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/X...', Array, true)
+#3 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/widgets/CContentDecorator.php(77): CBaseController->renderFile('/Applications/X...', Array, true)
+#4 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/widgets/CContentDecorator.php(55): CContentDecorator->decorate('<div id="mainme...')
+#5 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/widgets/COutputProcessor.php(45): CContentDecorator->processOutput('<div id="mainme...')
+#6 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CBaseController.php(207): COutputProcessor->run()
+#7 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CBaseController.php(301): CBaseController->endWidget('CContentDecorat...')
+#8 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/protected/views/layouts/loggedout.php(19): CBaseController->endContent()
+#9 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CBaseController.php(127): require('/Applications/X...')
+#10 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/X...', Array, true)
+#11 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php(785): CBaseController->renderFile('/Applications/X...', Array, true)
+#12 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/protected/controllers/LoginController.php(71): CController->render('login', Array)
+#13 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/protected/controllers/LoginController.php(16): LoginController->actionLogin()
+#14 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/actions/CInlineAction.php(50): LoginController->actionIndex()
+#15 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#16 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#17 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(276): CController->run('')
+#19 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('login')
+#20 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#22 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/login
+---
+2012/03/10 05:36:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/spin.min.js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('js/spin.min.js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/js/spin.min.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/login
+---
+2012/03/10 05:36:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/browse.js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('js/browse.js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/js/browse.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/login
+---
+2012/03/10 05:36:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/browse.js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('js/browse.js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/js/browse.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/login?title-bar=
+---
+2012/03/10 05:36:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/spin.min.js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('js/spin.min.js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/js/spin.min.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/login?title-bar=
+---
+2012/03/10 05:36:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/spin.min.js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('js/spin.min.js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/js/spin.min.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/login?title-bar=
+---
+2012/03/10 05:36:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/browse.js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('js/browse.js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/js/browse.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/login?title-bar=
+---
+2012/03/10 05:45:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "about".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php(271): CController->missingAction('about')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(276): CController->run('about')
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('features/about')
+#3 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#5 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/features/about
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php?title-bar=
+---
+2012/03/10 05:45:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(276): CController->run('js')
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('features/js/bro...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#5 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/features/js/browse.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/features/about
+---
+2012/03/10 05:45:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(276): CController->run('js')
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('features/js/spi...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#5 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/features/js/spin.min.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/features/about
+---
+2012/03/10 06:04:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(276): CController->run('js')
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('login/js/spin.m...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#5 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/login/js/spin.min.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/login/index
+---
+2012/03/10 06:04:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(276): CController->run('js')
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('login/js/browse...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#5 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/login/js/browse.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/login/index
+---
+2012/03/10 06:04:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(276): CController->run('js')
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('register/js/spi...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#5 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/register/js/spin.min.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/register/index
+---
+2012/03/10 06:04:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(276): CController->run('js')
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('register/js/bro...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#5 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/register/js/browse.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/register/index
+---
+2012/03/10 06:04:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(276): CController->run('js')
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('login/js/browse...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#5 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/login/js/browse.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/login/index
+---
+2012/03/10 06:04:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(276): CController->run('js')
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('login/js/spin.m...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#5 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/login/js/spin.min.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/login/index
+---
+2012/03/10 06:08:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/index".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('questions/index')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/questions/index
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php
+---
+2012/03/10 06:08:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/js/spin.min.js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('questions/js/sp...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/questions/js/spin.min.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/questions/index
+---
+2012/03/10 06:08:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "questions/js/browse.js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('questions/js/br...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/questions/js/browse.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/questions/index
+---
+2012/03/10 06:27:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/browse.js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('js/browse.js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/js/browse.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/login
+---
+2012/03/10 06:27:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/spin.min.js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('js/spin.min.js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/js/spin.min.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/login
+---
+2012/03/10 06:27:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/browse.js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('js/browse.js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/js/browse.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/login
+---
+2012/03/10 06:27:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/spin.min.js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('js/spin.min.js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/js/spin.min.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/login
+---
+2012/03/10 06:27:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/browse.js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('js/browse.js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/js/browse.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/login
+---
+2012/03/10 06:27:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/spin.min.js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('js/spin.min.js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/js/spin.min.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/login
+---
+2012/03/10 06:27:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/browse.js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('js/browse.js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/js/browse.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/login
+---
+2012/03/10 06:27:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/spin.min.js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('js/spin.min.js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/js/spin.min.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/login
+---
+2012/03/10 06:37:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php(271): CController->missingAction('')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(276): CController->run('')
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('')
+#3 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#5 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php
+---
+2012/03/10 06:37:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php(271): CController->missingAction('')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(276): CController->run('')
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('')
+#3 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#5 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php?title-bar=
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php
+---
+2012/03/10 06:44:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "you/index".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('you/index')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/you/index
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php
+---
+2012/03/10 06:44:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "you/js/browse.js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('you/js/browse.j...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/you/js/browse.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/you/index
+---
+2012/03/10 06:44:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "you/js/spin.min.js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('you/js/spin.min...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/you/js/spin.min.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/you/index
+---
+2012/03/10 06:44:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/spin.min.js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('js/spin.min.js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/js/spin.min.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/buy
+---
+2012/03/10 06:44:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/browse.js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('js/browse.js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/js/browse.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/buy
+---
+2012/03/10 06:46:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/spin.min.js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('js/spin.min.js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/js/spin.min.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/buy?title-bar=
+---
+2012/03/10 06:46:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/browse.js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('js/browse.js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/js/browse.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/buy?title-bar=
+---
+2012/03/10 06:46:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/spin.min.js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('js/spin.min.js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/js/spin.min.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/buy?title-bar=
+---
+2012/03/10 06:46:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/browse.js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('js/browse.js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/js/browse.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/buy?title-bar=
+---
+2012/03/10 06:46:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/browse.js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('js/browse.js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/js/browse.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/buy?title-bar=
+---
+2012/03/10 06:46:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/spin.min.js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('js/spin.min.js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/js/spin.min.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/buy?title-bar=
+---
+2012/03/10 06:46:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "you/index".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('you/index')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/you/index
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/buy?title-bar=
+---
+2012/03/10 06:46:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "you/js/browse.js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('you/js/browse.j...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/you/js/browse.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/you/index
+---
+2012/03/10 06:46:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "you/js/spin.min.js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('you/js/spin.min...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/you/js/spin.min.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/you/index
+---
+2012/03/10 06:57:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/browse.js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('js/browse.js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/js/browse.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/buy?title-bar=
+---
+2012/03/10 06:57:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/spin.min.js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('js/spin.min.js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#3 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/js/spin.min.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/buy?title-bar=
+---
+2012/03/10 06:57:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(276): CController->run('js')
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('browse/js/spin....')
+#3 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#5 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/browse/js/spin.min.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/browse/search?BrowseForm%5BsearchInput%5D=kjhkjh&title-bar=
+---
+2012/03/10 06:57:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(276): CController->run('js')
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('browse/js/brows...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#5 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/browse/js/browse.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/browse/search?BrowseForm%5BsearchInput%5D=kjhkjh&title-bar=
+---
+2012/03/10 06:58:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(276): CController->run('js')
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('browse/js/brows...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#5 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/browse/js/browse.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/browse/search?BrowseForm%5BsearchInput%5D=kjhkjh&title-bar=
+---
+2012/03/10 06:58:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(276): CController->run('js')
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('browse/js/spin....')
+#3 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#5 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/browse/js/spin.min.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/browse/search?BrowseForm%5BsearchInput%5D=kjhkjh&title-bar=
+---
+2012/03/10 06:58:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(276): CController->run('js')
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('browse/js/spin....')
+#3 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#5 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/browse/js/spin.min.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/browse/search?BrowseForm%5BsearchInput%5D=kjhkjh
+---
+2012/03/10 06:58:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(276): CController->run('js')
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('browse/js/brows...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#5 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/browse/js/browse.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/browse/search?BrowseForm%5BsearchInput%5D=kjhkjh
+---
+2012/03/10 06:59:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(276): CController->run('js')
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('browse/js/spin....')
+#3 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#5 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/browse/js/spin.min.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/browse/search?BrowseForm%5BsearchInput%5D=kjhkjllh
+---
+2012/03/10 06:59:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(276): CController->run('js')
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('browse/js/brows...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#5 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/browse/js/browse.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/browse/search?BrowseForm%5BsearchInput%5D=kjhkjllh
+---
+2012/03/10 07:00:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(276): CController->run('js')
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('browse/js/brows...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#5 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/browse/js/browse.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/browse/search?BrowseForm%5BsearchInput%5D=bellbook+-+Browse
+---
+2012/03/10 07:00:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(276): CController->run('js')
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('browse/js/spin....')
+#3 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#5 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/browse/js/spin.min.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/browse/search?BrowseForm%5BsearchInput%5D=bellbook+-+Browse
+---
+2012/03/10 07:00:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(276): CController->run('js')
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('browse/js/brows...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#5 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/browse/js/browse.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/browse/search?BrowseForm%5BsearchInput%5D=all
+---
+2012/03/10 07:00:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(276): CController->run('js')
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('browse/js/spin....')
+#3 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#5 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/browse/js/spin.min.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/browse/search?BrowseForm%5BsearchInput%5D=all
+---
+2012/03/10 07:10:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(276): CController->run('js')
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('browse/js/brows...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#5 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/browse/js/browse.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/browse/search?BrowseForm%5BsearchInput%5D=all
+---
+2012/03/10 07:10:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(276): CController->run('js')
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('browse/js/spin....')
+#3 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#5 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/browse/js/spin.min.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/browse/search?BrowseForm%5BsearchInput%5D=all
+---
+2012/03/10 07:13:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(276): CController->run('js')
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('browse/js/spin....')
+#3 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#5 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/browse/js/spin.min.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/browse/search?BrowseForm%5BsearchInput%5D=allae
+---
+2012/03/10 07:13:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(276): CController->run('js')
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('browse/js/brows...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#5 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/browse/js/browse.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/browse/search?BrowseForm%5BsearchInput%5D=allae
+---
+2012/03/10 07:13:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(276): CController->run('js')
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('browse/js/spin....')
+#3 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#5 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/browse/js/spin.min.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/browse/search?BrowseForm%5BsearchInput%5D=allaeerr
+---
+2012/03/10 07:13:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(276): CController->run('js')
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('browse/js/brows...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#5 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/browse/js/browse.js
+HTTP_REFERER=http://localhost/development/bellbook/bellbook/index.php/browse/search?BrowseForm%5BsearchInput%5D=allaeerr
+---
