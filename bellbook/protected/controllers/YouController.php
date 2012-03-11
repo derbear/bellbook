@@ -130,6 +130,9 @@ class YouController extends BBFrontendController
 		// the book the user may be trying to create
 		$userCreateBook = new Book('new');
 		$userCreateBook->unsetAttributes(); // remove default values… 
+		// the book that only holds a single ISBN
+		$userIsbnBook = new Book('isbn');
+		$userIsbnBook->unsetAttributes();
 		// the sell offer the user is trying to create
 		$userSellOffer = new SellOffer('new');
 		$userSellOffer->unsetAttributes(); // remove default values… 
@@ -153,14 +156,20 @@ class YouController extends BBFrontendController
 					return;
 				}
 			}
-			// TODO: Selection List
-			$this->render('sell_identify',array('model'=>$userBookSelection, 'newBookModel'=>$userCreateBook));
+			// render generic form, requiring only ISBN for new books
+			$this->render('sell_identify',array('model'=>$userBookSelection, 'newBookModel'=>$userIsbnBook));
 			return;
 		}
 		
 		else if(isset($_POST['Book'])) { /*if user created a book…*/
 			$userCreateBook->attributes=$_POST['Book'];
-			if ($userCreateBook->validate()) {
+			$userIsbnBook->attributes = $_POST['Book']; // TWO PATHS OF VALIDATION
+			
+			$isTotalValidation = $userCreateBook->validate();
+			$isIsbnValidation = $userIsbnBook->validate();
+			
+			// path 1: All details filled out, ready to make book
+			if ($isTotalValidation && $isIsbnValidation) {
 				// woot! THe user specified a new, valid book. Now create the book.
 				if (!$this->_createNewBook($userCreateBook)) {
 					// something horrible went wrong…
@@ -169,13 +178,30 @@ class YouController extends BBFrontendController
 					// success! 
 					// now that the data is saved we can clear the form
 					$userCreateBook->unsetAttributes();
+					$userIsbnBook->unsetAttributes();
 					// Rerender the view with new book as an option ( perhaps first option? )
-					$this->render('sell_identify',array('model'=>$userBookSelection, 'newBookModel'=>$userCreateBook));
+					$this->render('sell_identify',array('model'=>$userBookSelection, 'newBookModel'=>$userIsbnBook));
 					return;
 				}
-			} 
-			// didn't validate -> rerender with errors
-			$this->render('sell_identify',array('model'=>$userBookSelection, 'newBookModel'=>$userCreateBook));
+			}
+			// path 2: Only Isbn filled out
+			if ($isIsbnValidation) {
+				// User entered an ISBN!
+				$userCreateBook = $this->_buildNewBookModelFromIsbn($userIsbnBook->ISBN);
+				if ($userCreateBook) {
+					// add a notification (temporary, it's not really an error)
+					$userCreateBook->addError('title','We prefilled in everything for you!');
+					// send them back to the same page, with details filled in
+					$this->render('sell_identify',array('model'=>$userBookSelection, 'newBookModel'=>$userCreateBook));
+					return;
+				} else {
+					// isbn invalid, couldn't be found
+					$userIsbnBook->addError('ISBN',"ISBN doesn't match any book in our records");
+				}
+			}
+			// Nothing validated
+			//-> rerender with errors for ISBN required only
+			$this->render('sell_identify',array('model'=>$userBookSelection, 'newBookModel'=>$userIsbnBook));
 			return;
 		}
 		
@@ -202,8 +228,8 @@ class YouController extends BBFrontendController
 			$this->render('sell_describe',array('model'=>$userSellOffer));
 			return;
 		}
-		
-		$this->render('sell_identify',array('model'=>$userBookSelection, 'newBookModel'=>$userCreateBook));
+		// render generic form, requiring only ISBN for new books
+		$this->render('sell_identify',array('model'=>$userBookSelection, 'newBookModel'=>$userIsbnBook));
 		return;
 
 	}
@@ -327,6 +353,81 @@ class YouController extends BBFrontendController
 		return $success;
 	}
 	
+	// This might be useful for grabbing images? http://openlibrary.org/dev/docs/restful_api
+	
+	/**
+	 * _buildNewBookModelFromIsbn takes an isbn number, looks it up from isbndb.com, and returns
+	 * a Book model filled with the corresponding attributes.
+	 * 
+	 * @access private
+	 * @return Book model described by ISBN (null if not found)
+	 */
+	private function _buildNewBookModelFromIsbn($isbnToLookup) {
+		$newBookModel = new Book('new');
+		$newBookModel->unsetAttributes(); // remove default values… 
+		
+		if ($this->grabBookInfo($isbnToLookup, $isbn10, $isbn13, $title, $longtitle, $author, $publisher)) {
+			$authorNames = explode(" ", $author); //split into first and last names
+			
+			$newBookModel->ISBN = $isbn13;
+			$newBookModel->title = $title;
+			$newBookModel->author_firstname = $authorNames[0];
+			if (count($authorNames)>1)
+				$newBookModel->author_lastname = preg_replace("/(?![.=$'€%-])\p{P}/u", "", $authorNames[1]); //a comma follows
+			$newBookModel->publisher = $publisher;
+			if (count($authorNames)>2) { // if multiple authors, let's throw them into other data for now
+				for($i=2; $i<count($authorNames); $i++) {
+					$newBookModel->other_data .= $authorNames[$i] . " ";
+				}
+			}
+		} else {
+			$newBookModel = null;
+		}
+		
+		return $newBookModel; // null if no match found
+	}
+	
+	/**
+	 * grabBookInfo function.
+	 *
+	 * Derek Leung 2012
+	 * Uses external online database (isbndb.com) to grab book information given an isbn to lookup
+	 * writes all information to parameters passed in
+	 * 
+	 * @access private
+	 * @param mixed $fisbn
+	 * @param mixed &$isbn10
+	 * @param mixed &$isbn13
+	 * @param mixed &$title
+	 * @param mixed &$title_ext
+	 * @param mixed &$author
+	 * @param mixed &$publisher
+	 * @return void
+	 */
+	private function grabBookInfo($fisbn, &$isbn10, &$isbn13, &$title, &$title_ext, &$author, &$publisher) {
+	    $LOOKUP_URL = "http://isbndb.com/api/books.xml?";
+		$LOOKUP_KEY = "58EJBTZO";
+	    $full_url = $LOOKUP_URL . "access_key=" . $LOOKUP_KEY . "&index1=isbn&value1=" . $fisbn;
+	    $contents = file_get_contents($full_url);
+	    $parser = xml_parser_create();
+	    xml_parse_into_struct($parser, $contents, $values, $index);
+	    xml_parser_free($parser);
+	    $num_results = $values[$index['BOOKLIST'][0]]['attributes']['TOTAL_RESULTS']; 
+	    if(($num_results == 0)||($num_results == '0') ) { // bad ISBN
+	        return false;
+	    }
+	    // now retrieve data from the very first result
+	    $indx = $index['BOOKDATA'][0]; // get index of very first result's data
+	    $isbn10 = $values[$indx]['attributes']['ISBN'];
+	    $isbn13 = $values[$indx]['attributes']['ISBN13'];
+	    $title = $values[$index['TITLE'][0]]['value'];
+	    $title_ext = $values[$index['TITLELONG'][0]]['value'];
+	    $author = $values[$index['AUTHORSTEXT'][0]]['value'];
+	    $publisher = $values[$index['PUBLISHERTEXT'][0]]['value'];
+	    
+	    return true;
+	}
+	
 	/**
 	 * _createSellOffer creates a new sell offer and saves it to the database.
 	 * 
@@ -343,3 +444,4 @@ class YouController extends BBFrontendController
 		return $success;
 	}
 }
+

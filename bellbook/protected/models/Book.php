@@ -24,6 +24,7 @@
  * The following are scenarios (used in data validation)
  * ■ reference: only information necessary is the info needed to identify this book from other books
  * ■ new: all information required to create the book is necessary
+ * ■ isbn: only isbn is necessary
  */
 class Book extends CActiveRecord
 {
@@ -53,8 +54,9 @@ class Book extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs. Default is to deny modification unless deemed safe.
 		return array(
-			array('ISBN', 'isbn', 'on'=>'new'),
-			array('ISBN', 'unique', 'message'=>'This book has already been registered in our database. It should be listed in the list above!', 'on'=>'new'), //new books must be unique since… we don't want duplicate books in the database, that would be terribly annoying. ISBN is the perfect book identifier.
+			array('ISBN', 'isbn', 'on'=>'new, isbn'),
+			array('ISBN', 'unique', 'message'=>'This book has already been registered in our database. It should be listed in the list above!', 'on'=>'new, isbn'), //new books must be unique since… we don't want duplicate books in the database, that would be terribly annoying. ISBN is the perfect book identifier.
+			array('ISBN', 'required', 'on'=>'isbn'),
 			array('book_id', 'numerical', 'integerOnly'=>true, 'allowEmpty'=>false, 'on'=>'reference'),
 			array('book_id', 'exist', 'on'=>'reference'),
 			array('ISBN, title, author_firstname, author_lastname, publisher, year_published', 'required', 'on'=>'new'),
