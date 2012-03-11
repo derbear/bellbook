@@ -12,6 +12,7 @@
 	<?php echo CHtml::link("", array('browse/book', 'BookSelectionForm[book_id]'=>$data->book_id), array('class'=>'book-link')); ?>
 	<div class="book-info">
 		<div class="book-info-top"></div> <!-- UI stuff -->
+		<div class="book-info-num-offers"><span><?php echo $data->sellOfferCount;?></span></div>
 		<h2><?php echo CHtml::link(CHtml::encode($data->title), array('browse/book', 'BookSelectionForm[book_id]'=>$data->book_id)); ?></h2> <!-- book title -->
 		<p class="book-author">by <?php echo CHtml::encode($data->author_firstname) .' '. CHtml::encode($data->author_lastname); ?></p>
 		<p class="book-isbn">ISBN-13: <?php echo CHtml::encode($data->ISBN); ?></p>

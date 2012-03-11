@@ -18,6 +18,7 @@ $this->breadcrumbs=array(
 	'sortableAttributes'=>array(
 		'title',
 		'author_lastname',
+		'sellOfferCount',
 ),
 	'template' => <<<VEV
 	

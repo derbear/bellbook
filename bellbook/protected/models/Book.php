@@ -15,19 +15,35 @@
  * @property string $other_data
  * @property string $image_url
  *
- * The followings are the available model relations:
+ * The followings are the available model relations (readonly):
  * @property Course[] $courses
  * @property User[] $followingUsers
  * @property SellOffer[] $sellOffers
  *
- *
+ * The following are the available model statistical relations (readonly):
+ * @property integer $sellOfferCount
+ * 
+ * 
  * The following are scenarios (used in data validation)
  * ■ reference: only information necessary is the info needed to identify this book from other books
  * ■ new: all information required to create the book is necessary
  * ■ isbn: only isbn is necessary
+ * ■ search: nothing required
  */
 class Book extends CActiveRecord
 {
+	
+	
+	/**
+	 * init function.
+	 * 
+	 * @access public
+	 * @return void
+	 */
+	public function init() {
+		parent::init();
+	}
+	
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name
@@ -176,6 +192,7 @@ class Book extends CActiveRecord
 			'courses' => array(self::MANY_MANY, 'Course', '{{nm_course_book_map}}(book_id, course_id)'),
 			'followingUsers' => array(self::MANY_MANY, 'User', '{{followed_book_map}}(followed_id, user_id)'),
 			'sellOffers' => array(self::HAS_MANY, 'SellOffer', 'book_id', 'index'=>'sell_offer_id'), //so sellOffers[0] becomes the sell offer w/ pk 0 that we have
+			'sellOfferCount' => array(self::STAT, 'SellOffer', 'book_id'),
 		);
 	}
 
@@ -211,8 +228,8 @@ class Book extends CActiveRecord
 		
 		// load relations
 		$criteria->with = array(
-			'sellOffers',
-			'courses',
+			//'sellOffers',
+			//'courses',
 		);
 		
 		// generate WHERE clauses
@@ -224,18 +241,52 @@ class Book extends CActiveRecord
 		$criteria->compare('publisher',$this->publisher,true);
 		$criteria->compare('year_published',$this->year_published);
 		$criteria->compare('place_published',$this->place_published,true);
+		$criteria->compare('place_published',$this->place_published,true);
 		//$criteria->compare('other_data',$this->other_data,true);
 		//$criteria->compare('image_url',$this->image_url,true);
+		
+		// add 'sellOfferCount' attribute to the retrieved data
+		$criteria->scopes = "bySellOfferCount";
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 			'pagination'=>array('pageSize' => 12,),
 			// default: sort by recommended:
 			'sort' => array(
-				'defaultOrder' => 'title ASC',
+				'defaultOrder' => array('title'=>true),
+				'attributes' => array(
+					'sellOfferCount' => array(
+						'asc'=>'sellOfferCount DESC',
+						'desc'=>'sellOfferCount ASC',
+                    ),
+					'*',
+				),
 			),
 		));
 	}
+	
+	/**
+	 * scopes: declared scopes (named criteria).
+	 * See http://www.yiiframework.com/doc/guide/1.1/en/database.ar
+	 * 
+	 * @access public
+	 * @return void
+	 */
+	public function scopes()
+    {
+        return array(
+        	/* Criteria: Order by number of sell offers */
+        	// Yii can't use statistical queries to sort
+        	// so we do it manually::::
+        	// join sell offers, select sell offer counts, group by Book
+            'bySellOfferCount'=>array(
+                'order'=>'sellOfferCount DESC',
+                'select'=>'t.*, count(soff.book_id) as sellOfferCount',
+                'join'=>'LEFT JOIN ' . SellOffer::model()->getOriginalTableName() . ' soff USING (book_id)',
+                'group'=>'t.book_id',
+            ),
+        );
+    }
 	
 	/* getters and setters */
 	
@@ -252,4 +303,5 @@ class Book extends CActiveRecord
 	public function getIsbn10() {
 		return Book::convertIsbn($this->isbn);
 	}
+	
 }

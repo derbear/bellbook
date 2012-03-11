@@ -51,6 +51,18 @@ class SellOffer extends CActiveRecord
 	{
 		return '{{sell_offer}}';
 	}
+	
+	 
+	/**
+	 * getOriginalTableName function.
+	 * 
+	 * @access public
+	 * @return actual name of the table in database
+	 */
+	public function getOriginalTableName()
+	{
+	   return Yii::app()->db->tablePrefix.str_replace(array('{{','}}'),'',$this->tableName());
+	}
 
 	/**
 	 * @return array validation rules for model attributes.

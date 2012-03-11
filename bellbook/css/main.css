@@ -338,11 +338,28 @@ div.book-listing {
 			font-stretch:condensed;
 			font-size: 1.27em; /*14px*/
 			line-height: 1.3em;
+			clear: none;
 		}
 		
 		.book-info h2 a { /* title link */
 			color: #2e2e2e;
 		}
+		
+		div.book-info-num-offers {
+			width: 21px; height: 29px;
+			float: right;
+			background: url(../images/browse/listing-numoffers.png) no-repeat top right;
+			margin-top: -10px; /* to counteract padding since we want it to border the top */
+			margin-right: -3px;
+			font-size: 1.1em;
+			line-height: 1em;
+			color: #7fb3bf;
+			text-align: center;
+		}
+		
+			.book-info-num-offers span {
+				top: 8px;
+			}
 		
 		.book-info p.book-author {
 			margin-top: 3px;
