@@ -21,7 +21,7 @@ class UserIdentity extends CUserIdentity
 	 * @var mixed
 	 * @access private
 	 */
-	private $_id;
+	private $_id, $_displayName;
 	
 	/**
 	 * Authenticates a user against User model
@@ -41,7 +41,8 @@ class UserIdentity extends CUserIdentity
         else
         {
         	// successfully validated
-            $this->_id=$user->user_id; //set our id to the user's primary key (instead of default username)
+            $this->_id=$user->user_id; //set our id to the user's primary key (instead of default username). Why? No real reason.
+            $this->_displayName = $user->first_name; //display name should be our first name, and not our username
             $this->errorCode=self::ERROR_NONE;
         }
         return $this->errorCode==self::ERROR_NONE;
@@ -50,5 +51,11 @@ class UserIdentity extends CUserIdentity
     public function getId()
     {
         return $this->_id;
+    }
+    
+    public function getName()
+    {
+    	if ($this->_displayName) return $this->_displayName;
+    	else return $this->username;
     }
 }

@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
-	'Sell'=>array('/sell'),
-	'View',
+	'You'=>array('/you'),
+	'Logout',
 );?>
 <h1><?php echo $this->id . '/' . $this->action->id; ?></h1>
 

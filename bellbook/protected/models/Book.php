@@ -227,7 +227,7 @@ class Book extends CActiveRecord
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
-			'pagination'=>array('pageSize' => 1,),
+			'pagination'=>array('pageSize' => 12,),
 			// default: sort by recommended:
 			'sort' => array(
 				'defaultOrder' => 'title ASC',

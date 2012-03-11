@@ -46,24 +46,7 @@ class BBLoggedInFrontendController extends BBFrontendController
 	public function init() {
 		parent::init();	
 	
-		/* establish the menu we will use */
-		$this->htmlMenu = <<<VEV
-	
-	<ul id="menu">
-		<li><a href="{$this->createUrl('questions/index')}">questions</a></li>
-		<li id="profile">
-			<a id="profile-link" href="{$this->createUrl('you/index')}">Vervious</a>
-			<ul id="profile-nav">
-				<li><a href="{$this->createUrl('you/index')}">My Profile</a></li>
-				<li><a href="{$this->createUrl('you/settings')}">Transaction Settings</a></li>
-				<li><a href="{$this->createUrl('sell/index')}">Sell A Book</a></li>
-				<li><a href="{$this->createUrl('site/logout')}">Log Out</a></li>
-			</ul>
-		</li>
-		<li><a id="title-logo" href="{$this->createUrl('browse/')}">BellBook</a></li>
-	</ul>
-	
-VEV;
+		$this->setLoggedIn(true);
 	}
 	
 	/**

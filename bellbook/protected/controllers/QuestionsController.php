@@ -1,7 +1,15 @@
 <?php
 
-class QuestionsController extends BBUnknownFrontendController
+/**
+ * QuestionsController class.
+ * 
+ * @extends BBFrontendController
+ */
+class QuestionsController extends BBFrontendController
 {
+
+	public $defaultAction = 'welcome';
+	
 	public function actionAbout()
 	{
 		$this->render('about');
@@ -15,6 +23,20 @@ class QuestionsController extends BBUnknownFrontendController
 	public function actionWelcome()
 	{
 		$this->render('welcome');
+	}
+	
+	/**
+	 * This is the action to handle external exceptions.
+	 */
+	public function actionError()
+	{
+	    if($error=Yii::app()->errorHandler->error)
+	    {
+	    	if(Yii::app()->request->isAjaxRequest)
+	    		echo $error['message'];
+	    	else
+	        	$this->render('error', $error);
+	    }
 	}
 
 	// Uncomment the following methods and override them if needed

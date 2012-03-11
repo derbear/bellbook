@@ -42,7 +42,8 @@ return array(
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
-			'loginUrl'=>array('login/'),
+			'loginUrl'=>array('you/login'),
+			'returnUrl' => array('browse/'),
 		),
 		// uncomment the following to enable URLs in path-format
 		
@@ -76,8 +77,8 @@ return array(
 		),
 		
 		'errorHandler'=>array(
-			// use 'site/error' action to display errors
-            'errorAction'=>'site/error',
+			// use 'questions/error' action to display external errors
+            'errorAction'=>'questions/error',
         ),
 		'log'=>array(
 			'class'=>'CLogRouter',

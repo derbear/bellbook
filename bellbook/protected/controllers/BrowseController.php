@@ -1,6 +1,6 @@
 <?php
 
-class BrowseController extends BBLoggedInFrontendController
+class BrowseController extends BBFrontendController
 {
 
 	public $defaultAction = 'recommended';
@@ -8,7 +8,23 @@ class BrowseController extends BBLoggedInFrontendController
 	
 	public function actionBook()
 	{
-		$this->render('book');
+		$selectedBookForm = new BookSelectionForm(); 
+		$selectedBookForm->unsetAttributes(); // remove default values…
+		
+		if(isset($_GET['BookSelectionForm'])) { /*if user identified a book…*/
+			$selectedBookForm->attributes=$_GET['BookSelectionForm'];
+			if ($selectedBookForm->validate()) { 
+				// the selected input seems ok. Now let's try to grab the corresponding book and see if that's ok…
+				$selectedBook = $selectedBookForm->selectedBook();
+				if ( $selectedBook!=null && $selectedBook->validate() ) {
+					// the book exists in the database, the selection is good to go!
+					$this->render('book',array('model'=>$selectedBook));
+					return;
+				}
+			}
+		}
+		// book could not be found
+		$this->render('book_lost');
 	}
 
 	public function actionCourse()
@@ -18,15 +34,25 @@ class BrowseController extends BBLoggedInFrontendController
 
 	public function actionRecommended()
 	{
+		$this->pageTitle = "Recommended Books";
 		// get ongoing buy transactions
 		// get sold by friends
 		// get classes stuff
 		// then all books
-		$this->render('recommended');
+		// $this->render('recommended');
+		$searchParams = new BrowseForm();
+		$searchParams->searchInput = "";
+		$_GET['Book_sort'] = 'title'; /* to get defualt sorting to show up on the UI */
+		
+		$this->render('search', array(
+			'searchResults'=>$this->_generateBrowseBookList($searchParams), /*CActiveDataProvide*/
+			'searchInput'=>$this->pageTitle, // so user can see what was searched
+		));
 	}
 
 	public function actionSearch()
 	{
+		/* TODO: Always show ones with offers on top? */
 		$searchParams = new BrowseForm();
 		$searchParams->unsetAttributes(); // remove default values… 
 		

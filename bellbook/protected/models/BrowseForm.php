@@ -14,7 +14,7 @@
  */
 class BrowseForm extends CFormModel
 {
-	public $searchInput;
+	public $searchInput = "";
 
 	/**
 	 * Declares the validation rules.

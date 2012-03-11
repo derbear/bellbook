@@ -41,22 +41,7 @@ class BBUnknownFrontendController extends BBFrontendController
 	 */
 	public function init() {
 		parent::init();	
-	
-		/* establish the menu we will use */
-		$this->htmlMenu = <<<VEV
-	
-	<ul id="menu">
-		<li><a href="{$this->createUrl('questions/index')}">questions</a></li>
-		<li id="profile">
-			<a id="profile-link" href="{$this->createUrl('login/index')}">Login</a>
-			<ul id="profile-nav">
-				<li><a href="{$this->createUrl('register/index')}">Register</a></li>
-			</ul>
-		</li>
-		<li><a id="title-logo" href="{$this->createUrl('questions/')}">BellBook</a></li>
-	</ul>
-	
-VEV;
+		$this->setLoggedIn(false);
 	}
 	
 	/**

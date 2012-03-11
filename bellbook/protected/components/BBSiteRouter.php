@@ -36,7 +36,7 @@ class BBSiteRouter
     	$sender->defaultController = 'browse';
         return;
     }
-    // it shouldn't ever get here, but just in case...
+    // it shouldn't ever get here, but...
     throw new CHttpException(404, 'Page Could Not Be Found.');
   }
 }

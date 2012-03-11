@@ -1,6 +1,6 @@
 <?php
 return array (
   'template' => 'default',
-  'baseClass' => 'Controller',
-  'actions' => 'welcome about support',
+  'baseClass' => 'BBFrontendController',
+  'actions' => 'index login logout sell transactions register',
 );

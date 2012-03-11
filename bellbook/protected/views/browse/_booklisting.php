@@ -9,10 +9,10 @@
 <div class="book-listing">
 	<div class="book-pic" style="background-image: url(<?php echo CHtml::encode($data->image_url); ?>)" alt="<?php echo CHtml::encode($data->title);?>"></div>
 	<div class="book-listing-bg"></div>
-	<a class="book-link" href=""></a>
+	<?php echo CHtml::link("", array('browse/book', 'BookSelectionForm[book_id]'=>$data->book_id), array('class'=>'book-link')); ?>
 	<div class="book-info">
 		<div class="book-info-top"></div> <!-- UI stuff -->
-		<h2><?php echo CHtml::link(CHtml::encode($data->title), array('browse/book', 'bookid'=>$data->book_id)); ?></h2> <!-- book title -->
+		<h2><?php echo CHtml::link(CHtml::encode($data->title), array('browse/book', 'BookSelectionForm[book_id]'=>$data->book_id)); ?></h2> <!-- book title -->
 		<p class="book-author">by <?php echo CHtml::encode($data->author_firstname) .' '. CHtml::encode($data->author_lastname); ?></p>
 		<p class="book-isbn">ISBN-13: <?php echo CHtml::encode($data->ISBN); ?></p>
 		<p class="book-pub">Pub: <?php echo CHtml::encode($data->publisher); ?></p>
