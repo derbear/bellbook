@@ -4896,3 +4896,47 @@ Stack trace:
 REQUEST_URI=/development/bellbook/bellbook/index.php/browse/js/browse.js
 HTTP_REFERER=http://3qru.localtunnel.com/development/bellbook/bellbook/index.php/browse/search?BrowseForm%5BsearchInput%5D=ham&Book_sort=title
 ---
+2012/03/11 03:06:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(276): CController->run('js')
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('you/js/spin.min...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#5 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/you/js/spin.min.js
+HTTP_REFERER=http://3qru.localtunnel.com/development/bellbook/bellbook/index.php/you/index
+---
+2012/03/11 03:06:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(276): CController->run('js')
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('you/js/browse.j...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#5 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/you/js/browse.js
+HTTP_REFERER=http://3qru.localtunnel.com/development/bellbook/bellbook/index.php/you/index
+---
+2012/03/11 03:06:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(276): CController->run('js')
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('browse/js/spin....')
+#3 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#5 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/browse/js/spin.min.js
+HTTP_REFERER=http://3qru.localtunnel.com/development/bellbook/bellbook/index.php/browse/recommended?Book_sort=author_lastname
+---
+2012/03/11 03:06:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(276): CController->run('js')
+#2 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/web/CWebApplication.php(135): CWebApplication->runController('browse/js/brows...')
+#3 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/development/bellbook/bellbook/index.php(45): CApplication->run()
+#5 {main}
+REQUEST_URI=/development/bellbook/bellbook/index.php/browse/js/browse.js
+HTTP_REFERER=http://3qru.localtunnel.com/development/bellbook/bellbook/index.php/browse/recommended?Book_sort=author_lastname
+---
