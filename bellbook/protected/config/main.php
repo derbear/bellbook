@@ -13,7 +13,8 @@ return array(
 	'onBeginRequest' => array('BBSiteRouter', 'routeRequest'),
 
 	// preloading 'log' component
-	'preload'=>array('log'),
+	// preload 'keyword database' component
+	'preload'=>array('log', 'keywords'),
 
 	// autoloading model and component classes
 	// including all in our component directory
@@ -94,6 +95,10 @@ return array(
 				),*/
 				
 			),
+		),
+		'keywords'=>array(
+			'class'=>'BBKeywordDatabase',
+			'designator'=>'#',
 		),
 	),
 

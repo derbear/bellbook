@@ -409,6 +409,87 @@ div#loading {
 	}
 
 
+
+/* BOOK */
+
+div#book {
+	float: left;
+	width: 225px;
+	margin-top: 9px;
+	padding-right: 9px;
+}
+
+div#book div.book-listing {
+	float: left;
+	width: 207px;
+	margin: 9px;
+	margin-top: 0px;
+	height: auto;
+}
+	
+	div#book img.book-pic {
+		width: 100%;
+	}
+	
+	div#book div.book-listing-bg {
+		position: absolute;
+		left: -5px; 
+		top: -5px;
+		bottom: -5px;
+		right: -5px;
+		width: 217px;
+		height: auto;
+		background: none;
+	}
+	
+		div#book div.book-listing-bg-top {
+			position: absolute;
+			width: 100%;
+			top: 0px;
+			height: 10px;
+			background: url(../images/browse/listing-bg-top.png) no-repeat center bottom;
+		}
+		
+		div#book div.book-listing-bg-mid {
+			position: absolute;
+			width: 100%;
+			top: 10px; bottom: 10px; /* expand to fill */
+			background: url(../images/browse/listing-bg-mid.png) repeat-y center center;
+		}
+		
+		div#book div.book-listing-bg-bot {
+			position: absolute;
+			width: 100%;
+			bottom: 0px;
+			height: 10px;
+			background: url(../images/browse/listing-bg-bot.png) no-repeat center top;
+		}
+
+	div#book div.book-info {
+		position: relative;
+		width: 187px; /*207 - padding*/
+		line-height: 1.4em;
+		background: white;
+		padding: 10px;
+	}
+
+div#sell-offers {
+	height: 300px;
+	width: 657px;
+	margin-top: 9px;
+	margin-left: 234px;
+	padding-bottom: 10px;
+}
+
+	div#border-left {
+		position: absolute;
+		left: -1px;
+		height: 100%;
+		width: 2px;
+		background: url(../images/browse/left-border.png) repeat-y center left;
+	}
+
+
 div#footer {
 	margin: 0 auto;
 	width: 884px; 

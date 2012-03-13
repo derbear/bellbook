@@ -1,7 +1,7 @@
 <?php
 
 /*
- * the UI of a book page
+ * the UI of a book page in depth
  * 
  * requires:
  * $model (BookSelectionForm) the book we are viewing
@@ -10,13 +10,17 @@
  
  ?>
  
-We found your book!
-
+<div id="book">
 <?php 
-	$this->renderPartial("_booklisting", array('data'=>$model));
+	$this->renderPartial("_bookbiglisting", array('data'=>$model));
 	?>
 
 <div style="clear:both"></div>
+</div>
+
+
+<div id="sell-offers">
+	<div id="border-left"></div>
 
 <?php
 
@@ -33,3 +37,6 @@ We found your book!
 		'itemView'=>'_sellofferlisting',
 		'emptyText'=>'No Offers Yet! Want to add one?',
 	)); 
+?>
+</div>
+<div style="clear:both"></div>
