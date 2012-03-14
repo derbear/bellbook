@@ -43,12 +43,37 @@ class BBFrontendController extends Controller
 	 */
 	public function init() {
 		parent::init();	
+		Yii::app()->keywords->registerMainKeywords(); //register all keywords for frontend
 		if (Yii::app()->user->isGuest) {
 			$this->setLoggedIn(false);
 		} else {
 			$this->setLoggedIn(true);
 		}	
 	}
+	
+	/**
+	 * beforeAction executed immediately before any action of this controller.
+	 *
+	 * @note we could also override getPageTitle() instead, but in case Yii changes, let's just do this method
+	 * 
+	 * @access protected
+	 * @param mixed $action
+	 * @return void
+	 */
+	protected function beforeAction($action) {
+		// if this action has a keyword associated with it
+		// set our pagetitle to that keyword
+		// to maintain consistency
+		$myRoute = $this->getRoute();
+		$possibleKeywords = Yii::app()->keywords->keywordsForRoute($myRoute);
+		if(count($possibleKeywords) > 0) {
+			$keyword = $possibleKeywords[0];
+			$this->pageTitle = Yii::app()->keywords->designator . $keyword;
+		}
+		// continue execution
+		return true;
+	}
+	
 	
 	protected function setLoggedIn($bool) {
 		$this->loggedIn = $bool;

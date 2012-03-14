@@ -10,9 +10,11 @@
  *		Yii::app()->keywords
  *
  *
- * @note: we could have stored keywords as Keyword object/models, but the concept of the 
- *			keyword is simple enough that storing them as $key=>$values is sufficient
+ * @note: we could have stored keywords as Keyword object/models in a mySQL database, but the concept of the 
+ *			keyword is simple enough that storing them as $key=>$values at runtime is sufficient
  *			and may be even faster. In essence, treat a $keyword=>$route as a "Keyword"
+ *
+ * @note: keywords and pagetitles are consolidated in a controller's beforeAction()
  *
  * @author Ben Chan 2012
  */
@@ -42,6 +44,25 @@ class BBKeywordDatabase extends CApplicationComponent
 	{
 		//echo "HELLO WORDL!" . $this->designator;
 	}
+	
+	/**
+	 * registerMainKeywords registers the keywords for the frontend of the website.
+	 * 
+	 * @access public
+	 * @return void
+	 */
+	public function registerMainKeywords() {
+		$keywordsToRegister = array(
+			'Recommended Books' => 'browse/recommended',
+			'Questions' => 'questions/welcome',
+			Yii::app()->user->name => 'you/index',
+			'Your Transactions' => 'you/transactions',
+			'Sell A Book' => 'you/sell',
+			'Login' => 'you/login',
+			'Register' => 'you/register',
+		);
+		$this->registerNewKeywords($keywordsToRegister);
+	}
   
 	/**
 	* registerNewKeyword function.
@@ -52,7 +73,7 @@ class BBKeywordDatabase extends CApplicationComponent
 	* @return void
 	*/
 	public function registerNewKeyword( $keyword, $route ) {
-		$keywords[$keyword] = $route;
+		$this->{keywords}[$keyword] = $route;
 	}
 	
 	/**
@@ -71,14 +92,30 @@ class BBKeywordDatabase extends CApplicationComponent
 	
 	/**
 	 * routeForKeyword finds the route associated with the given keyword.
+	 * TODO: non case sensitive?
 	 * 
 	 * @access public
 	 * @param mixed $keyword
 	 * @return string route associated with keyword, or null if not found.
 	 */
 	public function routeForKeyword( $keyword ) {
+		$keywords = $this->keywords;
 		if(isset($keywords[$keyword])) return $keywords[$keyword];
 		else return null;
+	}
+	
+	/**
+	 * keywordsForRoute finds the keyword(s) associated with the given route.
+	 * 
+	 * @access public
+	 * @param string $route
+	 * @return array with keywords
+	 */
+	public function keywordsForRoute( $route ) {
+		$keywords = $this->keywords;
+		if (!$keywords) return array();
+		$matchingKeywords = array_keys( $keywords, $route );
+		return $matchingKeywords;
 	}
 	
 	/**
@@ -89,6 +126,7 @@ class BBKeywordDatabase extends CApplicationComponent
 	 * @return array keywords (without routes) that are possible matches for input, empty array if none found
 	 */
 	public function keywordsMatchingInput( $input ) {
+		$keywords = $this->keywords;
 		$matchingKeywords = array();
 		// select keywords from $keywords where $keywork like $input
 		$keys = array_keys($keywords);

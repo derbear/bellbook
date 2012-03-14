@@ -98,7 +98,7 @@ return array(
 		),
 		'keywords'=>array(
 			'class'=>'BBKeywordDatabase',
-			'designator'=>'#',
+			'designator'=>'#', //&#35;
 		),
 	),
 

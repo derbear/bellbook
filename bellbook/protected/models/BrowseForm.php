@@ -22,6 +22,7 @@ class BrowseForm extends CFormModel
 	public function rules()
 	{
 		return array(
+			array('searchInput', 'required'),
 			array('searchInput', 'safe'),
 		);
 	}

@@ -47,7 +47,6 @@ class YouController extends BBFrontendController
 
 	public function actionLogin()
 	{
-		$this->pageTitle = 'Login';
 		$model=new User('login');
 		$model->loginInfo = new LoginInfo();
 		
@@ -120,7 +119,6 @@ class YouController extends BBFrontendController
 
 	public function actionSell()
 	{
-		$this->pageTitle = 'Sell A Book';
 		
 		// first, define the (model) objects we're going to create
 		
@@ -236,7 +234,6 @@ class YouController extends BBFrontendController
 
 	public function actionTransactions()
 	{
-		$this->pageTitle = 'Your Transactions';
 		$this->render('transactions', array('mySellOffers'=>$this->_generateMySellOffersList()));
 	}
 
