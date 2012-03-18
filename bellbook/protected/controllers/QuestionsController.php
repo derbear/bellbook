@@ -10,8 +10,30 @@ class QuestionsController extends BBFrontendController
 
 	public $defaultAction = 'welcome';
 	
+	public function init() {
+		parent::init();
+		
+		$linka =  CHtml::link(CHtml::encode("Welcome"), array('questions/welcome'),
+			array('class'=>'selected'));
+		$linkb =  CHtml::link(CHtml::encode("About"), array('questions/about'),
+			array('class'=>''));
+		$linkc =  CHtml::link(CHtml::encode("Support"), array('questions/support'),
+			array('class'=>''));
+			
+		$this->htmlOptions = <<<VEV
+	<div class="page-options">
+		Navigate: <ul>
+		<li>$linka</li>
+		<li>$linkb</li>
+		<li>$linkc</li>
+		</ul>
+	</div>
+VEV;
+	}
+	
 	public function actionAbout()
 	{
+		// we're also hiring!
 		$this->render('about');
 	}
 

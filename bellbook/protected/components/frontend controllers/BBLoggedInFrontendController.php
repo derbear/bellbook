@@ -1,5 +1,6 @@
 <?php
 /**
+ * DEPRECATED
  * BBLoggedInFrontendController is a customized base controller class for the frontend for the logged in user.
  * All controller classes for the frontend for logged in users should extend from this base class.
  *

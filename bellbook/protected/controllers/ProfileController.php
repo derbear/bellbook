@@ -1,4 +1,5 @@
 <?php
+//  * DEPRECATED
 
 class ProfileController extends BBLoggedInFrontendController
 {

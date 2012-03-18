@@ -1,6 +1,7 @@
 <?php
 
 /**
+ * DEPRECATED
  * BuyController coordinates all buying/browsing.
  *
  * Accessible through url buy/, this would basically be the heart of the application

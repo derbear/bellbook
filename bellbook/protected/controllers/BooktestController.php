@@ -1,4 +1,5 @@
 <?php
+// * DEPRECATED - use for testing only
 
 class BooktestController extends Controller
 {

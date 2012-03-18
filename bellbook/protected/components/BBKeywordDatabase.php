@@ -48,13 +48,17 @@ class BBKeywordDatabase extends CApplicationComponent
 	/**
 	 * registerMainKeywords registers the keywords for the frontend of the website.
 	 * 
+	 * urls/routes must be lowercase
+	 *
 	 * @access public
 	 * @return void
 	 */
 	public function registerMainKeywords() {
 		$keywordsToRegister = array(
 			'Recommended Books' => 'browse/recommended',
-			'Questions' => 'questions/welcome',
+			'Questions: Welcome!' => 'questions/welcome',
+			'Questions: About!' => 'questions/about',
+			'Questions: Help!' => 'questions/support',
 			Yii::app()->user->name => 'you/index',
 			'Your Transactions' => 'you/transactions',
 			'Sell A Book' => 'you/sell',
@@ -112,6 +116,7 @@ class BBKeywordDatabase extends CApplicationComponent
 	 * @return array with keywords
 	 */
 	public function keywordsForRoute( $route ) {
+		$route = strtolower($route);
 		$keywords = $this->keywords;
 		if (!$keywords) return array();
 		$matchingKeywords = array_keys( $keywords, $route );

@@ -1,5 +1,5 @@
 <?php
-
+//  * DEPRECATED
 class FeaturesController extends BBUnknownFrontendController
 {
 	public function actionIndex()

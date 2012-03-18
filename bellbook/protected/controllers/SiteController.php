@@ -1,5 +1,7 @@
 <?php
 
+// * DEPRECATED
+
 class SiteController extends Controller
 {
 	/**

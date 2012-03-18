@@ -1,5 +1,6 @@
 <?php
 /**
+ * DEPRECATED
  * BBUnknownFrontendController is a customized base controller class for the frontend for the non logged in user.
  * All controller classes for the frontend for non logged in users should extend from this base class.
  *

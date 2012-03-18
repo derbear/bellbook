@@ -1,4 +1,5 @@
 <?php
+//  * DEPRECATED
 
 class RegisterController extends BBUnknownFrontendController
 {
