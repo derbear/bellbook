@@ -40,6 +40,16 @@ class BBKeywordDatabase extends CApplicationComponent
 	 */
 	public $keywords = array();
 	
+	/**
+	 * aliases are "shortcuts" for routes - e.g. the Questions alias would go to questions/welcome, 
+	 * 		but display the correct keyword (e.g. Questions-Welcome!)
+	 * $alias => $route
+	 * 
+	 * @var array
+	 * @access public
+	 */
+	public $aliases = array();
+	
 	public function init()
 	{
 		//echo "HELLO WORDL!" . $this->designator;
@@ -66,6 +76,22 @@ class BBKeywordDatabase extends CApplicationComponent
 			'Register' => 'you/register',
 		);
 		$this->registerNewKeywords($keywordsToRegister);
+		$this->registerMainAliases();
+	}
+	
+	/**
+	 * registerMainAliases registers the aliases for the frontend of website.
+	 * 
+	 * usually called from registerMainKeywords()
+	 * @access public
+	 * @return void
+	 */
+	public function registerMainAliases() {
+		$aliasesToRegister = array(
+			'Recommended' => 'browse/recommended',
+			'Questions' => 'questions/welcome',
+		);
+		$this->registerNewAliases($aliasesToRegister);
 	}
   
 	/**
@@ -95,7 +121,32 @@ class BBKeywordDatabase extends CApplicationComponent
 	}
 	
 	/**
-	 * routeForKeyword finds the route associated with the given keyword.
+	 * registerNewAlias registers an alias.
+	 * 
+	 * @access public
+	 * @param mixed $alias
+	 * @param mixed $route
+	 * @return void
+	 */
+	public function registerNewAlias( $alias, $route ) {
+		$this->{aliases}[$alias] = $route;
+	}
+	
+	/**
+	 * registerNewAliases registers multiple aliases.
+	 * 
+	 * @access public
+	 * @param mixed $aAliases
+	 * @return void
+	 */
+	public function registerNewAliases( $aAliases ) {
+		foreach ($aAliases as $alias => $route) {
+			$this->registerNewAlias($alias, $route);
+		}
+	}
+	
+	/**
+	 * routeForKeyword finds the route associated with the given keyword or alias.
 	 * TODO: non case sensitive?
 	 * 
 	 * @access public
@@ -105,6 +156,8 @@ class BBKeywordDatabase extends CApplicationComponent
 	public function routeForKeyword( $keyword ) {
 		$keywords = $this->keywords;
 		if(isset($keywords[$keyword])) return $keywords[$keyword];
+		$aliases = $this->aliases;
+		if(isset($aliases[$keyword])) return $aliases[$keyword];
 		else return null;
 	}
 	
