@@ -13,44 +13,59 @@
 //TODO: Integrate with Browse
 //create the array version of our dataProvider for our radioButtonList
 $selectOptions = new CActiveDataProvider( 'Book' , array (
-			'pagination' => array( 'pageSize' => 20, ),
-			'criteria' => array( 
-				//'condition' => 'status=1', // where clause in sql statement
-				'order' => 'title DESC',
-			),
-		));
-$aSelectOptions = array(); 	
-foreach ( $selectOptions->getData() as $bookModel ) {
-	$aSelectOptions["{$bookModel->book_id}"] = "<h1>{$bookModel->title}</h1>";
-}
+	'pagination' => array( 'pageSize' => 20, ),
+	'criteria' => array( 
+		//'condition' => 'status=1', // where clause in sql statement
+		'order' => 'title DESC',
+	),
+));
 
-?>
-
-<div class="form">
+?><div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'book-select-form',
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+<?php
 
-	<?php echo $form->errorSummary($model); ?>
+$listWidget = $this->widget('zii.widgets.CListView', array(
+	'dataProvider'=>$selectOptions,
+	'itemView'=>'_selectoptionlisting',
+	'sortableAttributes'=>array(
+		'title',
+		'author_lastname',
+		'sellOfferCount',
+),
+	'template' => <<<VEV
+	
+	{pager}
+	{items}
+	<div style="clear:both"></div> 
+	
+VEV
+,
+	'itemsTagName' => 'div', // the enclosing box of the whoe thing
+	'itemsCssClass' => 'search-results',
+	'id' => 'search-results',
+	'sorterCssClass' => 'page-options',
+	// note pagination is set in the CActiveDataProvider
+)); 
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'book_id'); ?>
-		<?php 
-		echo $form->radioButtonList($model,'book_id', $aSelectOptions); ?>
-		<?php echo $form->error($model,'book_id'); ?>
-	</div>
+/* now grab the sorter to display in the menu bar for use in main.php */
+ob_start();
+$listWidget->renderSorter();
+$this->htmlOptions = ob_get_contents();
+ob_end_clean();
 
-	<div class="row buttons">
-		<?php echo CHtml::submitButton('Select'); ?>
-	</div>
 
+
+?>
+<span class="row buttons">
+	<?php echo CHtml::submitButton('Select'); ?>
+</span>
 <?php $this->endWidget(); ?>
-
-</div><!-- form -->
+</div><!-- end form -->
 
 
 <h1>Create Book</h1>
