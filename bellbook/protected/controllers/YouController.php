@@ -116,9 +116,11 @@ class YouController extends BBFrontendController
 		
 		$this->render('register',array('model'=>$model));
 	}
+	
 
 	public function actionSell()
 	{
+		/* JQUERY REQUIRED */
 		
 		// first, define the (model) objects we're going to create
 		

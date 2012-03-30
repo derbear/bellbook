@@ -65,10 +65,15 @@ a img {
 /* Bellbook (Vervious 03-06-2012
 -------------------------------------------------------------- */
 
+html {
+	min-height: 100%;
+}
+
 body {
 	font-family: "helvetica neue",arial,sans-serif;
 	font-size: 0.7em; 
 	color: #211922;
+	min-height: 100%;
 }
 
 body a {
@@ -282,13 +287,11 @@ div#content {
 	padding-top: 8px;
 	margin: 110px auto 30px auto;
 	width: 900px;
-}
-
-input.book-selection {
+	height: 100%;
 }
 
 #content h1 {
-	margin: 9px;
+	margin: 8px; /*9 - 1 to compensate for 1px border */
 	font-size: 2.2em;
 	font-family: "HelveticaNeue-Light", "HelveticaNeueLight", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif; 
 	font-weight: 200;
@@ -443,7 +446,28 @@ div#loading {
 		margin: 0 auto;
 	}
 
+div#book-selection {
+	margin-top: -8px; /*counter h1 margin + border */
+}
 
+	div#book-selection-list {
+		height: 552px; /*two book-listings tall +18px margin - 18 padding*/
+		margin-left: 225px; /*one book-listing + paddings*/
+		margin-right: -20px; /*scroll bar */
+		padding: 9px 0px;
+		overflow: scroll;
+		border-bottom: 1px dashed red;
+	}
+	
+	div#book-selection-info {
+		position: absolute;
+		height: 552px; /*two book-listings tall +18px margin -18px padding */
+		width: 225px;
+		padding: 9px 0px; /*giving the content a 9px margin space where it should go*/
+		top: 0; left: 0;
+		border-bottom: 1px dashed red;
+	}
+	
 
 /* BOOK */
 

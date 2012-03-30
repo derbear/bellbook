@@ -8,4 +8,5 @@ $(document).ready(function() {
 function updateSelectedStyle() {
     $('input.book-selection:radio').next().removeClass('selected');
     $('input.book-selection:radio:checked').next().addClass('selected');
+    
 }

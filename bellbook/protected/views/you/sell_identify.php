@@ -9,9 +9,8 @@
  * $newBookModel: The book that is maybe being created (Book)
  * $model: the book that is being selected (BookSelectionForm)
  */
-?>
-<h1>Step 1: Choose A Book To Sell</h1>
-<?php
+
+
 //TODO: Integrate with Browse
 //create the array version of our dataProvider for our radioButtonList
 $selectOptions = new CActiveDataProvider( 'Book' , array (
@@ -22,14 +21,19 @@ $selectOptions = new CActiveDataProvider( 'Book' , array (
 	),
 ));
 
-?><div class="form">
+?>
 
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'book-select-form',
-	'enableAjaxValidation'=>false,
-)); ?>
+<h1>Step 1: Choose A Book To Sell</h1>
+<div class="form" id="book-selection">
+<div id="book-selection-list">
 
 <?php
+/* BEGIN THE CHOOSE BOOK SECTION */ 
+
+$form=$this->beginWidget('CActiveForm', array(
+	'id'=>'book-select-form',
+	'enableAjaxValidation'=>false,
+)); 
 
 $listWidget = $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$selectOptions,
@@ -63,14 +67,24 @@ ob_end_clean();
 
 
 ?>
+</div><!-- end selection list -->
+
+<div id="book-selection-info">
+	<!-- selected book -->
+	<?php $this->renderPartial('_selectedlisting', array($data=>null)); //updated by selection.js?>
+	<!-- create book -->
+	<?php $this->renderPartial('_createbook', array($data=>null)); //s?>
+</div>
+
 <span class="row buttons">
-	<?php echo CHtml::submitButton('Select'); ?>
+	<?php echo CHtml::submitButton('NExt Step'); ?>
 </span>
 <?php $this->endWidget(); ?>
+
 </div><!-- end form -->
 
 
-<h1>Create Book</h1>
+<!--<h1>Create Book</h1>
 Or Create A Book if One Doesn't Already Exist Already in our Database
 
 <div class="form">
@@ -150,4 +164,4 @@ Or Create A Book if One Doesn't Already Exist Already in our Database
 
 <?php $this->endWidget(); ?>
 
-</div><!-- form -->
+</div>--><!-- form -->
