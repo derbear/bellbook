@@ -9,7 +9,9 @@
  * $newBookModel: The book that is maybe being created (Book)
  * $model: the book that is being selected (BookSelectionForm)
  */
-
+?>
+<h1>Step 1: Choose A Book To Sell</h1>
+<?php
 //TODO: Integrate with Browse
 //create the array version of our dataProvider for our radioButtonList
 $selectOptions = new CActiveDataProvider( 'Book' , array (

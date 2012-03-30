@@ -114,7 +114,8 @@ div#header {
 			height: 40px; margin-top: -10px;
 			padding-right: 8px;
 			font-size: 2.2em;
-			font-family: "HelveticaNeue-Light", Helvetica, Arial, sans-serif; 
+			font-family: "HelveticaNeue-Light", "HelveticaNeueLight", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+			font-weight: 200; 
 			color: #585858;
 			background: url(../images/header/dashed-line.png) repeat-x left bottom;
 			width: 290px;
@@ -284,6 +285,20 @@ div#content {
 }
 
 input.book-selection {
+}
+
+#content h1 {
+	margin: 9px;
+	font-size: 2.2em;
+	font-family: "HelveticaNeue-Light", "HelveticaNeueLight", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+	font-weight: 200;
+	color: #585858;
+	border: 1px dashed red;
+	padding: 9px;
+}
+
+#content p.top-level {
+	margin: 9px;
 }
 
 /* the following can be divs or spans */
