@@ -83,8 +83,7 @@ ob_end_clean();
 
 </div><!-- end form -->
 
-
-<!--<h1>Create Book</h1>
+<h1>Create Book</h1>
 Or Create A Book if One Doesn't Already Exist Already in our Database
 
 <div class="form">
@@ -164,4 +163,4 @@ Or Create A Book if One Doesn't Already Exist Already in our Database
 
 <?php $this->endWidget(); ?>
 
-</div>--><!-- form -->
+</div><!-- form -->

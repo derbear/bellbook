@@ -455,7 +455,8 @@ div#book-selection {
 		margin-left: 225px; /*one book-listing + paddings*/
 		margin-right: -20px; /*scroll bar */
 		padding: 9px 0px;
-		overflow: scroll;
+		overflow-y: scroll;
+		overflow-x: hidden;
 		border-bottom: 1px dashed red;
 	}
 	
