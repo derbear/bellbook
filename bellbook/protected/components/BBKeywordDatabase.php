@@ -103,7 +103,9 @@ class BBKeywordDatabase extends CApplicationComponent
 	* @return void
 	*/
 	public function registerNewKeyword( $keyword, $route ) {
-		$this->{keywords}[$keyword] = $route;
+		$array = $this->keywords;
+		$array[$keyword] = $route;
+		$this->keywords = $array;
 	}
 	
 	/**
