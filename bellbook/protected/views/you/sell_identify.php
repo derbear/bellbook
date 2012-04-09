@@ -71,9 +71,9 @@ ob_end_clean();
 
 <div id="book-selection-info">
 	<!-- selected book -->
-	<?php $this->renderPartial('_selectedlisting', array($data=>null)); //updated by selection.js?>
+	<?php $this->renderPartial('_selectedlisting', array('data'=>null)); //updated by selection.js?>
 	<!-- create book -->
-	<?php $this->renderPartial('_createbook', array($data=>null)); //s?>
+	<?php $this->renderPartial('_createbook', array('data'=>null)); //s?>
 </div>
 
 <span class="row buttons">
