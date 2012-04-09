@@ -22,6 +22,7 @@ class BBAdminController extends Controller
 	 * for more details on how to specify this property.
 	 */
 	public $breadcrumbs=array();
+	public $htmlOptions = ""; /*plain text non-widget menu of options (e.g. sorting) to be displayed in menu bar (in main layout)*/ /*usually set in view/layouts */
 	
 	
 	/**
