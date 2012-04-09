@@ -131,7 +131,10 @@ class BBKeywordDatabase extends CApplicationComponent
 	 * @return void
 	 */
 	public function registerNewAlias( $alias, $route ) {
-		$this->{aliases}[$alias] = $route;
+		//$this->{aliases}[$alias] = $route;
+		$array = $this->aliases;
+		$array[$alias] = $route;
+		$this->aliases = $array;
 	}
 	
 	/**
