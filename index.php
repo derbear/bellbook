@@ -24,7 +24,7 @@ if (isset ($_GET['noscript']) && strcmp ($_GET['noscript'], 'true') == 0) {
 <title><? echo $title; ?></title>
 <script type='text/javascript'>
 // dynamically display page content
-function fetchContent(name, title) {
+function fetchContent(name) {
 	if (window.XMLHttpRequest) {
 		// IE7+, Firefox, Chrome, Opera, Safari
 		xmlhttp=new XMLHttpRequest();
@@ -39,17 +39,23 @@ function fetchContent(name, title) {
 	}}
 	xmlhttp.open("REQUEST", name, true);
 	xmlhttp.send();
+}
+
+// change title and content
+function setContent(name, title) {
 	document.title = title;
+	document.getElementById("headerTitle").innerHTML=title;
+	fetchContent(name);
 }
 </script>
 </head>
-<body onload='fetchContent("<? echo $loc ?>.php", "<? echo $title ?>")'>
+<body onload='fetchContent("<? echo $loc ?>.php")'>
 <!--header-->
-<h1><? echo $title; ?></h1>
+<h1 id='headerTitle'><? echo $title; ?></h1>
 <? include ('header.php'); ?>
+<hr />
 <!--//header-->
 <!--page content-->
-<!-- Format this better! -->
 <div id='pageContent'>
 <?php
 if ($noscript) {

@@ -64,3 +64,15 @@ function lookup($isbn, &$isbn10, &$isbn13, &$title, &$title_ext, &$author, &$pub
 	$publisher = $values[$index['PUBLISHERTEXT'][0]]['value'];
 	return true;
 }
+
+/**
+ * List a link which changes depending on whether scripts are enabled.
+ */
+function listLink($loc, $title) {
+	global $noscript;
+	if ($noscript) { 
+		?> <a href='index.php?loc=<? echo $loc; ?>&amp;noscript=true'><? echo $title; ?></a> <? 
+	} else {
+		?> <a href='#' onclick='setContent("<? echo $loc; ?>.php", "<? echo $title; ?>")'><? echo $title; ?></a> <?
+	}
+}
