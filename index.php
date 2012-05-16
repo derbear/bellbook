@@ -6,12 +6,10 @@ if (isset($_GET['loc'])) {
 } else {
 	$loc = 'home';
 }
-
 if (strcmp($loc, 'index') == 0) {
-	// prevent recursion
+	// prevent hax
 	$loc = 'home';
 }
-
 $title = $loc;
 
 // whether the user is using scripts
@@ -26,7 +24,7 @@ if (isset ($_GET['noscript']) && strcmp ($_GET['noscript'], 'true') == 0) {
 <title><? echo $title; ?></title>
 <script type='text/javascript'>
 // dynamically display page content
-function fetchContent(name) {
+function fetchContent(name, title) {
 	if (window.XMLHttpRequest) {
 		// IE7+, Firefox, Chrome, Opera, Safari
 		xmlhttp=new XMLHttpRequest();
@@ -41,10 +39,11 @@ function fetchContent(name) {
 	}}
 	xmlhttp.open("REQUEST", name, true);
 	xmlhttp.send();
+	document.title = title;
 }
 </script>
 </head>
-<body onload=<? echo "'fetchContent(" . '"' . $loc . '.php' . '")' . "'" ; ?>>
+<body onload='fetchContent("<? echo $loc ?>.php", "<? echo $title ?>")'>
 <!--header-->
 <h1><? echo $title; ?></h1>
 <? include ('header.php'); ?>
