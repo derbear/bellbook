@@ -1,5 +1,4 @@
 <? require_once('includes.php'); ?>
-<? require_once('header.php'); ?>
 <?php
 // set the page title
 if (isset($_GET['loc'])) {
@@ -14,6 +13,12 @@ if (strcmp($loc, 'index') == 0) {
 }
 
 $title = $loc;
+
+// whether the user is using scripts
+$noscript = false;
+if (isset ($_GET['noscript']) && strcmp ($_GET['noscript'], 'true') == 0) {
+	$noscript = true;
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -42,10 +47,17 @@ function fetchContent(name) {
 <body onload=<? echo "'fetchContent(" . '"' . $loc . '.php' . '")' . "'" ; ?>>
 <!--header-->
 <h1><? echo $title; ?></h1>
+<? include ('header.php'); ?>
 <!--//header-->
 <!--page content-->
 <!-- Format this better! -->
 <div id='pageContent'>
+<?php
+if ($noscript) {
+	include($loc . '.php');
+} else { ?>
+	<noscript>Your browser is not using JavaScript. Click <a href='index.php?noscript=true'>here</a> to use the simple version of bellbook. </noscript> <?
+} ?>
 </div>
 <!--//page content-->
 <!--footer-->
