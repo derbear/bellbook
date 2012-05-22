@@ -76,3 +76,73 @@ function listLink($loc, $title) {
 		?> <a href='#' onclick='setContent("<? echo $loc; ?>.php", "<? echo $title; ?>")'><? echo $title; ?></a> <?
 	}
 }
+
+/**
+ * User redirect which changes depending on whether scripts are enabled.
+ */
+function redirect($loc, $title) {
+	global $noscript;
+	if ($noscript) { 
+		header('Location:' . $loc);
+	} else {
+		?> <script type='text/javascript'> setContent("<? echo $loc; ?>", "<? echo $title ?>"); </script> <?
+	}
+}
+
+/**
+ * Creates a form with given parameters (changing on whether scripts are enabled).
+ *
+ * The following parameters are necessary:
+ * 1) 'names', an array mapping the names of the input field to their types
+ * 2) 'target', the target file location of the form
+ * 3) 'method', indicating whether the form should POST, GET, or REQUEST
+ * 
+ * Additionally, the following parameters are optional:
+ * 1) 'button', a string indicating the name of the submit button (otherwise default will be used)
+ * 2) 'default', a mapping of values in 'names' to default values [TODO not yet implemented]
+ */
+function makeForm($params) {
+	global $noscript;
+	$names = $params['names'];
+	$target = $params['target'];
+	$method = $params['method'];
+	
+	if (isset($params['default'])) {
+		$default = $params['default'];
+	} else {
+		$default = 0;
+	}
+	
+	?> <form action='<? echo $target; ?>' method='<?echo $method; ?>'>
+	<table> <?
+	foreach ($names as $name => $type) { ?>
+		<tr>
+			<td> <? echo $name; ?> </td>
+			<td> <input type='<? echo $type; ?>' name='<? echo $name; ?>' /> </td>
+		</tr>
+	<? } ?>
+	</table>
+	<?
+	if ($noscript) {
+		if (isset($params['button'])) {
+			?> <input type='submit' value='<? echo $params['button']; ?>' /> <?
+		} else {
+			?> <input type='submit' /> <?
+		}
+	} else {
+		if (isset($params['button'])) {
+			?> <button type='button' onclick='postContent("<? echo $target ?>", "<? echo $params ?>")'/> <? echo $params['button']; ?> </button> <?
+		} else {
+			?> <button type='button' onclick='postContent("<? echo $target ?>", "<? echo $params ?>")'> Submit Query </button> <?
+		}
+		//TODO fix postContent parameters
+	} ?>
+	</form> <?
+}
+
+/**
+ * Authentication placeholder. TODO
+ */
+function auth($cn, $password) {
+	return true;
+}
