@@ -2,4 +2,64 @@ bellbook cascade
 ----------------
 Cascade is the name for the 2012 version of project bellbook.
 
- - Derek Leung
+structure of app
+----------------
+ - index.php is the only page that gets served directly to users
+	- the variable 'query' refers to the physical location of the page
+	- referred pages are under content
+	- it also defines a bunch of randomly-used functions 
+		- e.g. include all function
+ - content contains all content for individual pages
+	- home.php is served both as a home page and a default for bellbook
+	- login.php requires the bellarmine common-name and password to log in
+	- logout.php logs the user out (duh)
+	- user.php gives the list of books a user offers/bids
+	- status.php is the personal-ized user page 
+		- essentially a modified user.php?id=[mine]
+		- users can edit listing parameters like price, description, etc.
+		- users can mark listings as complete/no longer needed (reversibly)
+			- this hides the book from the general listing
+			- on restore, date must be updated
+	- search.php is the advanced search form
+		- it allows finding book, course, and user information
+	- books.php is used for book search results (sortable)
+		- on default, it provides all book listings
+	- book.php gives bid and offer information on one book, given the ISBN
+		- it allows an automatic request notification e-mail to be sent
+	- course.php gives book requirements for a given course
+	- help.php is an FAQ with a feedback form
+	- add.php allows the user to put up both buy and sell listings
+		- both individual books and courses can be added
+ - process contains functions called to process forms under content
+	- proc.login.php processes logins/logouts
+	- proc.search.php processes searches
+	- proc.add.php processes adding to offers
+ - access allows access to other resources such as the database or network
+	- bellbook.greco.php has e-mail and authentication functions
+	- bellbook.db.php has convenient database functions to get users/courses
+	- bellbook.books.php has a function to fetch book information
+ - ui contains view/interface elements such as the navigation area
+	- page.qsearch.php is the quick-search bar
+	- page.navbar.php is the navigation and status bar
+	- page.header.php is the physical display of headers on the page
+	- page.footer.php is the physical display of footers on the page
+	- page.listing.php is the physical display of a book listing
+	- page.course.php is the physical display of course information
+	- page.user.php is the physical display of user information
+ - admin has administrative functions
+	- install.php will install bellbook
+	- dump.php will dump all the databases to a CSV
+
+examples
+--------
+ * student is taking WHAP next year
+	+ student goes to add.php to add WHAP as a course
+	+ bellbook goes to bellbook.db.php to add books required for WHAP
+	+ add.php now shows a bunch of books needed for WHAP
+	+ student already has World Civilizations so he removes that book
+	+ student enters in price and description for each book
+	+ student confirms, broadcasting his bids by e-mail to sellers
+	+ books get added to the general listing
+	
+
+ ~ Derek Leung
