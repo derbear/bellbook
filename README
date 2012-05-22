@@ -54,6 +54,7 @@ structure of app
  - admin has administrative functions
 	- install.php will install bellbook
 	- dump.php will dump all the databases to a CSV
+	- transmute.php will put the contents a CSV into the database
 
 examples
 --------
