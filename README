@@ -14,12 +14,14 @@ structure of app
 	- login.php requires the bellarmine common-name and password to log in
 	- logout.php logs the user out (duh)
 	- user.php gives the list of books a user offers/bids
+		- it allows an automatic request notification e-mail to be sent
 	- status.php is the personal-ized user page 
 		- essentially a modified user.php?id=[mine]
 		- users can edit listing parameters like price, description, etc.
 		- users can mark listings as complete/no longer needed (reversibly)
 			- this hides the book from the general listing
 			- on restore, date must be updated
+		- users can see other users who have requested their specific listing
 	- search.php is the advanced search form
 		- it allows finding book, course, and user information
 	- books.php is used for book search results (sortable)
@@ -34,10 +36,13 @@ structure of app
 	- proc.login.php processes logins/logouts
 	- proc.search.php processes searches
 	- proc.add.php processes adding to offers
+	- proc.status.php processes account updates
+	- proc.book.php processes specific listing requests
  - access allows access to other resources such as the database or network
 	- bellbook.greco.php has e-mail and authentication functions
 	- bellbook.db.php has convenient database functions to get users/courses
 	- bellbook.books.php has a function to fetch book information
+	- bellbook.meta.php looks up descriptors for pages (required for ui)
  - ui contains view/interface elements such as the navigation area
 	- page.qsearch.php is the quick-search bar
 	- page.navbar.php is the navigation and status bar
