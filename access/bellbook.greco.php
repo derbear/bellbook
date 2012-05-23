@@ -6,6 +6,14 @@
  * This ONLY WORKS ON GRECO directly - set up some way to grab info as testing?
  */
 function auth($bcpName, $password) {
+	$host       = 'ldap.bcp.org';
+	$port       = 389;
+	$baseDn 	= 'OU=Vista,DC=synergy,DC=bcp,DC=org';
+	$user       = 'CN=ldap_webaccounts,CN=users,DC=synergy,DC=bcp,DC=org';
+	$pass       = '12345';
+
+	$ds = ldap_connect($host, $port);
+
 	$result = userinfo($bcpName);
 	$ds = ldap_connect($host, $port);
 	if($result[0]) {
