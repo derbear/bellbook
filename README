@@ -30,6 +30,7 @@ structure of app
 		- it allows an automatic request notification e-mail to be sent
 	- course.php gives book requirements for a given course
 	- help.php is an FAQ with a feedback form
+	- about.php is the normal about page
 	- add.php allows the user to put up both buy and sell listings
 		- both individual books and courses can be added
  - process contains functions called to process forms under content
