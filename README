@@ -55,6 +55,13 @@ structure of app
 	- install.php will install bellbook
 	- dump.php will dump all the databases to a CSV
 	- transmute.php will put the contents a CSV into the database
+	
+database structure
+------------------
+ - Users (unique key int id)
+ - Listings (unique sequential key int id, int isbn, int price [negative is bid], int description, int offerrerId, int status [negative is irrelevant, positive is completed transaction], int date posted/refreshed, int date filled)
+ - Requests (Associates Listings and Users) (foreign key int listingId, foreign key int userId)
+ - Courses (int id, int isbn, str courseTitle, str bookTitle)
 
 examples
 --------
