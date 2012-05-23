@@ -2,3 +2,4 @@
 <!-- <div> 
 Page meta-data dump: <? print_r(pageinfo($QUERY)); ?> 
 </div> -->
+<? print_r(userinfo('derek.leung12')); ?>

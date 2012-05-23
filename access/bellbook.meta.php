@@ -16,7 +16,7 @@ function getTitle($isbn) {
 function initinfo() {
 	global $_PAGE_INFO_ARRAY;
 	if(!isset($_GET['isbn'])) // TODO replace with something more robust
-		$_GET['isbn'] = '';
+		$_GET['isbn'] = -1;
 	$_PAGE_INFO_ARRAY = array(
 		'home' => array(
 			'name' => 'Bellbook Home',
