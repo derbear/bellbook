@@ -19,20 +19,30 @@ function initinfo() {
 		$_GET['isbn'] = -1;
 	$_PAGE_INFO_ARRAY = array(
 		'home' => array(
-			'name' => 'Bellbook Home',
+			'name' => 'Bellbook - Home',
 			'title' => 'bellbook',
 			'location' => 'content/home.php',
 			'access' => 'public'),
 		'book' => array(
-			'name' => 'Bellbook Listings for ' + getTitle($_GET['isbn']), 
+			'name' => 'Bellbook - Listings for ' + getTitle($_GET['isbn']), 
 			'title' => 'Prices for ' + getTitle($_GET['isbn']),
 			'location' => 'content/book.php',
 			'access' => 'public'),
 		'status' => array(
-			'name' => 'Bellbook Status',
+			'name' => 'Bellbook - Status',
 			'title' => 'Status',
 			'location' => 'content/status.php',
-			'access' => 'private'));
+			'access' => 'private'),
+		'help' => array(
+			'name' => 'Bellbook - Help',
+			'title' => 'Help',
+			'location' => 'content/help.php',
+			'access' => 'public'),
+		'about' => array(
+			'name' => 'Bellbook - About',
+			'title' => 'About bellbook',
+			'location' => 'content/about.php',
+			'access' => 'public'));
 }
 
 /**
