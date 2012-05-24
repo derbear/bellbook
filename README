@@ -7,8 +7,6 @@ structure of app
  - index.php is the only page that gets served directly to users
 	- the variable 'query' refers to the physical location of the page
 	- referred pages are under content
-	- it also defines a bunch of randomly-used functions 
-		- e.g. include all function
  - content contains all content for individual pages
 	- home.php is served both as a home page and a default for bellbook
 	- login.php requires the bellarmine common-name and password to log in
@@ -40,6 +38,8 @@ structure of app
 	- proc.status.php processes account updates
 	- proc.book.php processes specific listing requests
  - access allows access to other resources such as the database or network
+	- bellbook.includes.php acts an an 'include-all' page 
+		- it also holds utility functions
 	- bellbook.greco.php has e-mail and authentication functions
 	- bellbook.db.php has convenient database functions to get users/courses
 	- bellbook.books.php has a function to fetch book information
