@@ -13,7 +13,12 @@ function sanitize() {
 	}
 }
 
+function isLoggedIn() {
+	return isset($_SESSION['id']);
+}
+
 sanitize();
+session_start();
 
 $testing = true; // false on actual server, true when testing
 

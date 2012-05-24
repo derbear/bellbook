@@ -28,6 +28,9 @@ function initinfo() {
 			'title' => 'Log in to bellbook',
 			'location' => 'content/login.php',
 			'access' => 'public'),
+		'logout' => array(
+			'access' => 'private',
+			'location' => 'content/logout.php'),
 		'book' => array(
 			'name' => 'Bellbook - Listings for ' + getTitle($_GET['isbn']), 
 			'title' => 'Prices for ' + getTitle($_GET['isbn']),

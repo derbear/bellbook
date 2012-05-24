@@ -3,6 +3,7 @@
 <body>
 <!--header-->
 <h1> <? echo $info['title']; ?> </h1> <br />
+<? if(isLoggedIn()) echo '<div> You are logged in as <b>' . $_SESSION['cn'] . '</b></div>'; ?>
 <? include('page.navbar.php'); ?>
 Quick search is here:
 <? include('page.qsearch.php'); ?>

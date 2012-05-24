@@ -1,0 +1,1 @@
+<? header('Location: process/proc.login.php?logout=true'); ?>
