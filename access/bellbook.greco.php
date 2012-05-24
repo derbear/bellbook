@@ -10,8 +10,8 @@ function auth($bcpName, $password) {
 	$port       = 389;
 	
 	$result = userinfo($bcpName);
-	$ds = ldap_connect($host, $port);
 	if($result[0]) {
+		$ds = ldap_connect($host, $port);
 		if(ldap_bind($ds, $result[0]['dn'], $password)) {
 			return true;
 		} else {
