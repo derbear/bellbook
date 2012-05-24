@@ -1,6 +1,7 @@
 <?php
 include('../access/bellbook.includes.php');
 if(isset($_GET['logout']) && $_GET['logout']) {
+	session_start();
 	session_destroy();
 	header('Location: ../index.php?message=You have been logged out');
 } else if(!isset($_POST['username'])) {
