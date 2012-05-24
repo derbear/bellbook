@@ -5,6 +5,11 @@ else
 	$QUERY = 'home';
 
 include('access/bellbook.includes.php');
+
+// pre-processing
+sanitize();
+session_start();
+authorize();
 ?>
 <!DOCTYPE html>
 <html>

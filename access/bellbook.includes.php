@@ -17,8 +17,20 @@ function isLoggedIn() {
 	return isset($_SESSION['id']);
 }
 
-sanitize();
-session_start();
+function authorize() {
+	global $QUERY;
+	$info = pageinfo($QUERY);
+	$private = $info['access'] == 'private';
+	if(!$private || isLoggedIn()) {
+		return;
+	} else {
+		$redirect = 'query=home';
+		if(isset($_GET['ref'])) {
+			$redirect = 'query=' . $_GET['ref'];
+		}
+		header('Location: index.php?message=You must be logged in to view this page&' . $redirect);
+	}
+}
 
 $testing = true; // false on actual server, true when testing
 
