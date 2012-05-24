@@ -23,6 +23,11 @@ function initinfo() {
 			'title' => 'bellbook',
 			'location' => 'content/home.php',
 			'access' => 'public'),
+		'login' => array(
+			'name' => 'Bellbook - Log in',
+			'title' => 'Log in to bellbook',
+			'location' => 'content/login.php',
+			'access' => 'public'),
 		'book' => array(
 			'name' => 'Bellbook - Listings for ' + getTitle($_GET['isbn']), 
 			'title' => 'Prices for ' + getTitle($_GET['isbn']),
