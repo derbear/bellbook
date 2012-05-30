@@ -34,11 +34,11 @@ function authorize() {
 
 $testing = true; // false on actual server, true when testing
 
-include('bellbook.meta.php');
+require_once('bellbook.meta.php');
 if($testing)
-	include('bellbook.local.php');
+	require_once('bellbook.local.php');
 else
-	include('bellbook.greco.php');
-include('bellbook.db.php');
-include('bellbook.books.php');
+	require_once('bellbook.greco.php');
+require_once('bellbook.db.php');
+require_once('bellbook.books.php');
 ?>
