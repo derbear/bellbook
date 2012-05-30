@@ -12,6 +12,7 @@ session_start();
 authorize();
 ?>
 <!DOCTYPE html>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 <html>
 <?
 $id = pageinfo($QUERY);
