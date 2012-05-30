@@ -60,9 +60,9 @@ structure of app
 database structure
 ------------------
  - Users (unique key int id)
- - Listings (unique sequential key int id, int isbn, int price [negative is bid], int description, int offerrerId, int status [negative is irrelevant, positive is completed transaction], int date posted/refreshed, int date filled)
- - Requests (Associates Listings and Users) (foreign key int listingId, foreign key int userId)
- - Courses (int id, int isbn, str courseTitle, str bookTitle)
+ - Listings (unique sequential key int id, int isbn, int price [negative is bid], int description, int owner [id], int status [negative is irrelevant, positive is completed transaction], date updated, date filled)
+ - Requests (Associates Listings and Users) (foreign key int listing [id], foreign key int user [id])
+ - Courses (int id, int isbn, str name [title of course])
 
 examples
 --------
