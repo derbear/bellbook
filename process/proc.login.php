@@ -1,5 +1,6 @@
 <?php
 include('../access/bellbook.includes.php');
+sanitize();
 if(isset($_GET['logout']) && $_GET['logout']) {
 	session_start();
 	session_destroy();
