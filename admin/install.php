@@ -1,12 +1,15 @@
 <?php
 require_once('../access/bellbook.db.php');
 
-destroy();
-emplace();
+$run = false;
+if($run) {
+	destroy();
+	emplace();
+}
 
 function emplace() {
 	global $DATABASE;
-	$success = connect();
+	$success = partial_connect();
 	if(!$success)
 		return false;
 	
@@ -76,12 +79,6 @@ function destroy() {
 	$success = connect();
 	if(!$success)
 		return false;
-	
-	$success = mysql_select_db($DATABASE);
-	if(!$success) {
-		echo 'NO CONNECT TO DB';
-		return false;
-	}
 		
 	$queries = array(
 		'DROP TABLE Requests',
