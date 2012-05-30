@@ -28,7 +28,7 @@ function authorize() {
 		if(isset($_GET['ref'])) {
 			$redirect = 'query=' . $_GET['ref'];
 		}
-		header('Location: index.php?message=You must be logged in to view this page&' . $redirect);
+		header('Location: index.php?message=You must be logged in to view this page&amp;' . $redirect);
 	}
 }
 
