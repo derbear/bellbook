@@ -15,7 +15,7 @@ function getTitle($isbn) {
  */
 function initinfo() {
 	global $_PAGE_INFO_ARRAY;
-	if(!isset($_GET['isbn'])) // TODO replace with something more robust
+	if(!isset($_GET['isbn'])) // TODO implement preprocessing and remove this
 		$_GET['isbn'] = -1;
 	$_PAGE_INFO_ARRAY = array(
 		'home' => array(
@@ -32,7 +32,7 @@ function initinfo() {
 			'access' => 'private',
 			'location' => 'content/logout.php'),
 		'book' => array(
-			'name' => 'Bellbook - Listings for ' + getTitle($_GET['isbn']), 
+			'name' => 'Bellbook - Listings for ' + getTitle($_GET['isbn']), // we need to preprocess this
 			'title' => 'Prices for ' + getTitle($_GET['isbn']),
 			'location' => 'content/book.php',
 			'access' => 'public'),
@@ -50,7 +50,17 @@ function initinfo() {
 			'name' => 'Bellbook - About',
 			'title' => 'About bellbook',
 			'location' => 'content/about.php',
-			'access' => 'public'));
+			'access' => 'public'),
+		'user' => array(
+			'name' => 'Bellbook - Listings from ___', // we need to preprocess this
+			'title' => "___'s Listings",
+			'location' => 'content/user.php',
+			'access' => 'public'),
+		'add' => array(
+			'name' => 'Bellbook - Post offers and bids',
+			'title' => 'Post offers and bids',
+			'location' => 'content/add.php',
+			'access' => 'private')); 
 }
 
 /**
