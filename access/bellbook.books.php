@@ -10,7 +10,7 @@ function bookinfo($fisbn, &$isbn10, &$isbn13, &$title, &$title_ext, &$author, &$
     $parser = xml_parser_create();
     xml_parse_into_struct($parser, $contents, $values, $index);
     xml_parser_free($parser);
-    $num_results = $values[$index['BOOKLIST'][0]];
+    $num_results = $values[$index['BOOKLIST'][0]]['attributes']['TOTAL_RESULTS'];
     if($num_results == 0) { // bad ISBN
         return false;
     }
