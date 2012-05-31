@@ -5,7 +5,7 @@
  */
 function format($row) {
 	$formatting = '';
-	$isbn = $row['isbn'];		
+	$isbn = $row[1];
 	$info = bookinfo($isbn, $isbn10, $isbn13, $title, $title_ext, $author, $publisher);
 	if(!$info)
 		return 'Invalid book data - bad ISBN <br />';
@@ -18,18 +18,18 @@ function format($row) {
 	$formatting .= '<li>Author: ' . $author . '</li>';
 	$formatting .= '<li>Publisher: ' . $publisher . '</li>';
 	$formatting .= '</ul>';
-	$price = $row['price'];
+	$price = $row[2];
 	$formatting .= 'Price: ' . abs($price) . '<br />';
 	if($price < 0)
 		$formatting .= 'Type: Bid <br />';
 	else
 		$formatting .= 'Type: Offer <br />';
-	$formatting .= 'Description: ' . $row['description'] . '<br />';
+	$formatting .= 'Description: ' . $row[3] . '<br />';
 	
-	$studentId = $row['owner'];
+	$studentId = $row[4];
 	$cn = getCn(userinfoId($studentId));
 	$formatting .= 'Posted by: ' . $cn . '<br />';
-	$formatting .= 'Updated on: ' . $row['updated'] . '<br />';
+	$formatting .= 'Updated on: ' . $row[6] . '<br />';
 	return $formatting;
 }
 
@@ -62,13 +62,13 @@ function inputFormat($row, $index) {
 		else
 			$formatting .= 'Type: Offer <br />';
 	} else {
-		$formatting .= "<label for='price" . $index . "'>Price: </label> <input type='text' id='entry" . $index . "' /> <br />\n";
-		$formatting .= "<label for='type" . $index . "'>Type: </label> <select name='type" . $index . "'> <option value='offer'>Sell</option> <option value='bid'>Buy</option> </select> <br />";
+		$formatting .= "<label for='price" . $index . "'>Price: </label> <input type='text' name='price" . $index . "' id='price" . $index . "' /> <br />\n";
+		$formatting .= "<label for='type" . $index . "'>Type: </label> <select name='type" . $index . "' id='type" . $index . "'> <option value='offer'>Sell</option> <option value='bid'>Buy</option> </select> <br />";
 	}
 	if(isset($row['description'])) {
 		$formatting .= 'Description: ' . $row['description'] . '<br />';
 	} else {
-		$formatting .= "<label for='description" . $index . "'>Description: </label> <input type='text' id='description" . $index . "' /> <br />\n";
+		$formatting .= "<label for='description" . $index . "'>Description: </label> <input type='text' name='description" . $index . "' id='description" . $index . "'/> <br />\n";
 	}
 	$formatting .= "<button onclick='removeBook(" . $index . ")'>Remove</button> <br />";
 	$formatting .= "</span>";
