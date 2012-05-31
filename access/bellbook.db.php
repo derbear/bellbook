@@ -51,7 +51,7 @@ function getListings($studentId, &$count) {
 	$arr = mysql_fetch_row(mysql_query('SELECT COUNT(*) FROM Listings WHERE owner = ' . $studentId));
 	$count = $arr[0];
 	
-	$query = 'SELECT * FROM Listings WHERE owner = ' . $studentId . ' AND price > 0';
+	$query = 'SELECT * FROM Listings WHERE owner = ' . $studentId;
 	$resource = mysql_query($query);
 	if(!$resource)
 		return false;
@@ -84,7 +84,7 @@ function getBids($studentId, &$count) {
 	if(!$resource)
 		return false;
 		
-	$arr = mysql_fetch_row(mysql_query('SELECT COUNT(*) FROM Listings WHERE owner = ' . $studentId . ' AND price > 0'));
+	$arr = mysql_fetch_row(mysql_query('SELECT COUNT(*) FROM Listings WHERE owner = ' . $studentId . ' AND price < 0'));
 	$count = $arr[0];
 	
 	$query = 'SELECT * FROM Listings WHERE owner = ' . $studentId . ' AND price < 0';
