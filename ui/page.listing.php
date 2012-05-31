@@ -1,5 +1,4 @@
 <?php
-require_once('../access/bellbook.includes.php');
 
 /**
  * Formats a listing entry from the database.
@@ -37,13 +36,14 @@ function format($row) {
 /**
  * Formats a book entry with editable input.
  */
-function inputFormat($row) {
+function inputFormat($row, $index) {
 	$formatting = '';
 	$isbn = $row['isbn'];
 	$info = bookinfo($isbn, $isbn10, $isbn13, $title, $title_ext, $author, $publisher);
 	if(!$info)
-		return 'Invalid book data - bad ISBN <br />';
-		
+		return false; // simplify things
+	
+	$formatting .= "<span id='listing" . $index . "'>";
 	$formatting .= '<ul>';
 	$formatting .= '<li>ISBN-10: ' . $isbn10 . '</li>';
 	$formatting .= '<li>ISBN-13: ' . $isbn13 . '</li>';
@@ -60,9 +60,17 @@ function inputFormat($row) {
 			$formatting .= 'Type: Bid <br />';
 		else
 			$formatting .= 'Type: Offer <br />';
+	} else {
+		$formatting .= "<label for='price" . $index . "'>Price: </label> <input type='text' id='entry" . $index . "' /> <br />\n";
+		$formatting .= "<label for='type" . $index . "'>Type: </label> <select name='type" . $index . "'> <option value='offer'>Sell</option> <option value='bid'>Buy</option> </select> <br />";
 	}
-	if(isset($row['description']))
+	if(isset($row['description'])) {
 		$formatting .= 'Description: ' . $row['description'] . '<br />';
+	} else {
+		$formatting .= "<label for='description" . $index . "'>Description: </label> <input type='text' id='description" . $index . "' /> <br />\n";
+	}
+	$formatting .= "<button onclick='removeBook(" . $index . ")'>Remove</button> <br />";
+	$formatting .= "</span>";
 	return $formatting;
 }
 ?>

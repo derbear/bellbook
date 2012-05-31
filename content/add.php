@@ -1,25 +1,45 @@
+<?php
+/*
+ * The way this script works is that whenever a student inputs an ISBN into 
+ * the ISBN field or a course into the Course field, the page sends an AJAX
+ * request to proc.add.php with two GET variables: the ISBN or course ID, and
+ * the index of the current entry. These indices are kept unique with the 
+ * bookCount variable, which increments if the AJAX request returns information
+ * on the book (indicating that it's valid). If the book is valid, its 
+ * information is added to the bottom of the page in the bookList element. This
+ * also includes a bunch of form input elements which are name "price" + index, 
+ * "type" + index, and "description" + index. Additionally, the entire section 
+ * is headed under the span element "listing" + index.
+ *
+ * When everything is complete, the input information is POSTed to proc.add.php
+ * where the books are subsequently added to the database. The user can remove 
+ * a book that they wish to sell by clicking the Remove button which will clear
+ * everything under the "listing" span, hiding the book information. 
+ * Additionally, it will add an additional hidden field called :removed" set to
+ * true, indicating the listing has been removed.
+ *
+ * If the AJAX request returns an empty page, it simply displays a message
+ * indicating that the ISBN was invalid. This shouldn't happen for inputs of 
+ * course IDs, which are found under a drop-down list.
+ */
+?>
 <div><noscript>You may need to enable Javascript for this page</noscript></div>
-<!--
-<div> <form action='proc.add.php' method='post'>
-	<input type='hidden' name='finalize' value='true' />
-	<input type='submit' value='Post!' />
-</form> </div>
--->
 <script type='text/javascript'>
-var books;
 var bookCount = 0;
+var valid = true; // toggle to display the string that the ISBN is invalid
+
+/**
+ * Clear the field if a valid ISBN is entered.
+ */
 function resetEntry() {
-	// document.getElementById("numBooks").innerHTML="<input type='hidden' name='numBooks' value='" + bookCount + "' />";
-	// bookCount += 1;
-	document.getElementById("bookForm").innerHTML="\n<label for='entry" + bookCount + "'>ISBN</label>";
-	document.getElementById("bookForm").innerHTML+="\n<input id='entry" + bookCount + "' type='text' name='entry" + bookCount + "' />";
-	document.getElementById("bookForm").innerHTML+="\n<input type='submit' onclick='updateIsbn(" + bookCount + ")' value='Add' />";
-	document.getElementById("bookForm").innerHTML+="\n<span id='text" + bookCount + "'> </span>";
-	document.getElementById("bookForm").innerHTML+="\n<br />";
+	document.getElementById("bookForm").innerHTML="\n<input id='entry' type='text' name='entry' /> <button type='submit' onclick='updateIsbn()'>Add</button>";
 }
 
-function updateIsbn(field) {
-	var isbn = document.getElementById("entry" + field).value;
+/**
+ * Send the AJAX request.
+ */
+function updateIsbn() {
+	var isbn = document.getElementById("entry").value;
 	var xmlhttp;
 	if (isbn.length==0) {
 		return;
@@ -32,12 +52,29 @@ function updateIsbn(field) {
 	}
 	xmlhttp.onreadystatechange=function() {
 		if (xmlhttp.readyState==4 && xmlhttp.status==200) { // on complete
-			document.getElementById("bookList").innerHTML+=xmlhttp.responseText;
+			var result = xmlhttp.responseText;
+			if(result.length == 0) { // empty page
+				if(valid) {
+					document.getElementById("bookForm").innerHTML += " <i>This ISBN is invalid</i>";
+					valid = false;
+				}
+			} else {
+				resetEntry();
+				bookCount++; // add another book
+				document.getElementById("numBooks").innerHTML="<input type='hidden' name='count' value='" + bookCount + "' />";
+				document.getElementById("bookList").innerHTML+=result;
+			}
 		}
 	}
-	xmlhttp.open("GET","process/proc.add.php?isbn="+isbn,true);
+	xmlhttp.open("GET","process/proc.add.php?isbn="+isbn+"&index="+bookCount,true);
 	xmlhttp.send();
-	resetEntry();
+}
+
+/**
+ * Remove a listing by wiping its entry.
+ */
+function removeBook(id) {
+	document.getElementById("listing" + id).innerHTML = "<input type='hidden' name='removed" + id + "' value = 'true' />";
 }
 function checkCourse(course) {
 
@@ -47,17 +84,16 @@ function checkCourse(course) {
 <div>
 	<!-- <input type='hidden' name='finalize' value='false' /> -->
 	<p>Add by book</p>
-		<form action='#' method='get'>
+		<label for='entry'>ISBN</label>
 		<span id='bookForm'></span>
-		</form>
 	<p>Add by course</p>
 		<label for='courseName'>Course</label>
 		<select name='courseId'> <? // TODO course option list goes here ?> </select> <input type='submit' value='Add' /> <br />
 	<p>Listing information to add</p>
 		<form action='process/proc.add.php' method='post'>
-		<span id='numBooks'> </span>
+		<span id='numBooks'> <input type='hidden' name='count' value='0' /> </span>
 		<span id='bookList'> </span>
 		<input type='hidden' name='finalize' value='true' />
 		<input type='submit' value='Post!' />
 		</form> </div>
-<script type='text/javascript'> resetEntry(); </script>
+<script type='text/javascript'> resetEntry(); // call for initial field display </script>
