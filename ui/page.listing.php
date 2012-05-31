@@ -44,6 +44,7 @@ function inputFormat($row, $index) {
 		return false; // simplify things
 	
 	$formatting .= "<span id='listing" . $index . "'>";
+	$formatting .= "<input type='hidden' name='isbn" . $index . "' . value='" . $isbn13 . "' />";
 	$formatting .= '<ul>';
 	$formatting .= '<li>ISBN-10: ' . $isbn10 . '</li>';
 	$formatting .= '<li>ISBN-13: ' . $isbn13 . '</li>';
