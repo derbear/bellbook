@@ -82,7 +82,6 @@ function checkCourse(course) {
 </script>
 
 <div>
-	<!-- <input type='hidden' name='finalize' value='false' /> -->
 	<p>Add by book</p>
 		<label for='entry'>ISBN</label>
 		<span id='bookForm'></span>
