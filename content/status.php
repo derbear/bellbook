@@ -13,6 +13,7 @@
 			$row = mysql_fetch_row($resource);
 			while($row) {
 				echo format($row);
+				$row = mysql_fetch_row($resource);
 			}
 		}
 	}
@@ -32,6 +33,7 @@
 			$row = mysql_fetch_row($resource);
 			while($row) {
 				echo format($row);
+				$row = mysql_fetch_row($resource);
 			}
 		}
 	}
