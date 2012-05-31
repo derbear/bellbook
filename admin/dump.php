@@ -44,7 +44,7 @@ function dump($tableNumber) {
 		while($row) {
 			$comma = false;
 			foreach($row as $cell) {
-				if($comma) {
+				if(!$comma) {
 					$comma = true;
 				} else {
 					echo ',';
