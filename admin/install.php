@@ -35,7 +35,7 @@ function emplace() {
 		)', 
 		'CREATE TABLE Listings(
 			id INT NOT NULL AUTO_INCREMENT,
-			isbn INT,
+			isbn TINYTEXT,
 			price INT,
 			description TINYTEXT,
 			owner INT,
