@@ -1,5 +1,6 @@
 <hr /> 
 <a href='index.php?query=home&amp;ref=<? echo $QUERY; ?>'>Home</a> | 
+<a href='index.php?query=books&amp;ref=<? echo $QUERY; ?>'>Browse</a> |
 <a href='index.php?query=status&amp;ref=<? echo $QUERY; ?>'>Status</a> |
 <a href='index.php?query=add&amp;ref=<? echo $QUERY; ?>'>Bid/Offer</a> |
 <a href='index.php?query=help&amp;ref=<? echo $QUERY; ?>'>Help</a> |

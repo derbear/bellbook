@@ -1,5 +1,8 @@
 <? $info = pageinfo($QUERY); ?>
-<head> <title> <? echo $info['name']; ?> </title> </head>
+<head> 
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+	<title> <? echo $info['name']; ?> </title>
+</head>
 <body>
 <!--header-->
 <h1> <? echo $info['title']; ?> </h1> <br />

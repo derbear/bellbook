@@ -60,7 +60,12 @@ function initinfo() {
 			'name' => 'Bellbook - Post offers and bids',
 			'title' => 'Post offers and bids',
 			'location' => 'content/add.php',
-			'access' => 'private')); 
+			'access' => 'private'),
+		'books' => array(
+			'name' => 'Bellbook - Listings', // or search
+			'title' => 'bellbook book listings',
+			'location' => 'content/books.php',
+			'access' => 'public')); 
 }
 
 /**
